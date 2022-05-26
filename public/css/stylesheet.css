@@ -1,0 +1,168 @@
+/* The background picture design*/
+
+.background {
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: 1920px 400px;
+    border: 2px solid rgb(104, 103, 103);
+
+}
+
+
+
+/* Reise ziele Logo adjustment*/
+.topic {
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    margin-left: 20%;
+    margin-right: 60%;
+    margin-bottom: -3%;
+}
+
+
+/* The navbar */
+/* Position the navbar container inside the image */
+.container {
+    position: relative;
+    margin: 32px auto;
+    margin-top: -30px;
+    width: auto;
+}
+
+.topnav {
+    overflow: overlay;
+    background-color: #333;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+
+
+/* home, ziel and Abstimmung design*/
+.links {
+    color: white;
+    padding: 14px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+li {
+    float: left;
+    list-style-type: none;
+}
+
+
+/* Article cards design */
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 100%;
+    font-size: 16px;
+    line-height: 1.5;
+    background: #F0F4FB;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+.site-container {
+    margin: 32px auto;
+    max-width: calc(100%-80px);
+
+}
+
+.article-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+    gap: 2rem;
+}
+
+.article-image {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.article-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px 20px 0 0;
+}
+
+.article-card {
+    background: white;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.article-card:hover {
+    box-shadow: 0 4px 20px 0 rgba(34, 68, 123, 0.2);
+    cursor: pointer;
+}
+
+.article-content {
+    padding: 2rem;
+}
+
+.article-content .card-category {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    color: #6b82a7;
+    display: block;
+    text-decoration: none;
+}
+
+.article-content .card-title {
+    color: #22447b;
+}
+
+.article-content .card-excerpt {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #6b82a7;
+    margin: 0;
+
+}
+
+@media screen and (min-width: 768px) {
+    .site-container {
+        max-width: 608px;
+    }
+
+    .article-card {
+        display: grid;
+        grid-template-rows: 220px 1fr;
+    }
+
+    @media screen and (min-width: 1280px) {
+        .site-container {
+            max-width: 1156px;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+/* the footer design for our Website */
+.footer-basic {
+    text-align: center;
+    justify-content: end;
+}
