@@ -88,7 +88,9 @@ body {
     margin: 32px auto;
     max-width: calc(100%-80px);
 
+
 }
+
 
 .article-container {
     display: grid;
@@ -100,6 +102,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+
 }
 
 .article-image img {
@@ -121,6 +124,7 @@ body {
 
 .article-content {
     padding: 2rem;
+    padding-bottom: 10rem;
 }
 
 .article-content .card-category {
