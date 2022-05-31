@@ -93,6 +93,7 @@ body {
 
 
 .article-container {
+    
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
     gap: 2rem;
@@ -124,8 +125,10 @@ body {
 
 .article-content {
     padding: 2rem;
-    padding-bottom: 10rem;
+    padding-bottom: 5rem;
 }
+
+
 
 .article-content .card-category {
     font-size: 0.875rem;
@@ -168,13 +171,60 @@ body {
 }
 
 
-
-
-
-
-
 /* the footer design for our Website */
 .footer-basic {
     text-align: center;
     justify-content: end;
+}
+
+
+.h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+  }
+
+button{
+    font-family: 'Poppins', sans-serif;
+    justify-content: space-around;
+    margin-top: 500px;
+    border-radius: 20px 20px 20px 20px;
+    float: left;
+    height: 30px;
+    width: 90px;
+    margin: 1px;
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    gap: 10px;
+}
+
+.fullclick li {
+    list-style: none;
+    margin: 1em 0;
+    padding: 20px 10px;
+    background: #2b2b2b;
+    position: relative;
+  }
+  .fullclick a.main {
+    color: #85baff;
+    text-align: right;
+    display: block;
+    z-index: 1;
+  }
+  .fullclick li a.main::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: ' ';
+  }
+
+.addFamilymember{
+    font-family: 'Poppins', sans-serif;
+   text-decoration: none;
+   color: black;
+   max-width: 100%;
+    height: auto;
+    border-radius: 20px 20px 0 0;
 }
