@@ -108,18 +108,25 @@ body {
     border-radius: 20px 20px 0 0;
 }
 
+
+
 .article-card {
     background: white;
     border-radius: 20px;
-    transition: 0.3s;
+    transition: 1s;
+    perspective: 1000px;
+
+
 }
 
 .article-card:hover {
     box-shadow: 0 4px 20px 0 rgba(34, 68, 123, 0.2);
     cursor: pointer;
+    transform: rotateY(180deg);
+
 }
 
-.article-content {
+.article-card .article-content {
     padding: 2rem;
 }
 
@@ -162,10 +169,6 @@ body {
     }
 
 }
-
-
-
-
 
 
 
