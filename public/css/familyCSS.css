@@ -1,43 +1,3 @@
-/* Three columns side by side */
-.column {
-
-  float: left;
-  width: 23.5%;
-  margin-bottom: 16px;
-  padding: 0 8px;
-
-}
-
-/* Add some shadows to create a card effect */
-.card {
-
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-  font-family: 'Poppins', sans-serif;
-  height: 600px;
-  overflow: hidden;
-}
-
-/* Some left and right padding inside the container */
-.container {
-  padding: 0 16px;
-
-}
-
-/* Clear floats */
-.container::after,
-.row::after {
-
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.title {
-  color: grey;
-  font-weight: bold;
-}
-
 /* header*/
 
 /* The background picture design*/
@@ -115,6 +75,8 @@ li {
   justify-content: end;
 }
 
+
+
 /* Slider Bar*/
 
 .slidecontainer {
@@ -159,4 +121,10 @@ li {
   border-radius: 50%;
   background: #04AA6D;
   cursor: pointer;
+}
+
+
+.h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
 }
