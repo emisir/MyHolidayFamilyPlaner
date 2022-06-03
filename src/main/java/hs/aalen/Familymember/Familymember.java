@@ -6,6 +6,9 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+import hs.aalen.Holidaywish.Holidaywish;
 
 
 @Entity
@@ -17,6 +20,8 @@ public class Familymember {
 	private long id;
 	private Date bday;
 
+	@ManyToMany(mappedBy="prio")
+	private List<Holidaywish> holidaywishprio;
 		
 	public Familymember() {
 	}
@@ -45,12 +50,19 @@ public class Familymember {
 	public void setBday(Date bday) {
 		this.bday = bday;
 
-
 	}
-	
+	public List<Holidaywish> setHolidaywishprio(){
+		return holidaywishprio;
+		
+	}
+	 public void getHolidaywishprio() {
+		 this.holidaywishprio = holidaywishprio;
+	 }
+
+}	
 
 
-}
+
 
 	
 	
