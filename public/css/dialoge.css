@@ -1,0 +1,167 @@
+#body-overlay{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms ease-in-out;
+}
+
+.dialog{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 8px 8px 16px rgba(255, 255, 255, 0.1);
+    background-color: white;
+    color: black;
+    opacity: 0;
+    pointer-events: none;
+
+}
+
+#body-overlay.sichtbar, .dialog.sichtbar{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#addFamilymember-dialog{
+    width: 25%;
+}
+
+.dialog-schliessen-button{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 32px;
+    line-height: 32px;
+    color: rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+}
+
+/* Styling */
+
+#addFamilymember-dialog{
+    background-color: #333;
+    box-shadow: inset 0px 0px 10px black, 2px 2px 4px rgba(255, 255, 255, 0.1), 8px 8px 16px rgba(255,255,255,0.1);
+    border: 5px solid silver;
+}
+
+#addFamilymember-dialog .dialog-schliessen-button{
+    color: rgba(255,255,255, 0.6);
+}
+
+#addFamilymember-dialog form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#addFamilymember-dialog h3{
+    margin: 0;
+    color: white;
+    text-align: center;
+    font-size: max(2.5vw, 1.1em);
+    text-shadow: 0px 0px 4px black;
+}
+
+#addFamilymember-dialog input{
+      width: 100%;
+      margin: 7px;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-family: inherit;
+      vertical-align: middle;
+}
+
+#addFamilymember-dialog .eingabefeld {
+    padding: 14px 16px;
+    font-size: 17px;
+    line-height: 16px;
+    background: rgb(240, 240, 240);
+    border: 2px solid silver;
+    color: #1c1e21;
+    height: 50px;
+    box-shadow: inset 0px 0px 4px #222;
+
+}
+
+#addFamilymember-dialog .eingabefeld:focus-visible{
+    outline: none;
+    border: 2px solid #3a342c;
+}
+
+#addFamilymember-dialog input[type=submit]{
+    padding: 0 16px;
+    background-color: #1877f2;
+    border: none;
+    font-size: 25px;
+    color: white;
+    line-height: 48px;
+    font-weight: bold;
+    cursor: pointer;
+    background-image: linear-gradient(#d3cdc5,#3a342c);
+    text-decoration: none;
+    text-shadow: 1px 1px 5px black;
+    box-shadow: inset 0px 0px 10px black;
+    border-radius: 10%/50%;
+    width: 50%;
+    display: inline-block;
+}
+
+/*
+#addFamilymember-dialog input[type=file]{
+    padding: 0 16px;
+    background-color: #1877f2;
+    border: none;
+    font-size: 25px;
+    color: white;
+    line-height: 48px;
+    font-weight: bold;
+    cursor: pointer;
+    background-image: linear-gradient(#d3cdc5,#3a342c);
+    text-decoration: none;
+    text-shadow: 1px 1px 5px black;
+    box-shadow: inset 0px 0px 10px black;
+    border-radius: 10%/50%;
+    width: 50%;
+    display: inline-block;
+}
+*/
+
+#addFamilymember-dialog input[type=submit]:hover{
+    box-shadow: inset 0px 0px 10px black, 0px 0px 15px #d3cdc5;
+}
+
+.h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+  }
+
+.eingabefeld{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.addFamilymember-dialog-daten{
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+#display-image{
+    width: 380px;
+    height: 225px;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+  }
+
+
+
+  
