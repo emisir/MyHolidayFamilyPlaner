@@ -7,6 +7,7 @@ var settings = {
     },
 };
 
+
 $(document).ready(function () {
     $.ajax(settings).done(function (response) {
         console.log(response);
@@ -16,50 +17,64 @@ $(document).ready(function () {
         $.each(data, function (i, order) {
             $(".article-container").append(`
                 <article class="article-card">
-                    <figure class="article-image">
-                        <img src="${data[i].image}" alt="Reiseziel Bild" />
-                    </figure>
-                    <div class="article-content">
-                        <a href="#" class="card-category">Reiseziel</a>
-                        <h3 class="card-title">
-                            ${data[i].city}
-                        </h3>
-                        <div class="card-excerpt flex">
-                            <div>${data[i].description}</div>
-                            
-                            <input
-                                type="range"
-                                min="1"
-                                max="10"
-                                value="1"
-                                class="slider"
-                                id="myRange${i}"
-
-                        
-                            />
-                            <p class="prio">Priorität: <span id="#demo"></span></p>
-                        </div>
-                    </div>
+                <figure class="article-image">
+                    <img src="${data[i].image}" alt="Reiseziel Bild" />
+                </figure>
+                <div class="article-content">
+                    <a href="#" class="card-category">Reiseziel</a>
+                    <h3 class="card-title">
+                        ${data[i].city}
+                    </h3>
+                    <div>${data[i].description}</div>
+                </div>
+                <div class = "cardFooter">
+                    <input type="range" min="1" max="10" value="1" class="slider" id="myRange${i}" />
+                    <p class="prio">Priorität: <span id="demo${i}">${data[i].prio}</span></p>
+                    <button id="saveSpot${i}">Speichern</button>
+                </div>
                 </article>`);
 
 
 
-            $("#myRange" + i).change((value) => {
+            $("#myRange" + i).change(function (e) {
 
-                var slider = document.getElementById("#myRange");
-                var output = document.getElementById("#demo");
-                output.innerHTML = slider.value;
+                $("#demo" + i).text(e.target.value);
 
-                slider.oninput = function () {
-                    output.innerHTML = this.value;
-                }
-
-
-                console.log(value.target.value);
+                console.log(e.target.value);
             });
+
+            $("#saveSpot" + i).click(function (e) {
+
+
+                let inputSave = {
+                    'input': $("#myRange" + i).val(),
+
+                };
+
+                $.ajax({
+                    type: 'POST', // define the type of HTTP verb we want to use(POST for our form)
+                    contentType: 'application/json',
+                    url: "https://397176c9-192a-4b09-8f9c-c4b79a3d8a30.mock.pstmn.io/priority", // url where we want to POST
+                    data: JSON.stringify(inputSave), // data we want to POST
+                    success: function (data, textStatus, jQxhr) {
+                    },
+                    error: function (jqXhr, textStatus, errorThrown) {
+                        console.log(errorThrown);
+                    }
+                });
+
+            });
+
+
+
 
         });
     });
+});
+
+$(document).ready(function () {
+
+
 });
 
 

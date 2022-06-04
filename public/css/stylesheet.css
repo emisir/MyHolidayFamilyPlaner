@@ -44,7 +44,7 @@ body {
     justify-content: space-around;
     align-items: center;
     overflow: overlay;
-    background-color: #333; 
+    background-color: #333;
     margin-left: 20%;
     margin-right: 20%;
     border-radius: 20px 20px 20px 20px;
@@ -96,7 +96,7 @@ body {
 
 .article-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+    grid-template-columns: repeat(4, minmax(265px, 1fr));
     gap: 2rem;
 }
 
@@ -131,6 +131,12 @@ body {
     padding: 2rem;
 }
 
+.article-content {
+
+
+    overflow: hidden;
+}
+
 .article-content .card-category {
     font-size: 0.875rem;
     text-transform: uppercase;
@@ -139,6 +145,8 @@ body {
     color: #6b82a7;
     display: block;
     text-decoration: none;
+
+
 }
 
 .article-content .card-title {
@@ -150,6 +158,7 @@ body {
     line-height: 1.5rem;
     color: #6b82a7;
     margin: 0;
+
 
 }
 
@@ -183,6 +192,8 @@ body {
 .slider {
     width: 100%;
     height: auto;
+    display: flex;
+    margin-top: 20%;
 }
 
 .prio {
@@ -196,6 +207,10 @@ body {
 
 }
 
+.cardFooter {
+    margin: 0 30px 30px 30px;
+}
+
 
 
 /* the footer design for our Website */
@@ -203,4 +218,3 @@ body {
     text-align: center;
     justify-content: end;
 }
-

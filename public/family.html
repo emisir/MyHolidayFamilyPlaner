@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Familienmitglieder</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
-    <link href="fontawesome-free-5.15.1-web/fontawesome-free-5.15.1-web/css/all-css" rel="stylesheet" >
+    <link href="fontawesome-free-5.15.1-web/fontawesome-free-5.15.1-web/css/all-css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b30115917b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/famsheet.css">
     <link rel="stylesheet" href="./css/dialoge.css">
@@ -32,25 +32,25 @@
 
         </nav>
     </div>
-  
-    
+
+
     <div class="article-basic">
         <div>
             <div class="site-container">
                 <div class="article-container">
-                
+
                     <article class="article-card">
                         <figure class="article-image">
-                        <a href="#" class="addFamilymember" onclick ="dialogOeffnen('addFamilymember-dialog')">
-                            <img src="./images/greyPlus.png" alt="Add Familymember" />
+                            <a href="#" class="addFamilymember" onclick="dialogOeffnen('addFamilymember-dialog')">
+                                <img src="./images/greyPlus.png" alt="Add Familymember" />
                         </figure>
                         <div class="article-content">
-                            <h2>Familienmitglied hinzufügen</h2>     
+                            <h2>Familienmitglied hinzufügen</h2>
                         </div>
                         </a>
                     </article>
 
-                
+
                     <article class="article-card">
                         <figure class="article-image">
                             <img src="./images/atilla.png" alt="atilla" />
@@ -61,9 +61,9 @@
                             <p class="card-excerpt">Oggi hanno fatto bene pero domani chi sa non si sa mai perche
                                 giovani giocatori sempre posso fare
                                 tutta la caso </p>
-                                <button type="button">Löschen</button>
-                                <button type="button">Bearbeiten</button>
-                            </div>
+                            <button type="button">Löschen</button>
+                            <button type="button">Bearbeiten</button>
+                        </div>
                     </article>
 
                     <article class="article-card">
@@ -76,7 +76,7 @@
                             <p class="card-excerpt"> Ay günesden daha güzelmis</p>
                         </div>
                     </article>
-                    
+
                     <article class="article-card">
                         <figure class="article-image">
                             <img src="./images/aylin.png" alt="Aylin" />
@@ -98,8 +98,8 @@
                             <p class="card-excerpt"> What dedin Gülüm?</p>
                         </div>
 
-                        
-                       
+
+
 
                 </div>
             </div>
@@ -110,38 +110,39 @@
 
     <div id="body-overlay"></div>
     <div class="dialog" id="addFamilymember-dialog">
-        <a href="#" role="button" class="dialog-schliessen-button" onclick ="dialogSchliessen('addFamilymember-dialog')">
+        <a href="#" role="button" class="dialog-schliessen-button" onclick="dialogSchliessen('addFamilymember-dialog')">
             <i class="fa-regular fa-circle-xmark"></i>
         </a>
         <h3>Familienmitglied Hinzufügen</h3>
 
-    <a class="addFamilymember-dialog-daten">
-    <form action="">
-        <div id="display-image"></div>  
-        <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg">
-        
+        <a class="addFamilymember-dialog-daten">
+            <form action="">
+                <div id="display-image"></div>
+                <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg">
 
-        <input type="text" placeholder="Vorname" class="eingabefeld">
-        <input type="text" placeholder="Nachname" class="eingabefeld">
-        <input type="text" placeholder="Rolle" class="eingabefeld">
-        <input type="text" placeholder="Beschreibung" class="eingabefeld">
-        <input type="submit" value="Hinzufügen!">
-        
 
-        <!--
+                <input type="text" placeholder="Vorname" class="eingabefeld">
+                <input type="text" placeholder="Nachname" class="eingabefeld">
+                <input type="text" placeholder="Rolle" class="eingabefeld">
+                <input type="text" placeholder="Beschreibung" class="eingabefeld">
+                <input type="submit" value="Hinzufügen!">
+
+
+                <!--
         <form action="/action_page.php">
             <input type="file" id="myFile" name="filename" accept="image/jpeg, image/png, image/jpg">
             <input type="submit" value="Hinzufügen!">
         
           </form>
         -->
-        
-    </form>
-    </a>
+
+            </form>
+        </a>
     </div>
-    
+
     <script src="./js/dialoge.js"></script>
-   
+
 
 </body>
+
 </html>
