@@ -6,6 +6,7 @@ var settings = {
         "Content-Type": "application/json"
     },
 };
+
 $(document).ready(function () {
     $.ajax(settings).done(function (response) {
         console.log(response);
@@ -32,18 +33,34 @@ $(document).ready(function () {
                                 max="10"
                                 value="1"
                                 class="slider"
-                                id="slider-${i}"
+                                id="myRange${i}"
+
+                        
                             />
-                            <p class="prio">Priorität: <span id="demo"></span></p>
+                            <p class="prio">Priorität: <span id="#demo"></span></p>
                         </div>
                     </div>
                 </article>`);
 
-            $("#slider-" + i).change((value) => {
+
+
+            $("#myRange" + i).change((value) => {
+
+                var slider = document.getElementById("#myRange");
+                var output = document.getElementById("#demo");
+                output.innerHTML = slider.value;
+
+                slider.oninput = function () {
+                    output.innerHTML = this.value;
+                }
+
+
                 console.log(value.target.value);
             });
+
         });
     });
 });
+
 
 
