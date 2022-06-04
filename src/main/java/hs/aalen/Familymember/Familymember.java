@@ -19,6 +19,7 @@ public class Familymember {
 	private String name;
 	private long id;
 	private Date bday;
+	
 
 	@ManyToMany(mappedBy="prio")
 	private List<Holidaywish> holidaywishprio;
@@ -52,11 +53,11 @@ public class Familymember {
 
 	}
 	public List<Holidaywish> setHolidaywishprio(){
-		return holidaywishprio;
+		return holidaywishprio ;
 		
 	}
-	 public void getHolidaywishprio() {
-		 this.holidaywishprio = holidaywishprio;
+	 public void getHolidaywishprio(List<Holidaywish> holidaywishprio) {
+		 this.holidaywishprio = holidaywishprio ;
 	 }
 
 }	

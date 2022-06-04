@@ -1,14 +1,12 @@
 package hs.aalen.Holidaywish;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 
 import hs.aalen.Familymember.Familymember;
-
-import java.util.List;
-
 
 @Entity
 public class Holidaywish {
@@ -23,7 +21,7 @@ public class Holidaywish {
 
     public Holidaywish() {
     }
-    public Holidaywish(String description, String bday) {
+    public Holidaywish(String description, String bday, String location) {
         super();
         this.description = description;
         this.location = location;
