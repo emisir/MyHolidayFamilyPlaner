@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyFamilyHolidayPlaner</title>
     <link rel="stylesheet" href="./css/zielesheet.css">
+
+    <link rel="stylesheet" href="./css/dialoge.css">
+    <script language="javascript" type="text/javascript" src="js/abstimmen.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
+    <link href="fontawesome-free-5.15.1-web/fontawesome-free-5.15.1-web/css/all-css" rel="stylesheet" >
+    <script src="https://kit.fontawesome.com/b30115917b.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -24,32 +31,74 @@
                 <li><a href="ziele.html" class="links">Ziele</a></li>
                 <li><a href="family.html" class="links">Familienmitglieder</a></li>
                 <li><a href="archiv.html" class="links">Archiv</a></li>
-                <li><a href="https://earthroulette.com/" class="links">Interessante Orte</a></li>
+                <li><a href="https://earthroulette.com/" target="_blank" class="links">Interessante Orte</a></li>
             </div>
         </nav>
     </div>
-    <div class="vote">
-        <div class="article-basic">
-            <div class="contain">
-                <h2> Voting System</h2>
-                <img src="" />
-                <div class="voting">
-                    <button id="likebtn">
-                        <i class="fa fa-thumbs-up"></i>
-                    </button>
-                    <input type="number" id="input1" value="0" name="">
 
-                    <button id="dislikebtn">
-                        <i class="fa fa-thumbs-down"></i>
-                    </button>
-                    <input type="number" id="input2" value="0" name="">
-                </div>
-                <article>
 
-                </article>
-            </div>
-        </div>
+    <div class="article-basic">
+        <div>
+            <div class="site-container">
+                <div class="article-container">
+                
+                    <article class="article-card">
+                        <figure class="article-image">
+                        <a href="#" class="addFamilymember" onclick ="dialogOeffnen('addFamilymember-dialog')">
+                            <img src="./images/greyPlus.png" alt="Add Familymember" />
+                        </figure>
+                        <div class="article-content">
+                            <h2>Urlaubsziel Hinzufügen</h2>     
+                        </div>
+                        </a>
+                    </article>
+
+                    
+                
+                    <div id="body-overlay"></div>
+                    <div class="dialog" id="addFamilymember-dialog">
+                        <a href="#" role="button" class="dialog-schliessen-button" onclick ="dialogSchliessen('addFamilymember-dialog')">
+                            <i class="fa-regular fa-circle-xmark"></i>
+                        </a>
+                        <h3>Urlaubsziel Hinzufügen</h3>
+                
+                    <a class="addFamilymember-dialog-daten">
+                    <form action="">
+                        <div id="display-image"></div>  
+                        <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg">            
+                        <input type="text" placeholder="Urlaubsort" id="t" class="eingabefeld" >
+                        <input type="text" placeholder="Anmerkung" id="t" class="eingabefeld" >
+                        <input type="text" placeholder="Beispiel Sehenswürdigkeiten #1" id="t" class="eingabefeld" >
+                        <a  id="teuer">
+                        <h1>Teuer Skala</h1>
+                        </a>
+                        <div class="slidecontainer" >
+                            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                          </div>
+                        
+                        
+                        
+                        <button type="submit" onclick="myFunction()">Hinzufügen!</button>
+                        
+            
+                        
+                    </form>
+                    </a>
+                    </div>
+</head>
+    <!-- Ab hier -->
+        
+    <div id="test">
+        
     </div>
+
+  <script src="./js/ziele.js"></script>
+  <script src="./js/dialoge.js"></script>
+
+     <!--  Bis hier  -->
+            
+
+
     <div class="footer-basic">
         <footer>
             <p>Impressum</p>
@@ -57,7 +106,8 @@
 
         </footer>
     </div>
-    <script language="javascript" type="text/javascript" src="js/abstimmen.js"></script>
+
+
 </body>
 
 </html>

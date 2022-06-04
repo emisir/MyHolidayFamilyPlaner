@@ -44,7 +44,7 @@ body {
     justify-content: space-around;
     align-items: center;
     overflow: overlay;
-    background-color: #333;
+    background-color: #333; 
     margin-left: 20%;
     margin-right: 20%;
     border-radius: 20px 20px 20px 20px;
@@ -171,6 +171,7 @@ body {
 
 }
 
+
 /* Article card design slider */
 .slidecontainer {
     width: 100%;
@@ -196,8 +197,10 @@ body {
 }
 
 
+
 /* the footer design for our Website */
 .footer-basic {
     text-align: center;
     justify-content: end;
 }
+
