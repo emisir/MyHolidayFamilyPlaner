@@ -8,13 +8,9 @@ function myFunction() {
     div2.classList.add("containerA");
 
 
-    <div id = "foo">
-        <div id = "bar"><img src="./images/Bali.jpg" id="img">Bali</div>
-    </div>
-
-    /*
+    
     const img = document.createElement("img");
-    img.src = "./images/Bali.jpg";*/
+    img.src = "./images/Bali.jpg";
     
 
     div1.appendChild(img);
