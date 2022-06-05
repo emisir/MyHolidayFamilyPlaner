@@ -28,6 +28,33 @@ body {
     margin-bottom: -3%;
 }
 
+#famBtn {
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: bolder;
+    color: #22447b;
+    display: block;
+    font-family: cursive;
+
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid grey;
+    margin-left: 35%;
+
+}
+
+#famBtn:hover {
+    background-color: #22447b;
+    color: white;
+
+}
+
+
+
+
+
+
 
 /* The navbar */
 /* Position the navbar container inside the image */
