@@ -207,10 +207,29 @@ body {
 
 }
 
+/* Priority design and Savebutton style */
+
 .cardFooter {
     margin: 0 30px 30px 30px;
 }
 
+.saveBtn {
+
+    font-size: 0.875rem;
+    font-weight: bolder;
+    color: #22447b;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid grey;
+    width: 100%;
+
+}
+
+.saveBtn:hover {
+    background-color: #22447b;
+    color: white;
+
+}
 
 
 /* the footer design for our Website */

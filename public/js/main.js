@@ -30,7 +30,7 @@ $(document).ready(function () {
                 <div class = "cardFooter">
                     <input type="range" min="1" max="10" value="1" class="slider" id="myRange${i}" />
                     <p class="prio">Priorität: <span id="demo${i}">${data[i].prio}</span></p>
-                    <button id="saveSpot${i}">Speichern</button>
+                    <button class ="saveBtn" id="saveSpot${i}">Speichern</button>
                 </div>
                 </article>`);
 
