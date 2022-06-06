@@ -1,5 +1,4 @@
 package hs.aalen.Holidaywish;
-
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -8,8 +7,10 @@ import javax.persistence.ManyToMany;
 
 import hs.aalen.Familymember.Familymember;
 
+
 @Entity
 public class Holidaywish {
+
 	@Id
     private String description;
     private String location;

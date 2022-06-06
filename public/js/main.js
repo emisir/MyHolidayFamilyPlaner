@@ -8,6 +8,7 @@ var settings = {
 };
 
 
+
 $(document).ready(function () {
     $.ajax(settings).done(function (response) {
         console.log(response);
@@ -30,7 +31,7 @@ $(document).ready(function () {
                 <div class = "cardFooter">
                     <input type="range" min="1" max="10" value="1" class="slider" id="myRange${i}" />
                     <p class="prio">Priorität: <span id="demo${i}">${data[i].prio}</span></p>
-                    <button id="saveSpot${i}">Speichern</button>
+                    <button class ="saveBtn" id="saveSpot${i}">Speichern</button>
                 </div>
                 </article>`);
 
@@ -72,7 +73,31 @@ $(document).ready(function () {
     });
 });
 
+
 $(document).ready(function () {
+    var myLog = document.getElementById("login");
+
+    var btn = document.getElementById("famBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function () {
+        myLog.style.display = "grid";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        myLog.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 
 
 });
