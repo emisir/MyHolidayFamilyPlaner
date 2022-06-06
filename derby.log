@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Mon Jun 06 14:39:43 CEST 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0181-3907-35e7-0000010690f0 
+on database directory C:\Users\atill\OneDrive\Desktop\Programmieren\WebDev\MyHolidayFamilyPlaner\mydb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@6d5380c2 
+Loaded from file:/C:/Users/atill/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.14.2.0/7efad40ef52fbb1f08142f07a83b42d29e47d8ce/derby-10.14.2.0.jar
+java.vendor=Eclipse Adoptium
+java.runtime.version=17.0.2+8
+user.dir=C:\Users\atill\OneDrive\Desktop\Programmieren\WebDev\MyHolidayFamilyPlaner
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

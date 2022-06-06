@@ -20,7 +20,7 @@ public class Familymember {
 	private long id;
 	private Date bday;
 	
-
+//beziehung m to n zu Holidaywish
 	@ManyToMany(mappedBy="prio")
 	private List<Holidaywish> holidaywishprio;
 		
