@@ -8,6 +8,7 @@ var settings = {
 };
 
 
+
 $(document).ready(function () {
     $.ajax(settings).done(function (response) {
         console.log(response);
@@ -52,10 +53,10 @@ $(document).ready(function () {
                 };
 
                 $.ajax({
-                    type: 'POST', // define the type of HTTP verb we want to use(POST for our form)
+                    type: 'POST',
                     contentType: 'application/json',
                     url: "https://397176c9-192a-4b09-8f9c-c4b79a3d8a30.mock.pstmn.io/priority", // url where we want to POST
-                    data: JSON.stringify(inputSave), // data we want to POST
+                    data: JSON.stringify(inputSave),
                     success: function (data, textStatus, jQxhr) {
                     },
                     error: function (jqXhr, textStatus, errorThrown) {
@@ -72,10 +73,29 @@ $(document).ready(function () {
     });
 });
 
-$(document).ready(function () {
 
+var modal = document.getElementById("myModal");
 
-});
+// Get the button that opens the modal
+var btn = document.getElementById("famBtn");
 
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
 
+// When the user clicks on the button, open the modal
+btn.onclick = function () {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 

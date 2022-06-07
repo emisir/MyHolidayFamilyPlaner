@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="./css/stylesheet.css">
-
+    <link rel="stylesheet" href="./css/dialoge.css">
 </head>
 
 
@@ -34,6 +34,27 @@
 
             </nav>
         </div>
+        </figure>
+        <div class="addFamBtn">
+            <button id="famBtn">Anmelden</button>
+        </div>
+        <div class="article-content">
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <div class="page">
+                        <span class="close">&times;</span>
+                        <label for="choose" class="chooseText"> Wählen Sie aus wer Sie sind:</label>
+                        <select name="choose" id="chooseDrop">
+                            <option id="chooseOption" value="Ebu"> Ebu</option>
+                            <option id="chooseOption" value="Burak"> Burak</option>
+                        </select>
+                        <button id="submitBtn">Auswählen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 
         <div class="article-basic">
             <div>
@@ -44,16 +65,25 @@
             </div>
         </div>
 
+<<<<<<< HEAD
         <div class="footer-basic">
             <footer>
                 <p><a href="kontakt.html" id="kontakt">Kontakt</a></p>
+=======
+    </div>
+
+    <div class="footer-basic">
+        <footer>
+            <p>Impressum</p>
+>>>>>>> ac1be7c7233abdb347ca7e54feecdc29588142fc
 
 
-            </footer>
-        </div>
+        </footer>
+    </div>
 
     </div>
     <script src="js/main.js"></script>
+
 
 </body>
 
