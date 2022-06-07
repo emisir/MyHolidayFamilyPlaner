@@ -30,7 +30,7 @@ public class HolidayController {
 
     }
     @RequestMapping(method = RequestMethod.PUT, value="/holiday/{id}" )
-    public void updateHoliday (@PathVariable long id, @RequestBody Holiday holiday) {
+    public void updateHoliday (@PathVariable String id, @RequestBody Holiday holiday) {
         holidayservice.updateHoliday(id,holiday);
     }
     @RequestMapping(method = RequestMethod.DELETE, value="/holiday/{id}" )
