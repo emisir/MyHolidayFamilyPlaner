@@ -4,6 +4,12 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+derby.log
+db.lck
+log.ctrl
+log1.ctrl
+log1.dat
+logmirror.ctrl
 
 ### STS ###
 .apt_generated
