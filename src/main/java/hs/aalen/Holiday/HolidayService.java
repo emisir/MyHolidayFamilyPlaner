@@ -32,7 +32,7 @@ public class HolidayService {
 
     }
 
-    public void updateHoliday(long id, Holiday holiday) {
+    public void updateHoliday(String id, Holiday holiday) {
         holidayrepository.save(holiday);
 
 
