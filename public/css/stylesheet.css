@@ -11,12 +11,11 @@ body {
     width: 100%;
     background-size: 1920px 400px;
     border-radius: 10px 10px 10px 10px;
-
 }
 
 
-
 /* Urlaubsplaner h1 design*/
+
 .topic {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
@@ -30,7 +29,10 @@ body {
 
 
 /* The navbar */
+
+
 /* Position the navbar container inside the image */
+
 .container {
     position: sticky;
     margin: 32px auto;
@@ -50,12 +52,11 @@ body {
     border-radius: 20px 20px 20px 20px;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-
 }
 
 
-
 /* home, ziel and Abstimmung design*/
+
 .links {
     color: white;
     padding: 14px;
@@ -76,7 +77,6 @@ li {
 /* Article cards design */
 
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
-
 body {
     font-family: 'PT Sans', sans-serif;
     font-size: 100%;
@@ -85,13 +85,11 @@ body {
     background: #F0F4FB;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
 }
 
 .site-container {
     margin: 32px auto;
     max-width: calc(100%-80px);
-
 }
 
 .article-container {
@@ -112,19 +110,14 @@ body {
     border-radius: 20px 20px 0 0;
 }
 
-
-
 .article-card {
     background: white;
     border-radius: 20px;
-
-
 }
 
 .article-card:hover {
     box-shadow: 0 4px 20px 0 rgba(34, 68, 123, 0.2);
     cursor: pointer;
-
 }
 
 .article-card .article-content {
@@ -132,8 +125,6 @@ body {
 }
 
 .article-content {
-
-
     overflow: hidden;
 }
 
@@ -145,8 +136,6 @@ body {
     color: #6b82a7;
     display: block;
     text-decoration: none;
-
-
 }
 
 .article-content .card-title {
@@ -154,41 +143,45 @@ body {
 }
 
 .article-content .card-excerpt {
-    font-size: 1rem;
+    font-size: 12px;
     line-height: 1.5rem;
     color: #6b82a7;
     margin: 0;
+}
 
-
+.article-content .card-mail {
+    font-size: 11px;
+    line-height: 1.5rem;
+    color: #6b82a7;
+    margin: 0;
 }
 
 @media screen and (min-width: 768px) {
     .site-container {
         max-width: 608px;
     }
-
     .article-card {
         display: grid;
         grid-template-rows: 220px 1fr;
     }
-
     @media screen and (min-width: 1280px) {
         .site-container {
             max-width: 1156px;
         }
     }
-
 }
 
 
 /* Article card design slider */
+
 .slidecontainer {
     width: 100%;
     margin-top: 10px;
-
 }
 
+
 /* The slider itself */
+
 .slider {
     width: 100%;
     height: auto;
@@ -204,8 +197,8 @@ body {
     color: #22447b;
     display: block;
     text-decoration: none;
-
 }
+
 
 /* Priority design and Savebutton style */
 
@@ -214,7 +207,6 @@ body {
 }
 
 .saveBtn {
-
     font-size: 0.875rem;
     font-weight: bolder;
     color: #22447b;
@@ -222,18 +214,23 @@ body {
     background-color: white;
     border: 1px solid grey;
     width: 100%;
-
 }
 
 .saveBtn:hover {
     background-color: #22447b;
     color: white;
-
 }
 
 
 /* the footer design for our Website */
+
 .footer-basic {
     text-align: center;
     justify-content: end;
+    text-decoration: none;
+}
+
+#kontakt {
+    text-decoration: none;
+    color: black;
 }

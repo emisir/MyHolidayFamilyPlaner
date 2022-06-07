@@ -1,4 +1,4 @@
-#body-overlay{
+#body-overlay {
     position: fixed;
     top: 0;
     right: 0;
@@ -10,7 +10,7 @@
     transition: opacity 300ms ease-in-out;
 }
 
-.dialog{
+.dialog {
     position: fixed;
     left: 50%;
     top: 50%;
@@ -22,19 +22,19 @@
     color: black;
     opacity: 0;
     pointer-events: none;
-
 }
 
-#body-overlay.sichtbar, .dialog.sichtbar{
+#body-overlay.sichtbar,
+.dialog.sichtbar {
     opacity: 1;
     pointer-events: auto;
 }
 
-#addFamilymember-dialog{
+#addFamilymember-dialog {
     width: 25%;
 }
 
-.dialog-schliessen-button{
+.dialog-schliessen-button {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -44,25 +44,26 @@
     text-decoration: none;
 }
 
+
 /* Styling */
 
-#addFamilymember-dialog{
+#addFamilymember-dialog {
     background-color: #333;
-    box-shadow: inset 0px 0px 10px black, 2px 2px 4px rgba(255, 255, 255, 0.1), 8px 8px 16px rgba(255,255,255,0.1);
+    box-shadow: inset 0px 0px 10px black, 2px 2px 4px rgba(255, 255, 255, 0.1), 8px 8px 16px rgba(255, 255, 255, 0.1);
     border: 5px solid silver;
 }
 
-#addFamilymember-dialog .dialog-schliessen-button{
-    color: rgba(255,255,255, 0.6);
+#addFamilymember-dialog .dialog-schliessen-button {
+    color: rgba(255, 255, 255, 0.6);
 }
 
-#addFamilymember-dialog form{
+#addFamilymember-dialog form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#addFamilymember-dialog h3{
+#addFamilymember-dialog h3 {
     margin: 0;
     color: white;
     text-align: center;
@@ -70,13 +71,13 @@
     text-shadow: 0px 0px 4px black;
 }
 
-#addFamilymember-dialog input{
-      width: 100%;
-      margin: 7px;
-      border-radius: 6px;
-      box-sizing: border-box;
-      font-family: inherit;
-      vertical-align: middle;
+#addFamilymember-dialog input {
+    width: 100%;
+    margin: 7px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-family: inherit;
+    vertical-align: middle;
 }
 
 #addFamilymember-dialog .eingabefeld {
@@ -88,15 +89,14 @@
     color: #1c1e21;
     height: 50px;
     box-shadow: inset 0px 0px 4px #222;
-
 }
 
-#addFamilymember-dialog .eingabefeld:focus-visible{
+#addFamilymember-dialog .eingabefeld:focus-visible {
     outline: none;
     border: 2px solid #3a342c;
 }
 
-#addFamilymember-dialog input[type=submit]{
+#addFamilymember-dialog input[type=submit] {
     padding: 0 16px;
     background-color: #1877f2;
     border: none;
@@ -105,7 +105,7 @@
     line-height: 48px;
     font-weight: bold;
     cursor: pointer;
-    background-image: linear-gradient(#d3cdc5,#3a342c);
+    background-image: linear-gradient(#d3cdc5, #3a342c);
     text-decoration: none;
     text-shadow: 1px 1px 5px black;
     box-shadow: inset 0px 0px 10px black;
@@ -113,6 +113,7 @@
     width: 50%;
     display: inline-block;
 }
+
 
 /*
 #addFamilymember-dialog input[type=file]{
@@ -134,34 +135,34 @@
 }
 */
 
-#addFamilymember-dialog input[type=submit]:hover{
+#addFamilymember-dialog input[type=submit]:hover {
     box-shadow: inset 0px 0px 10px black, 0px 0px 15px #d3cdc5;
 }
 
 .h3 {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-  }
+}
 
-.eingabefeld{
+.eingabefeld {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
 }
 
-.addFamilymember-dialog-daten{
+.addFamilymember-dialog-daten {
     font-family: 'Poppins', sans-serif;
-    
 }
 
-#display-image{
+#display-image {
     width: 380px;
     height: 225px;
     border: 1px solid black;
     background-position: center;
     background-size: cover;
     border-radius: 10px;
-  }
+}
 
-
-
-  
+#kontakt {
+    text-decoration: none;
+    color: black;
+}

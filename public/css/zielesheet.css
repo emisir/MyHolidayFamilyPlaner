@@ -7,12 +7,11 @@
     background-size: 1920px 400px;
     border: 2px solid rgb(104, 103, 103);
     border-radius: 10px 10px 10px 10px;
-
 }
 
 
-
 /* Reise ziele Logo adjustment*/
+
 .topic {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
@@ -26,13 +25,15 @@
 
 
 /* The navbar */
+
+
 /* Position the navbar container inside the image */
+
 .container {
     position: sticky;
     margin: 32px auto;
     margin-top: -30px;
     width: auto;
-    
 }
 
 .topnav {
@@ -47,12 +48,11 @@
     border-radius: 20px 20px 20px 20px;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-
 }
 
 
-
 /* home, ziel and Abstimmung design*/
+
 .links {
     color: white;
     padding: 14px;
@@ -68,8 +68,6 @@ li {
     float: left;
     list-style-type: none;
 }
-
-
 
 
 /* Fatih Abi "style in ziele html 
@@ -89,29 +87,29 @@ li {
   }
 */
 
-  /*-Button-*/
 
-  
+/*-Button-*/
+
 
 /* Styling */
 
-#addFamilymember-dialog{
+#addFamilymember-dialog {
     background-color: #333;
-    box-shadow: inset 0px 0px 10px black, 2px 2px 4px rgba(255, 255, 255, 0.1), 8px 8px 16px rgba(255,255,255,0.1);
+    box-shadow: inset 0px 0px 10px black, 2px 2px 4px rgba(255, 255, 255, 0.1), 8px 8px 16px rgba(255, 255, 255, 0.1);
     border: 5px solid silver;
 }
 
-#addFamilymember-dialog .dialog-schliessen-button{
-    color: rgba(255,255,255, 0.6);
+#addFamilymember-dialog .dialog-schliessen-button {
+    color: rgba(255, 255, 255, 0.6);
 }
 
-#addFamilymember-dialog form{
+#addFamilymember-dialog form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#addFamilymember-dialog h3{
+#addFamilymember-dialog h3 {
     margin: 0;
     color: white;
     text-align: center;
@@ -119,13 +117,13 @@ li {
     text-shadow: 0px 0px 4px black;
 }
 
-#addFamilymember-dialog input{
-      width: 100%;
-      margin: 7px;
-      border-radius: 6px;
-      box-sizing: border-box;
-      font-family: inherit;
-      vertical-align: middle;
+#addFamilymember-dialog input {
+    width: 100%;
+    margin: 7px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-family: inherit;
+    vertical-align: middle;
 }
 
 #addFamilymember-dialog .eingabefeld {
@@ -137,15 +135,14 @@ li {
     color: #1c1e21;
     height: 50px;
     box-shadow: inset 0px 0px 4px #222;
-
 }
 
-#addFamilymember-dialog .eingabefeld:focus-visible{
+#addFamilymember-dialog .eingabefeld:focus-visible {
     outline: none;
     border: 2px solid #3a342c;
 }
 
-#addFamilymember-dialog input[type=submit]{
+#addFamilymember-dialog input[type=submit] {
     padding: 0 16px;
     background-color: #1877f2;
     border: none;
@@ -154,7 +151,7 @@ li {
     line-height: 48px;
     font-weight: bold;
     cursor: pointer;
-    background-image: linear-gradient(#d3cdc5,#3a342c);
+    background-image: linear-gradient(#d3cdc5, #3a342c);
     text-decoration: none;
     text-shadow: 1px 1px 5px black;
     box-shadow: inset 0px 0px 10px black;
@@ -162,6 +159,7 @@ li {
     width: 50%;
     display: inline-block;
 }
+
 
 /*
 #addFamilymember-dialog input[type=file]{
@@ -183,38 +181,38 @@ li {
 }
 */
 
-#addFamilymember-dialog input[type=submit]:hover{
+#addFamilymember-dialog input[type=submit]:hover {
     box-shadow: inset 0px 0px 10px black, 0px 0px 15px #d3cdc5;
 }
 
 .h3 {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-  }
+}
 
-.eingabefeld{
+.eingabefeld {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
+    font-size: 15123px;
 }
 
-.addFamilymember-dialog-daten{
+.addFamilymember-dialog-daten {
     font-family: 'Poppins', sans-serif;
-    
 }
 
-#display-image{
+#display-image {
     width: 380px;
     height: 225px;
     border: 1px solid black;
     background-position: center;
     background-size: cover;
     border-radius: 10px;
-  }
+}
+
 
 /* Article cards design */
 
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
-
 body {
     font-family: 'PT Sans', sans-serif;
     font-size: 100%;
@@ -223,19 +221,14 @@ body {
     background: #F0F4FB;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
 }
 
 .site-container {
     margin: 32px auto;
     max-width: calc(100%-80px);
-
-
 }
 
-
 .article-container {
-    
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
     gap: 2rem;
@@ -245,7 +238,6 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-
 }
 
 .article-image img {
@@ -268,9 +260,9 @@ body {
 .article-content {
     padding: 2rem;
     padding-bottom: 5rem;
+    color: black;
+    height: auto;
 }
-
-
 
 .article-content .card-category {
     font-size: 0.875rem;
@@ -291,44 +283,40 @@ body {
     line-height: 1.5rem;
     color: #6b82a7;
     margin: 0;
-
 }
 
 @media screen and (min-width: 768px) {
     .site-container {
         max-width: 608px;
     }
-
     .article-card {
         display: grid;
         grid-template-rows: 220px 1fr;
     }
-
     @media screen and (min-width: 1280px) {
         .site-container {
             max-width: 1156px;
         }
     }
-
 }
 
 
-
 /* the footer design for our Website */
+
 .footer-basic {
     text-align: center;
     justify-content: end;
 }
 
-/* -- */
 
+/* -- */
 
 .h2 {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-  }
+}
 
-button{
+button {
     font-family: 'Poppins', sans-serif;
     justify-content: space-around;
     margin-top: 500px;
@@ -349,39 +337,39 @@ button{
     padding: 20px 10px;
     background: #2b2b2b;
     position: relative;
-  }
-  .fullclick a.main {
+}
+
+.fullclick a.main {
     color: #85baff;
     text-align: right;
     display: block;
     z-index: 1;
-  }
-  .fullclick li a.main::after {
+}
+
+.fullclick li a.main::after {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     content: ' ';
-  }
+}
 
-.addFamilymember{
+.addFamilymember {
     font-family: 'Poppins', sans-serif;
-   text-decoration: none;
-   color: black;
-   max-width: 100%;
+    text-decoration: none;
+    color: black;
+    max-width: 100%;
     height: auto;
     border-radius: 20px 20px 0 0;
 }
 
-
 h3 {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-  }
+}
 
-
-button[type=submit]{
+button[type=submit] {
     padding: 0 16px;
     background-color: #1877f2;
     border: none;
@@ -390,7 +378,7 @@ button[type=submit]{
     line-height: 48px;
     font-weight: bold;
     cursor: pointer;
-    background-image: linear-gradient(#d3cdc5,#3a342c);
+    background-image: linear-gradient(#d3cdc5, #3a342c);
     text-decoration: none;
     text-shadow: 1px 1px 5px black;
     box-shadow: inset 0px 0px 10px black;
@@ -400,52 +388,54 @@ button[type=submit]{
     display: inline-block;
 }
 
+
 /* SLIDER */
+
 .slidecontainer {
-    width: 80%; /* Width of the outside container */
+    width: 80%;
+    /* Width of the outside container */
     padding: 1px;
-  }
-  
-  .slider {
+}
+
+.slider {
     -webkit-appearance: none;
     width: 100%;
     height: 15px;
-    border-radius: 5px;  
+    border-radius: 5px;
     background: #d3d3d3;
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
-  }
-  
-  .slider::-webkit-slider-thumb {
+}
+
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%; 
-    background: #ffffff;
-    cursor: pointer;
-  }
-  
-  .slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
     border-radius: 50%;
     background: #ffffff;
     cursor: pointer;
-  }
+}
 
-  #teuer{
-      font-family:'Poppins', sans-serif;
-      font-size: 10px;
-      color: white;
-      padding: 1px;
-      
-  }
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+#teuer {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    color: white;
+    padding: 1px;
+}
 
 
-  /* Fatih Abi */
+/* Fatih Abi 
   .card   {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
@@ -455,15 +445,13 @@ button[type=submit]{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
     gap: 2rem;
-    
+    max-width: calc(100%-80px);
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
   }
 
-  #card image{
-   
-    
-  }
-  
-  .containerA  {
+    .containerA  {
     padding: 2px 16px;
     width: auto;
     margin: 32px auto;
@@ -473,24 +461,67 @@ button[type=submit]{
     border-radius: 20px 20px 0 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
-
+    margin: 32px auto;
+    max-width: calc(100%-80px);
   
+}
+
+#containerA{
+    padding: 2rem;
+    padding-bottom: 5rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    color: #6b82a7;
+    display: block;
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #6b82a7;
+    margin: 0;
+    color: #22447b;
+}
+
+
+
+  #card image{
+   
+    
   }
+  
+  
 
   #container image{
     
 
    
   }
+*/
 
-  .test image{
-    
-    
-  }
+.addDelete {
+    margin-top: 0.4cm;
+}
 
-  #test image{
-    
-  }
+img {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px 20px 0 0;
+}
 
+#kontakt {
+    text-decoration: none;
+    color: black;
+}
 
-  
+#image-input {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px 20px 0 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}

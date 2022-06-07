@@ -31,22 +31,22 @@ function myFunction() {
 
     const text = document.createTextNode("");
 
-    let collection = document.getElementById("urlaubsortTag").value;
+    let collection = document.getElementById("nameTag").value;
     console.log(collection);
 
-    let collection1 = document.getElementById("anmerkungTag").value;
+    let collection1 = document.getElementById("rolleTag").value;
     console.log(collection1);
 
-    let collection2 = document.getElementById("sehenswürdigkeitTag").value;
+    let collection2 = document.getElementById("beschreibungTag").value;
     console.log(collection2);
 
-    console.log(document.getElementById("image-input").files[0])
 
 
 
     div5.textContent = collection;
     div6.textContent = collection1;
     div7.textContent = collection2;
+
 
     console.log(div3.src);
 
@@ -56,7 +56,6 @@ function myFunction() {
     }
 
     reader.readAsDataURL(document.getElementById("image-input").files[0])
-
 
 
 
