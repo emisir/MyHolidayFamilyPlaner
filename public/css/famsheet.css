@@ -7,12 +7,11 @@
     background-size: 1920px 400px;
     border: 2px solid rgb(104, 103, 103);
     border-radius: 10px 10px 10px 10px;
-
 }
 
 
-
 /* Reise ziele Logo adjustment*/
+
 .topic {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
@@ -26,7 +25,10 @@
 
 
 /* The navbar */
+
+
 /* Position the navbar container inside the image */
+
 .container {
     position: sticky;
     margin: 32px auto;
@@ -46,12 +48,11 @@
     border-radius: 20px 20px 20px 20px;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-
 }
 
 
-
 /* home, ziel and Abstimmung design*/
+
 .links {
     color: white;
     padding: 14px;
@@ -72,7 +73,6 @@ li {
 /* Article cards design */
 
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
-
 body {
     font-family: 'PT Sans', sans-serif;
     font-size: 100%;
@@ -81,19 +81,14 @@ body {
     background: #F0F4FB;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
 }
 
 .site-container {
     margin: 32px auto;
     max-width: calc(100%-80px);
-
-
 }
 
-
 .article-container {
-    
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
     gap: 2rem;
@@ -103,7 +98,6 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-
 }
 
 .article-image img {
@@ -128,8 +122,6 @@ body {
     padding-bottom: 5rem;
 }
 
-
-
 .article-content .card-category {
     font-size: 0.875rem;
     text-transform: uppercase;
@@ -149,41 +141,38 @@ body {
     line-height: 1.5rem;
     color: #6b82a7;
     margin: 0;
-
 }
 
 @media screen and (min-width: 768px) {
     .site-container {
         max-width: 608px;
     }
-
     .article-card {
         display: grid;
         grid-template-rows: 220px 1fr;
     }
-
     @media screen and (min-width: 1280px) {
         .site-container {
             max-width: 1156px;
         }
     }
-
 }
 
 
 /* the footer design for our Website */
+
 .footer-basic {
     text-align: center;
     justify-content: end;
+    color: black;
 }
-
 
 .h2 {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-  }
+}
 
-button{
+button {
     font-family: 'Poppins', sans-serif;
     justify-content: space-around;
     margin-top: 500px;
@@ -204,34 +193,80 @@ button{
     padding: 20px 10px;
     background: #2b2b2b;
     position: relative;
-  }
-  .fullclick a.main {
+}
+
+.fullclick a.main {
     color: #85baff;
     text-align: right;
     display: block;
     z-index: 1;
-  }
-  .fullclick li a.main::after {
+}
+
+.fullclick li a.main::after {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     content: ' ';
-  }
+}
 
-.addFamilymember{
+.addFamilymember {
     font-family: 'Poppins', sans-serif;
-   text-decoration: none;
-   color: black;
-   max-width: 100%;
+    text-decoration: none;
+    color: black;
+    max-width: 100%;
     height: auto;
     border-radius: 20px 20px 0 0;
 }
 
-
 h3 {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-  }
+}
 
+button[type=submit] {
+    padding: 0 16px;
+    background-color: #1877f2;
+    border: none;
+    font-size: 25px;
+    color: white;
+    line-height: 48px;
+    font-weight: bold;
+    cursor: pointer;
+    background-image: linear-gradient(#d3cdc5, #3a342c);
+    text-decoration: none;
+    text-shadow: 1px 1px 5px black;
+    box-shadow: inset 0px 0px 10px black;
+    border-radius: 10%/50%;
+    width: 50%;
+    height: auto;
+    display: inline-block;
+}
+
+#addFamilymember-dialog input[type=submit] {
+    padding: 0 16px;
+    background-color: #1877f2;
+    border: none;
+    font-size: 25px;
+    color: white;
+    line-height: 48px;
+    font-weight: bold;
+    cursor: pointer;
+    background-image: linear-gradient(#d3cdc5, #3a342c);
+    text-decoration: none;
+    text-shadow: 1px 1px 5px black;
+    box-shadow: inset 0px 0px 10px black;
+    border-radius: 10%/50%;
+    width: 50%;
+    display: inline-block;
+}
+
+#addFamilymember-dialog input[type=submit]:hover {
+    box-shadow: inset 0px 0px 10px black, 0px 0px 15px #d3cdc5;
+}
+
+#kontakt {
+    text-decoration: none;
+    color: black;
+}

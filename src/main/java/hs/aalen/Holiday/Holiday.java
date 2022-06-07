@@ -43,6 +43,6 @@ public class Holiday {
             return time;
         }
 
-        public void setTime(String zeitraum) {
+        public void setTime(String time) {
             this.time = time;
         }}
