@@ -1,4 +1,4 @@
-package com.hsaalen.myholidayfamilyplaner;
+package hs.aalen;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
