@@ -15,47 +15,6 @@ body {
 }
 
 
-
-/* Urlaubsplaner h1 design*/
-.topic {
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    position: sticky;
-    z-index: 1;
-    display: grid;
-    margin-left: 20%;
-    margin-right: 60%;
-    margin-bottom: -3%;
-}
-
-#famBtn {
-    font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: bolder;
-    color: #22447b;
-    display: block;
-    font-family: cursive;
-
-    border-radius: 5px;
-    background-color: white;
-    border: 1px solid grey;
-    margin-left: 35%;
-
-}
-
-#famBtn:hover {
-    background-color: #22447b;
-    color: white;
-
-}
-
-
-
-
-
-
-
 /* The navbar */
 /* Position the navbar container inside the image */
 .container {
@@ -78,6 +37,121 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
 
+}
+
+
+/* Urlaubsplaner h1 design*/
+.topic {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    position: sticky;
+    z-index: 1;
+    display: grid;
+    margin-left: 20%;
+    margin-right: 60%;
+    margin-bottom: -3%;
+}
+
+#famBtn {
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: bolder;
+    color: #22447b;
+    display: block;
+
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid grey;
+    margin-left: 45%;
+
+}
+
+#famBtn:hover {
+    background-color: #22447b;
+    color: white;
+
+}
+
+
+/* Login Window to know Who is on the Website */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 50px;
+    border: 3px solid #888;
+    border-radius: 15px 15px 15px 15px;
+    width: 50%;
+
+}
+
+.page {
+    margin-left: 200px;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: inherit;
+    margin-top: -50px;
+    margin-right: -40px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#submitBtn {
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    font-weight: bolder;
+    color: #22447b;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid grey;
+}
+
+#submitBtn:hover {
+    background-color: #22447b;
+    color: white;
+
+}
+
+.chooseText {
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    font-weight: bolder;
+    color: #22447b;
+}
+
+#chooseOption {
+    font: 30px;
+}
+
+#chooseDrop {
+    min-width: 100px;
+    box-shadow: #333;
+    padding: 10px 10px;
+    border-radius: 10px 10px 10px 10px;
 }
 
 

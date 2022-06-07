@@ -1,21 +1,11 @@
 ----------------------------------------------------------------
-<<<<<<< HEAD
-Mon Jun 06 14:39:43 CEST 2022:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0181-3907-35e7-0000010690f0 
-on database directory C:\Users\atill\OneDrive\Desktop\Programmieren\WebDev\MyHolidayFamilyPlaner\mydb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@6d5380c2 
-Loaded from file:/C:/Users/atill/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.14.2.0/7efad40ef52fbb1f08142f07a83b42d29e47d8ce/derby-10.14.2.0.jar
-java.vendor=Eclipse Adoptium
-java.runtime.version=17.0.2+8
-user.dir=C:\Users\atill\OneDrive\Desktop\Programmieren\WebDev\MyHolidayFamilyPlaner
-=======
-Sun Jun 05 01:38:31 CEST 2022:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0181-3115-a4e2-000002c455c0 
+Tue Jun 07 13:36:55 CEST 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0181-3df4-1358-000002eadbc0 
 on database directory C:\Users\ebube\Desktop\Programmieren\Webentwicklung Projekt Urlaub\MyHolidayFamilyPlaner\mydb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@e73f9ac 
 Loaded from file:/C:/Users/ebube/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.14.2.0/7efad40ef52fbb1f08142f07a83b42d29e47d8ce/derby-10.14.2.0.jar
 java.vendor=Oracle Corporation
 java.runtime.version=15.0.1+9-18
 user.dir=C:\Users\ebube\Desktop\Programmieren\Webentwicklung Projekt Urlaub\MyHolidayFamilyPlaner
->>>>>>> a585d2b850209d9cbea73c936489a52f729d46a6
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
