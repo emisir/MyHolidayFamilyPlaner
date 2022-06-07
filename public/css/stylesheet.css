@@ -14,23 +14,6 @@ body {
 }
 
 
-<<<<<<< HEAD
-/* Urlaubsplaner h1 design*/
-
-.topic {
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    position: sticky;
-    z-index: 1;
-    display: grid;
-    margin-left: 20%;
-    margin-right: 60%;
-    margin-bottom: -3%;
-}
-
-
-=======
->>>>>>> ac1be7c7233abdb347ca7e54feecdc29588142fc
 /* The navbar */
 
 
@@ -58,9 +41,8 @@ body {
 }
 
 
-<<<<<<< HEAD
-=======
 /* Urlaubsplaner h1 design*/
+
 .topic {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
@@ -79,22 +61,20 @@ body {
     font-weight: bolder;
     color: #22447b;
     display: block;
-
     border-radius: 5px;
     background-color: white;
     border: 1px solid grey;
     margin-left: 45%;
-
 }
 
 #famBtn:hover {
     background-color: #22447b;
     color: white;
-
 }
 
 
 /* Login Window to know Who is on the Website */
+
 .modal {
     display: none;
     position: fixed;
@@ -115,14 +95,15 @@ body {
     border: 3px solid #888;
     border-radius: 15px 15px 15px 15px;
     width: 50%;
-
 }
 
 .page {
     margin-left: 200px;
 }
 
+
 /* The Close Button */
+
 .close {
     color: #aaa;
     float: right;
@@ -153,7 +134,6 @@ body {
 #submitBtn:hover {
     background-color: #22447b;
     color: white;
-
 }
 
 .chooseText {
@@ -175,8 +155,6 @@ body {
 }
 
 
-
->>>>>>> ac1be7c7233abdb347ca7e54feecdc29588142fc
 /* home, ziel and Abstimmung design*/
 
 .links {
@@ -265,14 +243,7 @@ body {
 }
 
 .article-content .card-excerpt {
-    font-size: 12px;
-    line-height: 1.5rem;
-    color: #6b82a7;
-    margin: 0;
-}
-
-.article-content .card-mail {
-    font-size: 11px;
+    font-size: 1rem;
     line-height: 1.5rem;
     color: #6b82a7;
     margin: 0;
@@ -349,10 +320,4 @@ body {
 .footer-basic {
     text-align: center;
     justify-content: end;
-    text-decoration: none;
-}
-
-#kontakt {
-    text-decoration: none;
-    color: black;
 }
