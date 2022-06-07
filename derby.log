@@ -1,11 +1,44 @@
 ----------------------------------------------------------------
+<<<<<<< HEAD
 Tue Jun 07 16:09:19 CEST 2022:
 Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0181-3e7f-953f-000001236060 
+=======
+<<<<<<< HEAD
+Mon Jun 06 00:24:02 CEST 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0181-35f7-cfd0-000002624410 
+on database directory C:\Users\brk_s\Desktop\MyHolidayFamilyPlaner\mydb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@6bc168e5 
+Loaded from file:/C:/Users/brk_s/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.14.2.0/7efad40ef52fbb1f08142f07a83b42d29e47d8ce/derby-10.14.2.0.jar
+java.vendor=Eclipse Adoptium
+java.runtime.version=17.0.2+8
+user.dir=C:\Users\brk_s\Desktop\MyHolidayFamilyPlaner
+=======
+<<<<<<< HEAD
+Tue Jun 07 14:03:33 CEST 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0181-3e0c-7025-0000014b8210 
+=======
+<<<<<<< HEAD
+Tue Jun 07 13:36:55 CEST 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0181-3df4-1358-000002eadbc0 
+on database directory C:\Users\ebube\Desktop\Programmieren\Webentwicklung Projekt Urlaub\MyHolidayFamilyPlaner\mydb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@e73f9ac 
+Loaded from file:/C:/Users/ebube/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.14.2.0/7efad40ef52fbb1f08142f07a83b42d29e47d8ce/derby-10.14.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=15.0.1+9-18
+user.dir=C:\Users\ebube\Desktop\Programmieren\Webentwicklung Projekt Urlaub\MyHolidayFamilyPlaner
+=======
+Tue Jun 07 13:33:15 CEST 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0181-3df0-b3f3-000000e96d20 
+>>>>>>> 8899e9a388a272031b95895d0318130bcfd91201
+>>>>>>> b799c9300f30358096360b1244972e7fd96dce6b
 on database directory C:\Users\aylin\OneDrive\Dokumente\Webentwicklung_Projekt\Webentwicklung_pr\MyHolidayFamilyPlaner\mydb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@5387f9e0 
 Loaded from file:/C:/Users/aylin/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.14.2.0/7efad40ef52fbb1f08142f07a83b42d29e47d8ce/derby-10.14.2.0.jar
 java.vendor=Oracle Corporation
 java.runtime.version=14.0.2+12-46
 user.dir=C:\Users\aylin\OneDrive\Dokumente\Webentwicklung_Projekt\Webentwicklung_pr\MyHolidayFamilyPlaner
+<<<<<<< HEAD
+=======
+>>>>>>> e5a750c072d2befa2c670a8f13439d9ba2879feb
+>>>>>>> ac1be7c7233abdb347ca7e54feecdc29588142fc
+>>>>>>> b799c9300f30358096360b1244972e7fd96dce6b
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
