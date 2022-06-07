@@ -10,6 +10,8 @@
     <script src="https://kit.fontawesome.com/b30115917b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/famsheet.css">
     <link rel="stylesheet" href="./css/dialoge.css">
+    <script src="./js/family.js"></script>
+
 
 </head>
 
@@ -37,7 +39,7 @@
     <div class="article-basic">
         <div>
             <div class="site-container">
-                <div class="article-container">
+                <div class="article-container" id="acontainer">
 
                     <article class="article-card">
                         <figure class="article-image">
@@ -49,58 +51,6 @@
                         </div>
                         </a>
                     </article>
-
-
-                    <article class="article-card">
-                        <figure class="article-image">
-                            <img src="./images/atilla.png" alt="atilla" />
-                        </figure>
-                        <div class="article-content">
-                            <h2>Atilla Durdu</h2>
-                            <a href="#" class="card-category">Vater</a>
-                            <p class="card-excerpt">Oggi hanno fatto bene pero domani chi sa non si sa mai perche
-                                giovani giocatori sempre posso fare
-                                tutta la caso </p>
-                            <button type="button">Löschen</button>
-                            <button type="button">Bearbeiten</button>
-                        </div>
-                    </article>
-
-                    <article class="article-card">
-                        <figure class="article-image">
-                            <img src="./images/ebu.PNG" alt="Ebubekir" />
-                        </figure>
-                        <div class="article-content">
-                            <h2>Ebubekir Misir</h2>
-                            <a href="#" class="card-category">Mutter</a>
-                            <p class="card-excerpt"> Ay günesden daha güzelmis</p>
-                        </div>
-                    </article>
-
-                    <article class="article-card">
-                        <figure class="article-image">
-                            <img src="./images/aylin.png" alt="Aylin" />
-                        </figure>
-                        <div class="article-content">
-                            <h2>Aylin Yamac</h2>
-                            <a href="#" class="card-category">Tochter</a>
-                            <p class="card-excerpt">63 aber nicht AMG</p>
-                        </div>
-                    </article>
-
-                    <article class="article-card">
-                        <figure class="article-image">
-                            <img src="./images/burak.png" alt="Burak" />
-                        </figure>
-                        <div class="article-content">
-                            <h2>Burak Seyrek</h2>
-                            <a href="#" class="card-category">Sohn</a>
-                            <p class="card-excerpt"> What dedin Gülüm?</p>
-                        </div>
-
-
-
-
                 </div>
             </div>
         </div>
@@ -119,14 +69,11 @@
             <form action="">
                 <div id="display-image"></div>
                 <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg">
+                <input type="text" placeholder="Name" id="nameTag" class="eingabefeld">
+                <input type="text" placeholder="Rolle" id="rolleTag" class="eingabefeld">
+                <input type="text" placeholder="Beschreibung" id="beschreibungTag" class="eingabefeld">
 
-
-                <input type="text" placeholder="Vorname" class="eingabefeld">
-                <input type="text" placeholder="Nachname" class="eingabefeld">
-                <input type="text" placeholder="Rolle" class="eingabefeld">
-                <input type="text" placeholder="Beschreibung" class="eingabefeld">
-                <input type="submit" value="Hinzufügen!">
-
+                <button type="submit" onclick="myFunction()">Hinzufügen!</button>
 
                 <!--
         <form action="/action_page.php">
@@ -136,11 +83,21 @@
           </form>
         -->
 
+
             </form>
         </a>
     </div>
 
+    <div class="footer-basic">
+        <footer>
+            <p><a href="kontakt.html" id="kontakt">Kontakt</a></p>
+
+
+        </footer>
+    </div>
+
     <script src="./js/dialoge.js"></script>
+
 
 
 </body>
