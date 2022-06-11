@@ -7,6 +7,8 @@
     background-size: 1920px 400px;
     border: 2px solid rgb(104, 103, 103);
     border-radius: 10px 10px 10px 10px;
+    margin-top: -12%;
+    backdrop-filter: blur(3px);
 }
 
 
@@ -18,9 +20,17 @@
     position: sticky;
     z-index: 1;
     display: grid;
-    margin-left: 20%;
-    margin-right: 60%;
+    margin-right: 40%;
+    margin-left: 40%;
     margin-bottom: -3%;
+    margin-top: 10%;
+    padding: 15px;
+    right: 80%;
+    border-radius: 20px;
+    color: white;
+    font-style: italic;
+    justify-content: center;
+    backdrop-filter: blur(3px);
 }
 
 
@@ -244,17 +254,21 @@ body {
     max-width: 100%;
     height: auto;
     border-radius: 20px 20px 0 0;
+    overflow: hidden;
 }
 
 .article-card {
     background: white;
     border-radius: 20px;
     transition: 0.3s;
+    overflow: hidden;
+    float: left;
 }
 
 .article-card:hover {
     box-shadow: 0 4px 20px 0 rgba(34, 68, 123, 0.2);
     cursor: pointer;
+    overflow: hidden;
 }
 
 .article-content {
@@ -262,6 +276,7 @@ body {
     padding-bottom: 5rem;
     color: black;
     height: auto;
+    justify-content: space-around;
 }
 
 .article-content .card-category {

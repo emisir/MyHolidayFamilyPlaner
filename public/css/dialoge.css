@@ -8,6 +8,7 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 300ms ease-in-out;
+    z-index: 1;
 }
 
 .dialog {
@@ -22,6 +23,7 @@
     color: black;
     opacity: 0;
     pointer-events: none;
+    z-index: 1;
 }
 
 #body-overlay.sichtbar,

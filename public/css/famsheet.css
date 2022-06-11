@@ -7,6 +7,7 @@
     background-size: 1920px 400px;
     border: 2px solid rgb(104, 103, 103);
     border-radius: 10px 10px 10px 10px;
+    margin-top: -12%;
 }
 
 
@@ -18,9 +19,17 @@
     position: sticky;
     z-index: 1;
     display: grid;
-    margin-left: 20%;
-    margin-right: 60%;
+    margin-right: 40%;
+    margin-left: 40%;
     margin-bottom: -3%;
+    margin-top: 10%;
+    padding: 15px;
+    right: 80%;
+    border-radius: 20px;
+    color: white;
+    font-style: italic;
+    justify-content: center;
+    backdrop-filter: blur(10px);
 }
 
 
@@ -120,6 +129,7 @@ body {
 .article-content {
     padding: 2rem;
     padding-bottom: 5rem;
+    overflow: hidden;
 }
 
 .article-content .card-category {
@@ -130,10 +140,12 @@ body {
     color: #6b82a7;
     display: block;
     text-decoration: none;
+    overflow: hidden;
 }
 
 .article-content .card-title {
     color: #22447b;
+    overflow: hidden;
 }
 
 .article-content .card-excerpt {
@@ -141,6 +153,7 @@ body {
     line-height: 1.5rem;
     color: #6b82a7;
     margin: 0;
+    overflow: hidden;
 }
 
 @media screen and (min-width: 768px) {
