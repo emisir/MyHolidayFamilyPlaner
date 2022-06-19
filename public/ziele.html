@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyFamilyHolidayPlaner</title>
-    <link rel="stylesheet" href="./css/zielesheet.css">
+    <link rel="stylesheet" href="./css/stylesheet.css">
+
     <link rel="stylesheet" href="./css/dialoge.css">
-    <script language="javascript" type="text/javascript" src="js/abstimmen.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
     <link href="fontawesome-free-5.15.1-web/fontawesome-free-5.15.1-web/css/all-css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b30115917b.js" crossorigin="anonymous"></script>
-    <script src="./js/ziele.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
@@ -30,10 +30,26 @@
                 <li><a href="index.html" class="links">Home</a></li>
                 <li><a href="ziele.html" class="links">Ziele</a></li>
                 <li><a href="family.html" class="links">Familienmitglieder</a></li>
-                <li><a href="archiv.html" class="links">Archiv</a></li>
                 <li><a href="https://earthroulette.com/" target="_blank" class="links">Interessante Orte</a></li>
             </div>
         </nav>
+    </div>
+    <div class="addFamBtn">
+        <button id="famBtn">Anmelden</button>
+    </div>
+    <div class="article-content">
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="page">
+                    <span class="close">&times;</span>
+                    <label for="choose" class="chooseText"> Wählen Sie aus wer Sie sind:</label>
+                    <select name="choose" id="chooseDrop">
+                        <option id="chooseOption" value='createDropOption'>Auswahl</option>
+                    </select>
+                    <button id="submitBtn" type="submit">Auswählen</button>
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -41,40 +57,42 @@
         <div class="site-container">
             <div class="article-container" id="acontainer">
 
-                <article class="article-card">
+
+                <article class="article-card" id="article-cards">
+
                     <figure class="article-image">
                         <a href="#" class="addFamilymember" onclick="dialogOeffnen('addFamilymember-dialog')">
                             <img src="./images/greyPlus.png" class="addZiele" />
                     </figure>
                     <div class="article-content">
-                        <h2>Urlaubsziel Hinzufügen</h2>
+                        <h2 class="holidayTarget">Urlaubsziel Hinzufügen</h2>
+
                     </div>
                     </a>
                 </article>
 
 
 
+
                 <div id="body-overlay"></div>
                 <div class="dialog" id="addFamilymember-dialog">
-                    <a href="#" role="button" class="dialog-schliessen-button" onclick="dialogSchliessen('addFamilymember-dialog')">
+                    <a href="#" role="button" class="dialog-schliessen-button"
+                        onclick="dialogSchliessen('addFamilymember-dialog')">
                         <i class="fa-regular fa-circle-xmark"></i>
                     </a>
                     <h3>Urlaubsziel Hinzufügen</h3>
 
-
                     <a class="addFamilymember-dialog-daten">
-                        <form action="">
+                        <form id="createHoliday" action="" onsubmit="createHoliday()">
+                            <input type="text" placeholder="Urlaubsort" id="titleTag" class="eingabefeld">
+                            <input type="text" id="timeTag" class="eingabefeld" placeholder="DD.MM.YYYY - DD.MM.YYYY">
+                            <button type="submit" id="submitBtn">Hinzufügen!</button>
 
-                            <div id="display-image"></div>
-                            <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg">
-                            <input type="text" placeholder="Urlaubsort" id="urlaubsortTag" class="eingabefeld">
-                            <input type="text" placeholder="Anmerkung" id="anmerkungTag" class="eingabefeld">
-                            <input type="text" placeholder="Beispiel Sehenswürdigkeiten" id="sehenswürdigkeitTag" class="eingabefeld">
-                            <button type="submit" onclick="myFunction()">Hinzufügen!</button>
 
                         </form>
                     </a>
                 </div>
+
 
 
             </div>
@@ -90,6 +108,7 @@
     </div>
 
     <script src="./js/dialoge.js"></script>
+    <script src="./js/ziele.js"></script>
 
 
 </body>

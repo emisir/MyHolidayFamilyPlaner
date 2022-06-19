@@ -1,7 +1,11 @@
-package hs.aalen.Familymember;
+package hs.aalen.familymember;
+
+import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-public interface FamilymemberRepository extends CrudRepository<Familymember, String> {
+public interface FamilyMemberRepository extends CrudRepository<FamilyMember, Long> {
+
+	List<FamilyMember> findAll();
 
 }

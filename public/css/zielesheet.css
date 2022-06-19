@@ -60,6 +60,123 @@
     font-weight: bold;
 }
 
+/* Login Window to know Who is on the Website */
+
+.modal {
+    font-family: 'Poppins', sans-serif;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    font-family: 'Poppins', sans-serif;
+    background-color: #333;
+    box-shadow: inset 0px 0px 10px black, 2px 2px 4px rgba(255, 255, 255, 0.1), 8px 8px 16px rgba(255, 255, 255, 0.1);
+    margin: 15% auto;
+    padding: 50px;
+    border: 5px solid silver;
+    border-radius: 15px 15px 15px 15px;
+    width: 50%;
+}
+
+.page {
+    font-family: 'Poppins', sans-serif;
+    margin-left: 200px;
+}
+
+
+
+#famBtn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: bolder;
+    color: #22447b;
+    display: block;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid grey;
+    margin-left: 45%;
+}
+
+#famBtn:hover {
+    font-family: 'Poppins', sans-serif;
+    background-color: #22447b;
+    color: white;
+}
+
+/* The Close Button */
+
+.close {
+    font-family: 'Poppins', sans-serif;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: inherit;
+    margin-top: -50px;
+    margin-right: -40px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#submitBtn {
+    background-color: #1877f2;
+    border: none;
+    font-size: 25px;
+    color: white;
+    line-height: 48px;
+    font-weight: bold;
+    cursor: pointer;
+    background-image: linear-gradient(#d3cdc5, #3a342c);
+    text-decoration: none;
+    text-shadow: 1px 1px 5px black;
+    box-shadow: inset 0px 0px 10px black;
+    border-radius: 10%/50%;
+    width: 50%;
+    display: inline-block;
+}
+
+#submitBtn:hover {
+    box-shadow: inset 0px 0px 10px black, 0px 0px 15px #d3cdc5;
+}
+
+.chooseText {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    font-weight: bolder;
+    color: #ffffff;
+    border: black;
+}
+
+#chooseOption {
+    font: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#chooseDrop {
+    font-family: 'Poppins', sans-serif;
+    min-width: 100px;
+    box-shadow: #333;
+    padding: 5px 10px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+
 
 /* home, ziel and Abstimmung design*/
 
@@ -78,24 +195,6 @@ li {
     float: left;
     list-style-type: none;
 }
-
-
-/* Fatih Abi "style in ziele html 
-
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    width: 40%;
-  }
-  
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  .container {
-    padding: 2px 16px;
-  }
-*/
 
 
 /*-Button-*/
@@ -170,27 +269,6 @@ li {
     display: inline-block;
 }
 
-
-/*
-#addFamilymember-dialog input[type=file]{
-    padding: 0 16px;
-    background-color: #1877f2;
-    border: none;
-    font-size: 25px;
-    color: white;
-    line-height: 48px;
-    font-weight: bold;
-    cursor: pointer;
-    background-image: linear-gradient(#d3cdc5,#3a342c);
-    text-decoration: none;
-    text-shadow: 1px 1px 5px black;
-    box-shadow: inset 0px 0px 10px black;
-    border-radius: 10%/50%;
-    width: 50%;
-    display: inline-block;
-}
-*/
-
 #addFamilymember-dialog input[type=submit]:hover {
     box-shadow: inset 0px 0px 10px black, 0px 0px 15px #d3cdc5;
 }
@@ -223,6 +301,7 @@ li {
 /* Article cards design */
 
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
 body {
     font-family: 'PT Sans', sans-serif;
     font-size: 100%;
@@ -304,10 +383,12 @@ body {
     .site-container {
         max-width: 608px;
     }
+
     .article-card {
         display: grid;
         grid-template-rows: 220px 1fr;
     }
+
     @media screen and (min-width: 1280px) {
         .site-container {
             max-width: 1156px;
@@ -331,20 +412,7 @@ body {
     font-weight: bold;
 }
 
-button {
-    font-family: 'Poppins', sans-serif;
-    justify-content: space-around;
-    margin-top: 500px;
-    border-radius: 20px 20px 20px 20px;
-    float: left;
-    height: 30px;
-    width: 90px;
-    margin: 1px;
-    background-color: #333;
-    color: white;
-    font-weight: bold;
-    gap: 10px;
-}
+
 
 .fullclick li {
     list-style: none;
@@ -384,7 +452,7 @@ h3 {
     font-weight: bold;
 }
 
-button[type=submit] {
+#submitBtn {
     padding: 0 16px;
     background-color: #1877f2;
     border: none;
@@ -404,139 +472,24 @@ button[type=submit] {
 }
 
 
-/* SLIDER */
-
-.slidecontainer {
-    width: 80%;
-    /* Width of the outside container */
-    padding: 1px;
-}
-
-.slider {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 15px;
-    border-radius: 5px;
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-}
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #ffffff;
-    cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #ffffff;
-    cursor: pointer;
-}
-
-#teuer {
-    font-family: 'Poppins', sans-serif;
-    font-size: 10px;
-    color: white;
-    padding: 1px;
-}
-
-
-/* Fatih Abi 
-  .card   {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    width: auto;
-    border-radius: 20px;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
-    gap: 2rem;
-    max-width: calc(100%-80px);
-    font-family: 'Poppins', sans-serif;
-    font-size: 25px;
-    font-weight: bold;
-  }
-
-    .containerA  {
-    padding: 2px 16px;
-    width: auto;
-    margin: 32px auto;
-    max-width: calc(100%-80px);
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px 20px 0 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
-    margin: 32px auto;
-    max-width: calc(100%-80px);
-  
-}
-
-#containerA{
-    padding: 2rem;
-    padding-bottom: 5rem;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 600;
-    color: #6b82a7;
-    display: block;
-    text-decoration: none;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    color: #6b82a7;
-    margin: 0;
-    color: #22447b;
-}
-
-
-
-  #card image{
-   
-    
-  }
-  
-  
-
-  #container image{
-    
-
-   
-  }
-*/
-
-.addDelete {
-    margin-top: 0.4cm;
-}
-
-img {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px 20px 0 0;
-}
 
 #kontakt {
     text-decoration: none;
     color: black;
 }
 
-#image-input {
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px 20px 0 0;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+.cardBtn {
+    color: white;
+    font-weight: bolder;
+    font-family: 'Poppins', sans-serif;
+    justify-content: space-around;
+    border-radius: 20px 20px 20px 20px;
+    float: left;
+    height: 30px;
+    width: 90px;
+    margin: 5px;
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    gap: 10px;
 }

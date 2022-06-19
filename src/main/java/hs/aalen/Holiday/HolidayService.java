@@ -1,50 +1,70 @@
 package hs.aalen.Holiday;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import hs.aalen.Holidaywish.HolidayWish;
+import hs.aalen.Holidaywish.HolidayWishRepository;
+import hs.aalen.prio.Prio;
 
 @Service
 public class HolidayService {
-@Autowired
-    private HolidayRepository holidayrepository;
+	@Autowired
+	private HolidayRepository holidayRepository;
 
-     public List<Holiday> getHolidayList() {
-            ArrayList<Holiday> mylist = new ArrayList<>();
-            Iterator<Holiday> it = holidayrepository.findAll().iterator();
-            while (it.hasNext())
-                mylist.add(it.next());
-            return mylist;
+	@Autowired
+	private HolidayWishRepository holidayWishRepository;
 
-    }
+	public List<Holiday> getHolidayList() {
+		List<Holiday> holidays = holidayRepository.findAll();
+		for (Holiday holiday : holidays) {
+			for (HolidayWish wish : holiday.getWishes()) {
+				this.calculatePrioritySum(wish);
+			}
+		}
+		return holidays;
+	}
 
-    public Holiday getHoliday(String id) {
-        return holidayrepository.findById(id).orElse(null);
-    }
+	public Holiday getHoliday(Long id) {
+		Holiday holiday = holidayRepository.findById(id).orElse(null);
 
-    public void addHoliday(Holiday holiday) {
-        holidayrepository.save(holiday);
+		if (holiday != null) {
+			for (HolidayWish wish : holiday.getWishes()) {
+				this.calculatePrioritySum(wish);
+			}
+		}
 
+		return holiday;
+	}
 
-    }
+	public void saveHolidayWishById(Long holidayId, HolidayWish holidayWish) {
+		Holiday holiday = holidayRepository.findById(holidayId).orElse(null);
+		if (holiday != null) {
+			holidayWish.setHoliday(holiday);
+			holidayWishRepository.save(holidayWish);
+		}
+	}
 
-    public void updateHoliday(String id, Holiday holiday) {
-        holidayrepository.save(holiday);
+	public void addHoliday(Holiday holiday) {
+		holidayRepository.save(holiday);
+	}
 
+	public void updateHoliday(Long id, Holiday holiday) {
+		holidayRepository.save(holiday);
+	}
 
-    }
+	public void deleteHoliday(Long id) {
+		holidayRepository.deleteById(id);
+	}
 
-    public void deleteHoliday(String id) {
-        holidayrepository.deleteById(id);
-
-    }
-
-
-
-
+	private void calculatePrioritySum(HolidayWish holidayWish) {
+		int sum = 0;
+		for (Prio prio : holidayWish.getPriorities()) {
+			sum = sum + prio.getPriority();
+		}
+		holidayWish.setSumPriority(sum);
+	}
 
 }

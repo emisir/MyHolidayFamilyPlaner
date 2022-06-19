@@ -1,8 +1,10 @@
-function myFunction() {
-
+function myFunction(id, title, time) {
 
     const div1 = document.createElement("article");
     div1.classList.add("article-card");
+    div1.classList.add("div1");
+
+
 
     const div2 = document.createElement("figure");
     div2.classList.add("article-image");
@@ -17,8 +19,15 @@ function myFunction() {
     const div6 = document.createElement("a");
     div6.classList.add("card-category");
 
-    const div7 = document.createElement("p");
-    div7.classList.add("card-excerpt");
+    const div7 = document.createElement("button");
+    div7.classList.add("cardBtn");
+
+
+
+
+    div7.innerText = "Löschen";
+
+
 
     div1.appendChild(div2);
     div2.appendChild(div3);
@@ -29,38 +38,144 @@ function myFunction() {
 
 
 
+
     const text = document.createTextNode("");
 
-    let collection = document.getElementById("urlaubsortTag").value;
-    console.log(collection);
-
-    let collection1 = document.getElementById("anmerkungTag").value;
-    console.log(collection1);
-
-    let collection2 = document.getElementById("sehenswürdigkeitTag").value;
-    console.log(collection2);
-
-    console.log(document.getElementById("image-input").files[0])
 
 
-
-    div5.textContent = collection;
-    div6.textContent = collection1;
-    div7.textContent = collection2;
+    div5.textContent = title;
+    div6.textContent = time;
+    div3.src = "./images/Urlaub.jpg "
 
     console.log(div3.src);
-
-    const reader = new FileReader();
-    reader.onload = () => {
-        div3.src = reader.result
-    }
-
-    reader.readAsDataURL(document.getElementById("image-input").files[0])
-
-
-
-
 
     document.getElementById("acontainer").appendChild(div1);
 
 };
+
+
+
+
+
+function createHoliday(e) {
+    var form = $("#createHoliday")
+    var title = form.find("#titleTag").val();
+    var time = form.find("#timeTag").val();
+    console.log(time)
+
+    $.ajax({
+
+        url: 'http://localhost:8090/holiday',
+        type: 'POST',
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({
+            "title": title,
+            "time": time
+        }),
+        success: function (data) {
+            document.getElementById("addFamilymember-dialog").classList.remove("sichtbar")
+            document.getElementById("body-overlay").classList.remove("sichtbar");
+            loadHoliday()
+        },
+        error: function (request, error) {
+            alert("Request: " + JSON.stringify(request));
+        }
+    });
+
+
+}
+
+
+function loadHoliday() {
+    $(".div1").remove()
+    $.ajax({
+        url: 'http://localhost:8090/holiday',
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            console.log(data)
+
+            data.forEach(function (holiday) {
+                myFunction(holiday.id, holiday.title, holiday.time)
+            })
+
+        },
+        error: function (request, error) {
+            alert("Request: " + JSON.stringify(request));
+        }
+    })
+
+
+}
+
+loadHoliday()
+
+
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var addFamBtn = document.getElementById("famBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+addFamBtn.onclick = function () {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+var submitBtnFam = document.getElementById("submitBtn");
+
+submitBtnFam.onclick = function () {
+    document.name.submit();
+
+}
+
+
+
+
+function createDropOption(id, name) {
+
+    const option = document.createElement("option");
+    option.value = id
+    option.innerHTML = name
+    $('#chooseDrop').append(option);
+}
+
+
+function loadFamilyMember() {
+    $.ajax({
+        url: 'http://localhost:8090/familymember',
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            console.log(data)
+
+            data.forEach(function (familymember) {
+                createDropOption(familymember.id, familymember.name)
+            })
+
+        },
+
+    })
+
+}
+
+
+
+
+
+
+loadFamilyMember()

@@ -79,6 +79,10 @@
     color: white;
 }
 
+.holidayTarget:link {
+    text-decoration: none;
+}
+
 
 /* Login Window to know Who is on the Website */
 
@@ -198,6 +202,7 @@ li {
 /* Article cards design */
 
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
 body {
     font-family: 'PT Sans', sans-serif;
     font-size: 100%;
@@ -274,10 +279,12 @@ body {
     .site-container {
         max-width: 608px;
     }
+
     .article-card {
         display: grid;
         grid-template-rows: 220px 1fr;
     }
+
     @media screen and (min-width: 1280px) {
         .site-container {
             max-width: 1156px;

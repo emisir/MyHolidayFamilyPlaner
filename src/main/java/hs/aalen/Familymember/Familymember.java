@@ -1,52 +1,71 @@
-package hs.aalen.Familymember;
+package hs.aalen.familymember;
 
+import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import hs.aalen.prio.Prio;
+
 @Entity
-public class Familymember {
-@Id
-    private String name;
-    private String id;
-    private String bday;
+public class FamilyMember {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	private String name;
+	private Date bday;
 
+	@OneToMany(mappedBy = "familyMember")
+	@JsonIgnore
+	private List<Prio> priorities;
 
+	public FamilyMember(Long id, String name, Date bday, List<Prio> priorities) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.bday = bday;
+		this.priorities = priorities;
+	}
 
-    public Familymember() {
-    }
+	public FamilyMember() {
+	}
 
-    public Familymember(String name, String id, String bday) {
-        super();
-        this.name = name;
-        this.id = id;
-        this.bday = bday;
+	public List<Prio> getPriorities() {
+		return priorities;
+	}
 
-    }
+	public void setPriorities(List<Prio> priorities) {
+		this.priorities = priorities;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public String getId() {
-        return id;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setId(String id) {
-        this.id = id;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public String getBday() {
-        return bday;
-    }
+	public Date getBday() {
+		return bday;
+	}
 
-    public void setBday(String bday) {
-        this.bday = bday;
-
-
-    }
+	public void setBday(Date bday) {
+		this.bday = bday;
+	}
 
 }

@@ -2,7 +2,6 @@ package hs.aalen.Holidaywish;
 
 import org.springframework.data.repository.CrudRepository;
 
-
-public interface HolidaywishRepository extends CrudRepository<Holidaywish, String> {
+public interface HolidayWishRepository extends CrudRepository<HolidayWish, Long> {
 
 }
