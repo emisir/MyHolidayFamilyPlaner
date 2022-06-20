@@ -119,12 +119,6 @@ function loadFamilyMember() {
 
 }
 
-
-function dialogOeffnen(dialogId) {
-    document.getElementById(dialogId).classList.add("sichtbar");
-    document.getElementById("body-overlay").classList.add("sichtbar");
-}
-
 function deleteFamilyMember(id) {
 
     $.ajax({
@@ -139,7 +133,7 @@ function deleteFamilyMember(id) {
 }
 
 
-function editFamilyMember(id, name, bday) {
+function editFamilyMember(id) {
 
     $.ajax({
         url: 'http://localhost:8090/familymember/' + id,
