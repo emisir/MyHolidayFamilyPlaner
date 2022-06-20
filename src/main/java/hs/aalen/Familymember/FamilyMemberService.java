@@ -1,4 +1,4 @@
-package hs.aalen.familymember;
+package hs.aalen.Familymember;
 
 import java.util.List;
 

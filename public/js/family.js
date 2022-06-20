@@ -4,6 +4,7 @@ function myFunction(id, name, bday) {
     const div1 = document.createElement("article");
     div1.classList.add("article-card");
     div1.classList.add("div1");
+    div1.id = "familymember-" + id;
 
     const div2 = document.createElement("figure");
     div2.classList.add("article-image");
@@ -18,19 +19,28 @@ function myFunction(id, name, bday) {
     const div6 = document.createElement("a");
     div6.classList.add("card-category");
 
+    let btnDelete = document.createElement("button");
+    btnDelete.innerHTML = "Löschen";
+    btnDelete.addEventListener('click', event => {
+        deleteFamilyMember(id)
+    })
+
+    let btnEdit = document.createElement("button");
+    btnEdit.innerHTML = "Edit";
+    btnEdit.addEventListener('click', event => {
+        editFamilyMember(id, name, bday)
+    })
 
     div1.appendChild(div2);
     div2.appendChild(div3);
     div1.appendChild(div4);
     div4.appendChild(div5);
     div4.appendChild(div6);
-
-
+    div4.appendChild(btnDelete);
+    div4.appendChild(btnEdit);
 
 
     const text = document.createTextNode("");
-
-
 
     div5.textContent = name;
     div6.textContent = bday;
@@ -41,6 +51,9 @@ function myFunction(id, name, bday) {
     document.getElementById("acontainer").appendChild(div1);
 
 };
+
+
+
 
 function createFamilyMember(e) {
     var form = $("#createFamily")
@@ -105,5 +118,42 @@ function loadFamilyMember() {
 
 
 }
+
+
+function dialogOeffnen(dialogId) {
+    document.getElementById(dialogId).classList.add("sichtbar");
+    document.getElementById("body-overlay").classList.add("sichtbar");
+}
+
+function deleteFamilyMember(id) {
+
+    $.ajax({
+
+        url: 'http://localhost:8090/familymember/' + id,
+        type: 'DELETE',
+        success: function(data) {
+            $("#familymember-" + id).remove()
+        },
+
+    });
+}
+
+
+function editFamilyMember(id, name, bday) {
+
+    $.ajax({
+        url: 'http://localhost:8090/familymember/' + id,
+        type: 'PUT',
+        success: function(data) {
+            alert("Passt")
+            $("#familymember-" + id).remove()
+        },
+        error: alert("nicht")
+
+    });
+}
+
+
+
 
 loadFamilyMember()

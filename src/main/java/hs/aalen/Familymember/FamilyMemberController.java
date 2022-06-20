@@ -1,4 +1,4 @@
-package hs.aalen.familymember;
+package hs.aalen.Familymember;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 
-public class FamilymemberController {
+public class FamilyMemberController {
 
 	@Autowired
 	FamilyMemberService familyMemberService;

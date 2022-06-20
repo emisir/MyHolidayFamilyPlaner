@@ -8,7 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import hs.aalen.Holidaywish.HolidayWish;
-import hs.aalen.familymember.FamilyMember;
+import hs.aalen.Familymember.FamilyMember;
 
 @Entity
 public class Prio {

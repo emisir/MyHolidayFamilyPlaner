@@ -141,6 +141,7 @@ body {
     display: block;
     text-decoration: none;
     overflow: hidden;
+    padding-bottom: 30px;
 }
 
 .article-content .card-title {
@@ -193,11 +194,11 @@ button {
     float: left;
     height: 30px;
     width: 90px;
-    margin: 1px;
+    margin: 5px;
     background-color: #333;
     color: white;
     font-weight: bold;
-    gap: 10px;
+    gap: 20px;
 }
 
 .fullclick li {

@@ -1,4 +1,4 @@
-package hs.aalen.familymember;
+package hs.aalen.Familymember;
 
 import java.sql.Date;
 import java.util.List;
