@@ -60,7 +60,7 @@ function myFunction(id, title, time) {
 function createHoliday(e) {
     var form = $("#createHoliday")
     var title = form.find("#titleTag").val();
-    var time = form.find("#timeTag").val();
+    var time = $("#timeTag :selected").text();
     console.log(time)
 
     $.ajax({
@@ -72,12 +72,12 @@ function createHoliday(e) {
             "title": title,
             "time": time
         }),
-        success: function(data) {
+        success: function (data) {
             document.getElementById("addFamilymember-dialog").classList.remove("sichtbar")
             document.getElementById("body-overlay").classList.remove("sichtbar");
             loadHoliday()
         },
-        error: function(request, error) {
+        error: function (request, error) {
             alert("Request: " + JSON.stringify(request));
         }
     });
@@ -92,15 +92,15 @@ function loadHoliday() {
         url: 'http://localhost:8090/holiday',
         type: 'GET',
         dataType: 'json',
-        success: function(data) {
+        success: function (data) {
             console.log(data)
 
-            data.forEach(function(holiday) {
+            data.forEach(function (holiday) {
                 myFunction(holiday.id, holiday.title, holiday.time)
             })
 
         },
-        error: function(request, error) {
+        error: function (request, error) {
             alert("Request: " + JSON.stringify(request));
         }
     })
@@ -120,17 +120,17 @@ var addFamBtn = document.getElementById("famBtn");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
-addFamBtn.onclick = function() {
+addFamBtn.onclick = function () {
     modal.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+span.onclick = function () {
     modal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
@@ -138,7 +138,7 @@ window.onclick = function(event) {
 
 var submitBtnFam = document.getElementById("submitBtn");
 
-submitBtnFam.onclick = function() {
+submitBtnFam.onclick = function () {
     document.name.submit();
 
 }
@@ -160,10 +160,10 @@ function loadFamilyMember() {
         url: 'http://localhost:8090/familymember',
         type: 'GET',
         dataType: 'json',
-        success: function(data) {
+        success: function (data) {
             console.log(data)
 
-            data.forEach(function(familymember) {
+            data.forEach(function (familymember) {
                 createDropOption(familymember.id, familymember.name)
             })
 

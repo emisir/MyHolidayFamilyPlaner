@@ -11,7 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
     <link href="fontawesome-free-5.15.1-web/fontawesome-free-5.15.1-web/css/all-css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b30115917b.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 
 </head>
@@ -29,7 +30,9 @@
                 <li><a href="index.html" class="links">Home</a></li>
                 <li><a href="ziele.html" class="links">Ziele</a></li>
                 <li><a href="family.html" class="links">Familienmitglieder</a></li>
-                <li><a href="https://earthroulette.com/" target="_blank" class="links">Interessante Orte</a></li>
+                <li><a href="urlaub.html" class="links">Urlaubszeitraum</a></li>
+
+                <li><a href="https://earthroulette.com/" class="links">Interessante Orte</a></li>
             </div>
         </nav>
     </div>
@@ -75,7 +78,8 @@
 
                 <div id="body-overlay"></div>
                 <div class="dialog" id="addFamilymember-dialog">
-                    <a href="#" role="button" class="dialog-schliessen-button" onclick="dialogSchliessen('addFamilymember-dialog')">
+                    <a href="#" role="button" class="dialog-schliessen-button"
+                        onclick="dialogSchliessen('addFamilymember-dialog')">
                         <i class="fa-regular fa-circle-xmark"></i>
                     </a>
                     <h3>Urlaubsziel Hinzufügen</h3>
@@ -83,10 +87,45 @@
                     <a class="addFamilymember-dialog-daten">
                         <form id="createHoliday" action="" onsubmit="createHoliday()">
                             <input type="text" placeholder="Urlaubsort" id="titleTag" class="eingabefeld">
-                            <input type="text" id="timeTag" class="eingabefeld" placeholder="DD.MM.YYYY - DD.MM.YYYY">
+                            <select name="choose" id="timeTag" class="chooseSeason">
+                                <option id="chooseOption" value='createDropOption' class="ChooseSeasonText">Frühling
+                                </option>
+                                <option id="chooseOption" value='createDropOption' class="ChooseSeasonText">Sommer
+                                </option>
+                                <option id="chooseOption" value='createDropOption' class="ChooseSeasonText">Herbst
+                                </option>
+                                <option id="chooseOption" value='createDropOption' class="ChooseSeasonText">Winter
+                                </option>
+                            </select>
                             <button type="submit" id="submitBtn">Hinzufügen!</button>
 
 
+                        </form>
+                    </a>
+                </div>
+                <div id="body-overlay"></div>
+                <div class="dialog" id="editHoliday-dialog">
+                    <a href="#" role="button" class="dialog-schliessen-button"
+                        onclick="dialogSchliessen('editHoliday-dialog')">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                    </a>
+                    <h3>Urlaubsziel Bearbeiten</h3>
+
+                    <a class="editHoliday-dialog-daten">
+                        <form id="editHoliday" action="">
+                            <input type="text" placeholder="Urlaubsort" id="titleTag" class="eingabefeld">
+                            <select name="choose" id="timeTag" class="chooseSeason">
+                                <option id="chooseOption" value='createDropOption' class="ChooseSeasonText">Frühling
+                                </option>
+                                <option id="chooseOption" value='createDropOption' class="ChooseSeasonText">Sommer
+                                </option>
+                                <option id="chooseOption" value='createDropOption' class="ChooseSeasonText">Herbst
+                                </option>
+                                <option id="chooseOption" value='createDropOption' class="ChooseSeasonText">Winter
+                                </option>
+                            </select>
+
+                            <button type="submit">Bearbeiten!</button>
                         </form>
                     </a>
                 </div>
@@ -107,6 +146,7 @@
 
     <script src="./js/dialoge.js"></script>
     <script src="./js/ziele.js"></script>
+
 
 
 </body>

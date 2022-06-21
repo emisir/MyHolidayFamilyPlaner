@@ -157,14 +157,7 @@
     box-shadow: inset 0px 0px 10px black, 0px 0px 15px #d3cdc5;
 }
 
-.chooseText {
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    letter-spacing: 0.1em;
-    font-weight: bolder;
-    color: #ffffff;
-    border: black;
-}
+
 
 #chooseOption {
     font: 30px;
@@ -178,6 +171,16 @@
     padding: 5px 10px;
     border-radius: 10px 10px 10px 10px;
 }
+
+.chooseSeason {
+    font-family: 'Poppins', sans-serif;
+    min-width: 100px;
+    box-shadow: #333;
+    padding: 2% 35%;
+    border-radius: 10px 10px 10px 10px;
+    margin: 5%;
+}
+
 
 
 /* home, ziel and Abstimmung design*/
