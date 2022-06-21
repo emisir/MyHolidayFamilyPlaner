@@ -36,6 +36,10 @@
     width: 25%;
 }
 
+#editFamilymember-dialog {
+    width: 25%;
+}
+
 .dialog-schliessen-button {
     position: absolute;
     top: 10px;
@@ -116,9 +120,56 @@
     display: inline-block;
 }
 
+#editFamilymember-dialog {
+    background-color: #333;
+    box-shadow: inset 0px 0px 10px black, 2px 2px 4px rgba(255, 255, 255, 0.1), 8px 8px 16px rgba(255, 255, 255, 0.1);
+    border: 5px solid silver;
+}
 
-/*
-#addFamilymember-dialog input[type=file]{
+#editFamilymember-dialog .dialog-schliessen-button {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#editFamilymember-dialog form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#editFamilymember-dialog h3 {
+    margin: 0;
+    color: white;
+    text-align: center;
+    font-size: max(2.5vw, 1.1em);
+    text-shadow: 0px 0px 4px black;
+}
+
+#editFamilymember-dialog input {
+    width: 100%;
+    margin: 7px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-family: inherit;
+    vertical-align: middle;
+}
+
+#editFamilymember-dialog .eingabefeld {
+    padding: 14px 16px;
+    font-size: 17px;
+    line-height: 16px;
+    background: rgb(240, 240, 240);
+    border: 2px solid silver;
+    color: #1c1e21;
+    height: 50px;
+    box-shadow: inset 0px 0px 4px #222;
+}
+
+#editFamilymember-dialog .eingabefeld:focus-visible {
+    outline: none;
+    border: 2px solid #3a342c;
+}
+
+#editFamilymember-dialog input[type=submit] {
     padding: 0 16px;
     background-color: #1877f2;
     border: none;
@@ -127,7 +178,7 @@
     line-height: 48px;
     font-weight: bold;
     cursor: pointer;
-    background-image: linear-gradient(#d3cdc5,#3a342c);
+    background-image: linear-gradient(#d3cdc5, #3a342c);
     text-decoration: none;
     text-shadow: 1px 1px 5px black;
     box-shadow: inset 0px 0px 10px black;
@@ -135,9 +186,12 @@
     width: 50%;
     display: inline-block;
 }
-*/
 
 #addFamilymember-dialog input[type=submit]:hover {
+    box-shadow: inset 0px 0px 10px black, 0px 0px 15px #d3cdc5;
+}
+
+#editFamilymember-dialog input[type=submit]:hover {
     box-shadow: inset 0px 0px 10px black, 0px 0px 15px #d3cdc5;
 }
 
@@ -146,12 +200,7 @@
     font-weight: bold;
 }
 
-.eingabefeld {
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-}
-
-.addFamilymember-dialog-daten {
+.editFamilymember-dialog-daten {
     font-family: 'Poppins', sans-serif;
 }
 
@@ -167,4 +216,9 @@
 #kontakt {
     text-decoration: none;
     color: black;
+}
+
+.eingabefeld {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 }

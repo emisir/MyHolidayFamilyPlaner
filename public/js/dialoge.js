@@ -20,4 +20,4 @@ image_input.addEventListener("change", function() {
         console.log(uploaded_image);
     });
     reader.readAsDataURL(this.files[0]);
-});
+})

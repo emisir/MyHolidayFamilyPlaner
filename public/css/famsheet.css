@@ -234,6 +234,15 @@ button {
     border-radius: 20px 20px 0 0;
 }
 
+.editFamilymember {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: black;
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px 20px 0 0;
+}
+
 h3 {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
@@ -276,7 +285,29 @@ button[type=submit] {
     display: inline-block;
 }
 
+#editFamilymember-dialog input[type=submit] {
+    padding: 0 16px;
+    background-color: #1877f2;
+    border: none;
+    font-size: 25px;
+    color: white;
+    line-height: 48px;
+    font-weight: bold;
+    cursor: pointer;
+    background-image: linear-gradient(#d3cdc5, #3a342c);
+    text-decoration: none;
+    text-shadow: 1px 1px 5px black;
+    box-shadow: inset 0px 0px 10px black;
+    border-radius: 10%/50%;
+    width: 50%;
+    display: inline-block;
+}
+
 #addFamilymember-dialog input[type=submit]:hover {
+    box-shadow: inset 0px 0px 10px black, 0px 0px 15px #d3cdc5;
+}
+
+#editFamilymember-dialog input[type=submit]:hover {
     box-shadow: inset 0px 0px 10px black, 0px 0px 15px #d3cdc5;
 }
 

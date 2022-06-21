@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ----------------------------------------------------------------
 Tue Jun 21 12:10:47 CEST 2022:
 Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0181-85be-3e4e-000002d720f8 
@@ -11,3 +12,5 @@ os.arch=amd64
 os.version=10.0
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
+=======
+>>>>>>> 5c8355d947b59a4611611eb019bea549071c3316

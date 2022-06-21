@@ -26,9 +26,9 @@ function myFunction(id, name, bday) {
     })
 
     let btnEdit = document.createElement("button");
-    btnEdit.innerHTML = "Edit";
+    btnEdit.innerHTML = "Bearbeiten";
     btnEdit.addEventListener('click', event => {
-        editFamilyMember(id, name, bday)
+        loadIndividualFamilyMember(id, name, bday)
     })
 
     div1.appendChild(div2);
@@ -52,7 +52,16 @@ function myFunction(id, name, bday) {
 
 };
 
+function dialogOeffnen(dialogId) {
+    document.getElementById(dialogId).classList.add("sichtbar");
+    document.getElementById("body-overlay").classList.add("sichtbar");
+}
 
+function dialogSchliessen(dialogId) {
+    document.getElementById(dialogId).classList.remove("sichtbar")
+    document.getElementById("body-overlay").classList.remove("sichtbar");
+
+}
 
 
 function createFamilyMember(e) {
@@ -79,8 +88,6 @@ function createFamilyMember(e) {
             alert("Request: " + JSON.stringify(request));
         }
     });
-
-
 }
 
 function formatDate(date) {
@@ -115,8 +122,6 @@ function loadFamilyMember() {
             alert("Request: " + JSON.stringify(request));
         }
     })
-
-
 }
 
 function deleteFamilyMember(id) {
@@ -132,18 +137,40 @@ function deleteFamilyMember(id) {
     });
 }
 
+function loadIndividualFamilyMember(id, name, bday) {
+    dialogOeffnen('editFamilymember-dialog')
+    $(".editFamilymember-dialog-daten #nameTag").val(name);
+    $(".editFamilymember-dialog-daten #bdayTag").val(bday);
+    $("#editFamily").submit(function() {
+        editFamilyMember(id)
+    })
+
+}
 
 function editFamilyMember(id) {
+
+    var nameDialog = $(".editFamilymember-dialog-daten #nameTag").val();
+    var bdayDialog = $(".editFamilymember-dialog-daten #bdayTag").val();
 
     $.ajax({
         url: 'http://localhost:8090/familymember/' + id,
         type: 'PUT',
-        success: function(data) {
-            alert("Passt")
-            $("#familymember-" + id).remove()
-        },
-        error: alert("nicht")
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({
+            "id": id,
+            "name": nameDialog,
+            "bday": bdayDialog
+        }),
 
+        success: function(data) {
+            dialogSchliessen('editFamilymember-dialog')
+            loadFamilyMember()
+
+        },
+        error: function(data) {
+
+            console.log(data)
+        },
     });
 }
 

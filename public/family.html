@@ -74,16 +74,23 @@
                 <input type="date" placeholder="Geburtstag" id="bdayTag" class="eingabefeld">
 
                 <button type="submit">Hinzufügen!</button>
+            </form>
+        </a>
+    </div>
 
-                <!--
-        <form action="/action_page.php">
-            <input type="file" id="myFile" name="filename" accept="image/jpeg, image/png, image/jpg">
-            <input type="submit" value="Hinzufügen!">
-        
-          </form>
-        -->
+    <div id="body-overlay"></div>
+    <div class="dialog" id="editFamilymember-dialog">
+        <a href="#" role="button" class="dialog-schliessen-button" onclick="dialogSchliessen('editFamilymember-dialog')">
+            <i class="fa-regular fa-circle-xmark"></i>
+        </a>
+        <h3>Familienmitglied Bearbeiten</h3>
 
+        <a class="editFamilymember-dialog-daten">
+            <form id="editFamily" action="">
+                <input type="text" placeholder="Name" id="nameTag" class="eingabefeld">
+                <input type="date" placeholder="Geburtstag" id="bdayTag" class="eingabefeld">
 
+                <button type="submit">Bearbeiten!</button>
             </form>
         </a>
     </div>
