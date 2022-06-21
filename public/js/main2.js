@@ -25,35 +25,44 @@ function myFunction(id, title, time) {
     const div7 = document.createElement("div");
     div7.classList.add("card-footer")
 
-    $(function () {
-        var div8 = document.createElement('input');
 
-        div8.id = "myRange";
-        div8.className = "slider"
-        div8.type = 'range';
-        div8.min = 1;
-        div8.max = 10;
-        div8.value = 1;
-        div4.appendChild(div8);
-    });
+    var div8 = document.createElement('input');
 
-    $(function () {
-        var div9 = document.createElement("p");
-
-        div9.className = "prio";
-        div9.textContent = "Priorität: ";
-        div4.appendChild(div9);
+    div8.id = "myRange";
+    div8.className = "slider"
+    div8.type = 'range';
+    div8.min = 1;
+    div8.max = 10;
+    div8.value = 1;
+    div4.appendChild(div8);
 
 
-    });
 
-    $(function () {
-        var div10 = document.createElement("span");
+    var div9 = document.createElement("p");
 
-        div10.id = "demo";
-        div4.appendChild(div10);
+    div9.className = "prio";
+    div9.textContent = "Priorität: ";
+    div4.appendChild(div9);
 
 
+
+
+
+    var div10 = document.createElement("span");
+
+    div10.id = "demo";
+    div4.appendChild(div10);
+
+
+
+
+
+    $("#myRange").change(function (e) {
+
+
+        $("#demo").text(e.target.value);
+
+        console.log(e.target.value);
     });
 
 
