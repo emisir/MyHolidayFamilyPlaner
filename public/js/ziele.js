@@ -108,6 +108,7 @@ function editHoliday(id) {
 
         success: function (data) {
             dialogSchliessen('editHoliday-dialog')
+            loadHoliday()
 
         },
         error: function (data) {
