@@ -3,6 +3,8 @@ function myFunction(id, title, time) {
     const div1 = document.createElement("article");
     div1.classList.add("article-card");
     div1.classList.add("div1");
+    div1.id = "holiday-" + id;
+
 
 
 
@@ -19,14 +21,23 @@ function myFunction(id, title, time) {
     const div6 = document.createElement("a");
     div6.classList.add("card-category");
 
-    const div7 = document.createElement("button");
-    div7.classList.add("cardBtn");
 
 
 
 
-    div7.innerText = "Löschen";
 
+
+    let btnDelete = document.createElement("button");
+    btnDelete.innerHTML = "Löschen";
+    btnDelete.addEventListener('click', event => {
+        deleteHoliday(id)
+    })
+
+    let btnEdit = document.createElement("button");
+    btnEdit.innerHTML = "Bearbeiten";
+    btnEdit.addEventListener('click', event => {
+        loadIndividualHoliday(id, title, time)
+    })
 
 
     div1.appendChild(div2);
@@ -34,7 +45,8 @@ function myFunction(id, title, time) {
     div1.appendChild(div4);
     div4.appendChild(div5);
     div4.appendChild(div6);
-    div4.appendChild(div7);
+    div4.appendChild(btnDelete);
+    div4.appendChild(btnEdit);
 
 
 
@@ -52,6 +64,60 @@ function myFunction(id, title, time) {
     document.getElementById("acontainer").appendChild(div1);
 
 };
+
+
+
+
+function deleteHoliday(id) {
+
+    $.ajax({
+
+        url: 'http://localhost:8090/holiday/' + id,
+        type: 'DELETE',
+        success: function (data) {
+            $("#holiday-" + id).remove()
+        },
+
+    });
+}
+
+function loadIndividualHoliday(id, title, time) {
+    dialogOeffnen('editHoliday-dialog')
+    $(".editHoliday-dialog-daten #titleTag").val(title);
+    $("#timeTag :selected").text(time);
+    $("#editHoliday").submit(function () {
+        editHoliday(id)
+    })
+
+}
+
+function editHoliday(id) {
+
+    var titleDialog = $(".editHoliday-dialog-daten #titleTag").val();
+    var timeDialog = $(".editHoliday-dialog-daten #timeTag :selected").text();
+
+    $.ajax({
+        url: 'http://localhost:8090/holiday/' + id,
+        type: 'PUT',
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({
+            "id": id,
+            "title": titleDialog,
+            "time": timeDialog
+        }),
+
+        success: function (data) {
+            dialogSchliessen('editHoliday-dialog')
+
+        },
+        error: function (data) {
+
+            console.log(data)
+        },
+    });
+}
+
+
 
 
 
@@ -109,7 +175,6 @@ function loadHoliday() {
 }
 
 loadHoliday()
-
 
 var modal = document.getElementById("myModal");
 
