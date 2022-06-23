@@ -1,0 +1,48 @@
+/* Article card design slider */
+
+.slidecontainer {
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+/* The slider itself */
+
+.slider {
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin-top: 20%;
+}
+
+.prio {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: bolder;
+    color: #22447b;
+    display: block;
+    text-decoration: none;
+}
+
+
+/* Priority design and Savebutton style */
+
+.cardFooter {
+    margin: 0 30px 30px 30px;
+}
+
+.saveBtn {
+    font-size: 0.875rem;
+    font-weight: bolder;
+    color: #22447b;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid grey;
+    width: 100%;
+}
+
+.saveBtn:hover {
+    background-color: #22447b;
+    color: white;
+}

@@ -1,101 +1,169 @@
-var settings = {
-    "url": "https://397176c9-192a-4b09-8f9c-c4b79a3d8a30.mock.pstmn.io//holiday-wishes",
-    "method": "GET",
-    "timeout": 0,
-    "headers": {
-        "Content-Type": "application/json"
-    },
+
+
+function myFunction(id, title, time) {
+
+    const div1 = document.createElement("article");
+    div1.classList.add("article-card");
+    div1.classList.add("div1");
+
+
+
+    const div2 = document.createElement("figure");
+    div2.classList.add("article-image");
+
+    const div3 = document.createElement("img");
+
+    const div4 = document.createElement("div");
+    div4.classList.add("article-content");
+
+    const div5 = document.createElement("h2");
+
+    const div6 = document.createElement("a");
+    div6.classList.add("card-category");
+
+
+    const div7 = document.createElement("div");
+    div7.classList.add("card-footer")
+
+
+    var div8 = document.createElement('input');
+
+    div8.id = "myRange";
+    div8.className = "slider"
+    div8.type = 'range';
+    div8.min = 1;
+    div8.max = 10;
+    div8.value = 1;
+    div4.appendChild(div8);
+
+
+
+    var div9 = document.createElement("p");
+
+    div9.className = "prio";
+    div9.textContent = "Priorität: ";
+    div4.appendChild(div9);
+
+
+
+
+
+    var div10 = document.createElement("span");
+
+    div10.id = "demo";
+    div4.appendChild(div10);
+
+
+    var div11 = document.createElement('button');
+
+    div11.id = "saveSpot";
+    div11.className = "saveBtn";
+    div11.textContent = "Speichern";
+
+    div4.appendChild(div11);
+
+
+
+    $("#myRange").change(function (e) {
+
+
+        $("#demo").text(e.target.value);
+
+        console.log(e.target.value);
+    });
+
+
+
+
+
+
+
+
+
+    div1.appendChild(div2);
+    div2.appendChild(div3);
+    div1.appendChild(div4);
+    div4.appendChild(div5);
+    div4.appendChild(div6);
+
+
+
+
+
+    const text = document.createTextNode("");
+
+
+
+    div5.textContent = title;
+    div6.textContent = time;
+    div3.src = "./images/Urlaub.jpg "
+
+    console.log(div3.src);
+
+    document.getElementById("acontainer").appendChild(div1);
+
 };
 
 
 
-$(document).ready(function() {
-    $.ajax(settings).done(function(response) {
-        console.log(response);
-        let data = JSON.parse(response);
-
-        console.log(data);
-        $.each(data, function(i, order) {
-            $(".article-container").append(`
-                <article class="article-card">
-                <figure class="article-image">
-                    <img src="${data[i].image}" alt="Reiseziel Bild" />
-                </figure>
-                <div class="article-content">
-                    <a href="#" class="card-category">Reiseziel</a>
-                    <h3 class="card-title">
-                        ${data[i].city}
-                    </h3>
-                    <div>${data[i].description}</div>
-                </div>
-                <div class = "cardFooter">
-                    <input type="range" min="1" max="10" value="1" class="slider" id="myRange${i}" />
-                    <p class="prio">Priorität: <span id="demo${i}">${data[i].prio}</span></p>
-                    <button class ="saveBtn" id="saveSpot${i}">Speichern</button>
-                </div>
-                </article>`);
 
 
 
-            $("#myRange" + i).change(function(e) {
+function loadHoliday() {
+    $(".div1").remove()
+    $.ajax({
+        url: 'http://localhost:8090/holiday',
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            console.log(data)
 
-                $("#demo" + i).text(e.target.value);
+            data.forEach(function (holiday) {
+                myFunction(holiday.id, holiday.title, holiday.time)
+            })
 
-                console.log(e.target.value);
-            });
-
-            $("#saveSpot" + i).click(function(e) {
-
-
-                let inputSave = {
-                    'input': $("#myRange" + i).val(),
-
-                };
-
-                $.ajax({
-                    type: 'POST',
-                    contentType: 'application/json',
-                    url: "https://397176c9-192a-4b09-8f9c-c4b79a3d8a30.mock.pstmn.io/priority", // url where we want to POST
-                    data: JSON.stringify(inputSave),
-                    success: function(data, textStatus, jQxhr) {},
-                    error: function(jqXhr, textStatus, errorThrown) {
-                        console.log(errorThrown);
-                    }
-                });
-
-            });
+        },
+        error: function (request, error) {
+            alert("Request: " + JSON.stringify(request));
+        }
+    })
 
 
+}
 
-
-        });
-    });
-});
+loadHoliday()
 
 
 var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("famBtn");
+var addFamBtn = document.getElementById("famBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
-btn.onclick = function() {
+addFamBtn.onclick = function () {
     modal.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+span.onclick = function () {
     modal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+}
+
+var submitBtnFam = document.getElementById("submitBtn");
+
+submitBtnFam.onclick = function () {
+    document.name.submit();
+
 }
 
 
@@ -115,10 +183,10 @@ function loadFamilyMember() {
         url: 'http://localhost:8090/familymember',
         type: 'GET',
         dataType: 'json',
-        success: function(data) {
+        success: function (data) {
             console.log(data)
 
-            data.forEach(function(familymember) {
+            data.forEach(function (familymember) {
                 createDropOption(familymember.id, familymember.name)
             })
 
@@ -127,7 +195,6 @@ function loadFamilyMember() {
     })
 
 }
-
 
 
 

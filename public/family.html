@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Familienmitglieder</title>
+    <link rel="stylesheet" href="./css/stylesheet.css">
     <link rel="stylesheet" href="./css/famsheet.css">
     <link rel="stylesheet" href="./css/dialoge.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
@@ -30,13 +31,11 @@
     <div class="nav-basic">
         <nav class="container">
             <div class="topnav">
-                <li><a href="urlaub.html" class="links">Urlaubszeitraum</a></li>
-                <li><a href="ziele.html" class="links">Ziele</a></li>
+                <li><a href="index.html" class="links">Home</a></li>
+                <li><a href="holiday.html" class="links">Urlaub</a></li>
+                <li><a href="holidayWish.html" class="links">Urlaubswunsch</a></li>
                 <li><a href="family.html" class="links">Familienmitglieder</a></li>
-                <li><a href="index.html" class="links">Priorisieren</a></li>
-
-
-                <li><a href="https://earthroulette.com/" class="links">Interessante Orte</a></li>
+                <li><a href="priority.html" class="links">Priorisieren</a></li>
             </div>
 
         </nav>
@@ -50,7 +49,7 @@
 
                     <article class="article-card">
                         <figure class="article-image">
-                            <a href="#" class="addFamilymember" onclick="dialogOeffnen('addFamilymember-dialog')">
+                            <a href="#" class="addFamilymember" onclick="dialogOeffnen('addWindow-dialog')">
                                 <img src="./images/greyPlus.png" alt="Add Familymember" />
                         </figure>
                         <div class="article-content">
@@ -66,13 +65,13 @@
     </div>
 
     <div id="body-overlay"></div>
-    <div class="dialog" id="addFamilymember-dialog">
-        <a href="#" role="button" class="dialog-schliessen-button" onclick="dialogSchliessen('addFamilymember-dialog')">
+    <div class="dialog" id="addWindow-dialog">
+        <a href="#" role="button" class="dialog-schliessen-button" onclick="dialogSchliessen('addWindow-dialog')">
             <i class="fa-regular fa-circle-xmark"></i>
         </a>
         <h3>Familienmitglied Hinzufügen</h3>
 
-        <a class="addFamilymember-dialog-daten">
+        <a class="addWindow-dialog-daten">
             <form id="createFamily" action="" onsubmit="createFamilyMember()">
                 <input type="text" placeholder="Name" id="nameTag" class="eingabefeld">
                 <input type="date" placeholder="Geburtstag" id="bdayTag" class="eingabefeld">
@@ -83,14 +82,13 @@
     </div>
 
     <div id="body-overlay"></div>
-    <div class="dialog" id="editFamilymember-dialog">
-        <a href="#" role="button" class="dialog-schliessen-button"
-            onclick="dialogSchliessen('editFamilymember-dialog')">
+    <div class="dialog" id="editWindow-dialog">
+        <a href="#" role="button" class="dialog-schliessen-button" onclick="dialogSchliessen('editWindow-dialog')">
             <i class="fa-regular fa-circle-xmark"></i>
         </a>
         <h3>Familienmitglied Bearbeiten</h3>
 
-        <a class="editFamilymember-dialog-daten">
+        <a class="editWindow-dialog-daten">
             <form id="editFamily" action="">
                 <input type="text" placeholder="Name" id="nameTag" class="eingabefeld">
                 <input type="date" placeholder="Geburtstag" id="bdayTag" class="eingabefeld">
@@ -102,7 +100,7 @@
 
     <div class="footer-basic">
         <footer>
-            <p><a href="kontakt.html" id="kontakt">Kontakt</a></p>
+            <p><a href="impressum.html" id="kontakt">Kontakt</a></p>
 
 
         </footer>

@@ -22,11 +22,6 @@ function myFunction(id, title, time) {
     div6.classList.add("card-category");
 
 
-
-
-
-
-
     let btnDelete = document.createElement("button");
     btnDelete.innerHTML = "Löschen";
     btnDelete.addEventListener('click', event => {
@@ -82,8 +77,8 @@ function deleteHoliday(id) {
 }
 
 function loadIndividualHoliday(id, title, time) {
-    dialogOeffnen('editHoliday-dialog')
-    $(".editHoliday-dialog-daten #titleTag").val(title);
+    dialogOeffnen('editWindow-dialog')
+    $(".editWindow-dialog-daten #titleTag").val(title);
     $("#timeTag :selected").text(time);
     $("#editHoliday").submit(function () {
         editHoliday(id)
@@ -93,8 +88,8 @@ function loadIndividualHoliday(id, title, time) {
 
 function editHoliday(id) {
 
-    var titleDialog = $(".editHoliday-dialog-daten #titleTag").val();
-    var timeDialog = $(".editHoliday-dialog-daten #timeTag :selected").text();
+    var titleDialog = $(".editWindow-dialog-daten #titleTag").val();
+    var timeDialog = $(".editWindow-dialog-daten #timeTag :selected").text();
 
     $.ajax({
         url: 'http://localhost:8090/holiday/' + id,
@@ -107,7 +102,7 @@ function editHoliday(id) {
         }),
 
         success: function (data) {
-            dialogSchliessen('editHoliday-dialog')
+            dialogSchliessen('editWindow-dialog')
             loadHoliday()
 
         },
@@ -140,7 +135,7 @@ function createHoliday(e) {
             "time": time
         }),
         success: function (data) {
-            document.getElementById("addFamilymember-dialog").classList.remove("sichtbar")
+            document.getElementById("addWindow-dialog").classList.remove("sichtbar")
             document.getElementById("body-overlay").classList.remove("sichtbar");
             loadHoliday()
         },

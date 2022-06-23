@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyFamilyHolidayPlaner</title>
     <link rel="stylesheet" href="./css/stylesheet.css">
-
     <link rel="stylesheet" href="./css/dialoge.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
     <link href="fontawesome-free-5.15.1-web/fontawesome-free-5.15.1-web/css/all-css" rel="stylesheet">
@@ -20,24 +19,22 @@
 <body>
     <div class="header-basic">
         <header>
-            <h1 class="topic">Ziele</h1>
+            <h1 class="topic">Urlaubswunsch</h1>
             <img class="background" src="Images/hintergrund.jpg">
         </header>
     </div>
     <div class="nav-basic">
         <nav class="container">
             <div class="topnav">
-                <li><a href="urlaub.html" class="links">Urlaubszeitraum</a></li>
-                <li><a href="ziele.html" class="links">Ziele</a></li>
+                <li><a href="index.html" class="links">Home</a></li>
+                <li><a href="holiday.html" class="links">Urlaub</a></li>
+                <li><a href="holidayWish.html" class="links">Urlaubswunsch</a></li>
                 <li><a href="family.html" class="links">Familienmitglieder</a></li>
-                <li><a href="index.html" class="links">Priorisieren</a></li>
-
-
-                <li><a href="https://earthroulette.com/" class="links">Interessante Orte</a></li>
+                <li><a href="priority.html" class="links">Priorisieren</a></li>
             </div>
         </nav>
     </div>
-    <div class="addFamBtn">
+    <!-- <div class="addFamBtn">
         <button id="famBtn">Anmelden</button>
     </div>
     <div class="article-content">
@@ -53,7 +50,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <div class="article-basic">
@@ -64,11 +61,11 @@
                 <article class="article-card" id="article-cards">
 
                     <figure class="article-image">
-                        <a href="#" class="addFamilymember" onclick="dialogOeffnen('addFamilymember-dialog')">
+                        <a href="#" class="addFamilymember" onclick="dialogOeffnen('addWindow-dialog')">
                             <img src="./images/greyPlus.png" class="addZiele" />
                     </figure>
                     <div class="article-content">
-                        <h2 class="holidayTarget">Urlaubsziel Hinzufügen</h2>
+                        <h2 class="holidayTarget">Urlaubswunsch Hinzufügen</h2>
 
                     </div>
                     </a>
@@ -78,26 +75,23 @@
 
 
                 <div id="body-overlay"></div>
-                <div class="dialog" id="addFamilymember-dialog">
+                <div class="dialog" id="addWindow-dialog">
                     <a href="#" role="button" class="dialog-schliessen-button"
-                        onclick="dialogSchliessen('addFamilymember-dialog')">
+                        onclick="dialogSchliessen('addWindow-dialog')">
                         <i class="fa-regular fa-circle-xmark"></i>
                     </a>
-                    <h3>Urlaubsziel Hinzufügen</h3>
+                    <h3>Urlaubswunsch Hinzufügen</h3>
 
-                    <a class="addFamilymember-dialog-daten">
-                        <form id="createHoliday" action="" onsubmit="createHoliday()">
-                            <input type="text" placeholder="Urlaubsort" id="titleTag" class="eingabefeld">
-                            <select name="choose" id="timeTag" class="chooseSeason">
-                                <option id="chooseOption" value='createDropOption' class="ChooseSeasonText">Frühling
-                                </option>
-                                <option id="chooseOption" value='createDropOption' class="ChooseSeasonText">Sommer
-                                </option>
-                                <option id="chooseOption" value='createDropOption' class="ChooseSeasonText">Herbst
-                                </option>
-                                <option id="chooseOption" value='createDropOption' class="ChooseSeasonText">Winter
-                                </option>
+                    <a class="addWindow-dialog-daten">
+                        <form id="createHolidayWish" action="" onsubmit="createHolidayWish()">
+                            <select name="choose" id="chooseDrop">
+                                <option id="chooseOption" value='createDropOption'>Auswahl</option>
                             </select>
+                            <input type="text" placeholder="Ort" id="locationTag" class="eingabefeld">
+                            <input type="text" placeholder="beschreibung" id="descriptionTag" class="eingabefeld">
+
+
+
                             <button type="submit" id="submitBtn">Hinzufügen!</button>
 
 
@@ -105,27 +99,17 @@
                     </a>
                 </div>
                 <div id="body-overlay"></div>
-                <div class="dialog" id="editHoliday-dialog">
+                <div class="dialog" id="editWindow-dialog">
                     <a href="#" role="button" class="dialog-schliessen-button"
-                        onclick="dialogSchliessen('editHoliday-dialog')">
+                        onclick="dialogSchliessen('editWindow-dialog')">
                         <i class="fa-regular fa-circle-xmark"></i>
                     </a>
-                    <h3>Urlaubsziel Bearbeiten</h3>
+                    <h3>Urlaubswunsch Bearbeiten</h3>
 
-                    <a class="editHoliday-dialog-daten">
-                        <form id="editHoliday" action="">
-                            <input type="text" placeholder="Urlaubsort" id="titleTag" class="eingabefeld">
-                            <select name="choose" id="timeTag" class="chooseSeason">
-                                <option id="chooseOption" value='createDropOption' class="ChooseSeasonText">Frühling
-                                </option>
-                                <option id="chooseOption" value='createDropOption' class="ChooseSeasonText">Sommer
-                                </option>
-                                <option id="chooseOption" value='createDropOption' class="ChooseSeasonText">Herbst
-                                </option>
-                                <option id="chooseOption" value='createDropOption' class="ChooseSeasonText">Winter
-                                </option>
-                            </select>
-
+                    <a class="editWindow-dialog-daten">
+                        <form id="editHoliday-wish" action="">
+                            <input type="text" placeholder="Ort" id="locationTag" class="eingabefeld">
+                            <input type="text" placeholder="beschreibung" id="descriptionTag" class="eingabefeld">
                             <button type="submit">Bearbeiten!</button>
                         </form>
                     </a>
@@ -139,14 +123,14 @@
 
     <div class="footer-basic">
         <footer>
-            <p><a href="kontakt.html" id="kontakt">Kontakt</a></p>
+            <p><a href="impressum.html" id="kontakt">Kontakt</a></p>
 
 
         </footer>
     </div>
 
     <script src="./js/dialoge.js"></script>
-    <script src="./js/ziele.js"></script>
+    <script src="./js/holidayWish.js"></script>
 
 
 

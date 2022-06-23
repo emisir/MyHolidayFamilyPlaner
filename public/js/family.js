@@ -79,12 +79,12 @@ function createFamilyMember(e) {
             "name": name,
             "bday": bday
         }),
-        success: function(data) {
-            document.getElementById("addFamilymember-dialog").classList.remove("sichtbar")
+        success: function (data) {
+            document.getElementById("addWindow-dialog").classList.remove("sichtbar")
             document.getElementById("body-overlay").classList.remove("sichtbar");
             loadFamilyMember()
         },
-        error: function(request, error) {
+        error: function (request, error) {
             alert("Request: " + JSON.stringify(request));
         }
     });
@@ -110,15 +110,15 @@ function loadFamilyMember() {
         url: 'http://localhost:8090/familymember',
         type: 'GET',
         dataType: 'json',
-        success: function(data) {
+        success: function (data) {
             console.log(data)
 
-            data.forEach(function(familymember) {
+            data.forEach(function (familymember) {
                 myFunction(familymember.id, familymember.name, familymember.bday)
             })
 
         },
-        error: function(request, error) {
+        error: function (request, error) {
             alert("Request: " + JSON.stringify(request));
         }
     })
@@ -130,7 +130,7 @@ function deleteFamilyMember(id) {
 
         url: 'http://localhost:8090/familymember/' + id,
         type: 'DELETE',
-        success: function(data) {
+        success: function (data) {
             $("#familymember-" + id).remove()
         },
 
@@ -138,10 +138,10 @@ function deleteFamilyMember(id) {
 }
 
 function loadIndividualFamilyMember(id, name, bday) {
-    dialogOeffnen('editFamilymember-dialog')
-    $(".editFamilymember-dialog-daten #nameTag").val(name);
-    $(".editFamilymember-dialog-daten #bdayTag").val(bday);
-    $("#editFamily").submit(function() {
+    dialogOeffnen('editWindow-dialog')
+    $(".editWindow-dialog-daten #nameTag").val(name);
+    $(".editWindow-dialog-daten #bdayTag").val(bday);
+    $("#editFamily").submit(function () {
         editFamilyMember(id)
     })
 
@@ -149,8 +149,8 @@ function loadIndividualFamilyMember(id, name, bday) {
 
 function editFamilyMember(id) {
 
-    var nameDialog = $(".editFamilymember-dialog-daten #nameTag").val();
-    var bdayDialog = $(".editFamilymember-dialog-daten #bdayTag").val();
+    var nameDialog = $(".editWindow-dialog-daten #nameTag").val();
+    var bdayDialog = $(".editWindow-dialog-daten #bdayTag").val();
 
     $.ajax({
         url: 'http://localhost:8090/familymember/' + id,
@@ -162,12 +162,12 @@ function editFamilyMember(id) {
             "bday": bdayDialog
         }),
 
-        success: function(data) {
-            dialogSchliessen('editFamilymember-dialog')
+        success: function (data) {
+            dialogSchliessen('editWindow-dialog')
             loadFamilyMember()
 
         },
-        error: function(data) {
+        error: function (data) {
 
             console.log(data)
         },

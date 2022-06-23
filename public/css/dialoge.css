@@ -32,11 +32,11 @@
     pointer-events: auto;
 }
 
-#addFamilymember-dialog {
+#addWindow-dialog {
     width: 25%;
 }
 
-#editFamilymember-dialog {
+#editWindow-dialog {
     width: 25%;
 }
 
@@ -53,23 +53,23 @@
 
 /* Styling */
 
-#addFamilymember-dialog {
+#addWindow-dialog {
     background-color: #333;
     box-shadow: inset 0px 0px 10px black, 2px 2px 4px rgba(255, 255, 255, 0.1), 8px 8px 16px rgba(255, 255, 255, 0.1);
     border: 5px solid silver;
 }
 
-#addFamilymember-dialog .dialog-schliessen-button {
+#addWindow-dialog .dialog-schliessen-button {
     color: rgba(255, 255, 255, 0.6);
 }
 
-#addFamilymember-dialog form {
+#addWindow-dialog form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#addFamilymember-dialog h3 {
+#addWindow-dialog h3 {
     margin: 0;
     color: white;
     text-align: center;
@@ -77,7 +77,7 @@
     text-shadow: 0px 0px 4px black;
 }
 
-#addFamilymember-dialog input {
+#addWindow-dialog input {
     width: 100%;
     margin: 7px;
     border-radius: 6px;
@@ -86,7 +86,7 @@
     vertical-align: middle;
 }
 
-#addFamilymember-dialog .eingabefeld {
+#addWindow-dialog .eingabefeld {
     padding: 14px 16px;
     font-size: 17px;
     line-height: 16px;
@@ -97,12 +97,12 @@
     box-shadow: inset 0px 0px 4px #222;
 }
 
-#addFamilymember-dialog .eingabefeld:focus-visible {
+#addWindow-dialog .eingabefeld:focus-visible {
     outline: none;
     border: 2px solid #3a342c;
 }
 
-#addFamilymember-dialog input[type=submit] {
+#addWindow-dialog input[type=submit] {
     padding: 0 16px;
     background-color: #1877f2;
     border: none;
@@ -120,23 +120,23 @@
     display: inline-block;
 }
 
-#editFamilymember-dialog {
+#editWindow-dialog {
     background-color: #333;
     box-shadow: inset 0px 0px 10px black, 2px 2px 4px rgba(255, 255, 255, 0.1), 8px 8px 16px rgba(255, 255, 255, 0.1);
     border: 5px solid silver;
 }
 
-#editFamilymember-dialog .dialog-schliessen-button {
+#editWindow-dialog .dialog-schliessen-button {
     color: rgba(255, 255, 255, 0.6);
 }
 
-#editFamilymember-dialog form {
+#editWindow-dialog form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#editFamilymember-dialog h3 {
+#editWindow-dialog h3 {
     margin: 0;
     color: white;
     text-align: center;
@@ -144,7 +144,7 @@
     text-shadow: 0px 0px 4px black;
 }
 
-#editFamilymember-dialog input {
+#editWindow-dialog input {
     width: 100%;
     margin: 7px;
     border-radius: 6px;
@@ -153,7 +153,7 @@
     vertical-align: middle;
 }
 
-#editFamilymember-dialog .eingabefeld {
+#editWindow-dialog .eingabefeld {
     padding: 14px 16px;
     font-size: 17px;
     line-height: 16px;
@@ -164,12 +164,12 @@
     box-shadow: inset 0px 0px 4px #222;
 }
 
-#editFamilymember-dialog .eingabefeld:focus-visible {
+#editWindow-dialog .eingabefeld:focus-visible {
     outline: none;
     border: 2px solid #3a342c;
 }
 
-#editFamilymember-dialog input[type=submit] {
+#editWindow-dialog input[type=submit] {
     padding: 0 16px;
     background-color: #1877f2;
     border: none;
@@ -187,11 +187,11 @@
     display: inline-block;
 }
 
-#addFamilymember-dialog input[type=submit]:hover {
+#addWindow-dialog input[type=submit]:hover {
     box-shadow: inset 0px 0px 10px black, 0px 0px 15px #d3cdc5;
 }
 
-#editFamilymember-dialog input[type=submit]:hover {
+#editWindow-dialog input[type=submit]:hover {
     box-shadow: inset 0px 0px 10px black, 0px 0px 15px #d3cdc5;
 }
 
@@ -200,7 +200,7 @@
     font-weight: bold;
 }
 
-.editFamilymember-dialog-daten {
+.editWindow-dialog-daten {
     font-family: 'Poppins', sans-serif;
 }
 

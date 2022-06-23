@@ -24,7 +24,7 @@ public class Holiday {
 	
 	public Holiday() {
 		
-	}
+	} 	
 
 	public Holiday(Long id, String title, String time, List<HolidayWish> wishes) {
 		super();
