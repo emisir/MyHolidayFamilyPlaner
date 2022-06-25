@@ -1,4 +1,4 @@
-function myFunction(id, location, description, title, time) {
+function myFunction(id, description, location, holiday_title, time, sumPrio) {
 
     const div1 = document.createElement("article");
     div1.classList.add("article-card");
@@ -24,16 +24,6 @@ function myFunction(id, location, description, title, time) {
     const divLocation = document.createElement("h3");
 
     const divDescription = document.createElement("p");
-
-
-
-
-
-
-
-
-
-
 
 
     let btnDelete = document.createElement("button");
@@ -66,10 +56,10 @@ function myFunction(id, location, description, title, time) {
     const text = document.createTextNode("");
 
 
-    div5.textContent = title;
+    div5.textContent = holiday_title;
     div6.textContent = time;
     divLocation.textContent = location;
-    divDescription.textContent = description;
+    divDescription.textContent = description + " " + sumPrio;
     div3.src = "./images/Urlaub.jpg "
 
     console.log(div3.src);
@@ -97,12 +87,12 @@ function createHolidayWish(id) {
             "location": location,
             "description": description
         }),
-        success: function (data) {
+        success: function(data) {
             document.getElementById("addWindow-dialog").classList.remove("sichtbar")
             document.getElementById("body-overlay").classList.remove("sichtbar");
             loadHolidayWish(id)
         },
-        error: function (request, error) {
+        error: function(request, error) {
             alert("Request: " + JSON.stringify(request));
         }
     });
@@ -117,15 +107,15 @@ function loadHolidayWish() {
         url: 'http://localhost:8090/holiday/1/holiday-wish',
         type: 'GET',
         dataType: 'json',
-        success: function (data) {
+        success: function(data) {
             console.log(data)
 
-            data.forEach(function (holidayWish, holiday) {
+            data.forEach(function(holidayWish, holiday) {
                 myFunction(holidayWish.id, holidayWish.location, holidayWish.description, holiday.id, holiday.title, holiday.time)
             })
 
         },
-        error: function (request, error) {
+        error: function(request, error) {
             alert("Request: " + JSON.stringify(request));
         }
     })
@@ -151,15 +141,15 @@ function loadHolidayDrop() {
         url: 'http://localhost:8090/holiday',
         type: 'GET',
         dataType: 'json',
-        success: function (data) {
+        success: function(data) {
             console.log(data)
 
-            data.forEach(function (holiday) {
+            data.forEach(function(holiday) {
                 createDropOption(holiday.id, holiday.title)
             })
 
         },
-        error: function () {
+        error: function() {
             alert("Holiday daten konnten nicht geladen werden");
 
         }
@@ -168,21 +158,23 @@ function loadHolidayDrop() {
 
 }
 
-function loadHoliday() {
+function loadHolidayWishes() {
     $(".div1").remove()
     $.ajax({
         url: 'http://localhost:8090/holiday',
         type: 'GET',
         dataType: 'json',
-        success: function (data) {
+        success: function(data) {
             console.log(data)
 
-            data.forEach(function (holiday) {
-                myFunction(holiday.id, holiday.title, holiday.time)
+            data.forEach(function(holiday) {
+                holiday.wishes.forEach(w => {
+                    myFunction(w.id, w.description, w.location, holiday.title, holiday.time, w.sumPriority)
+                })
             })
 
         },
-        error: function (request, error) {
+        error: function(request, error) {
             alert("Request: " + JSON.stringify(request));
         }
     })
@@ -190,19 +182,5 @@ function loadHoliday() {
 
 }
 
-
-
-loadHoliday()
-
-
-
-
-
-
+loadHolidayWishes()
 loadHolidayDrop()
-
-
-
-
-
-

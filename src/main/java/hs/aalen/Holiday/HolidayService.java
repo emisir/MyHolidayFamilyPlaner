@@ -56,6 +56,11 @@ public class HolidayService {
 	}
 
 	public void deleteHoliday(Long id) {
+		Holiday holiday = this.holidayRepository.findById(id).orElse(null);
+		List<HolidayWish> holidayWishes = holiday.getWishes();
+		for (int i = 0; i < holidayWishes.size(); i++) {
+			holidayWishRepository.delete(holidayWishes.get(i));
+		}
 		holidayRepository.deleteById(id);
 	}
 
