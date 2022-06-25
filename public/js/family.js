@@ -21,12 +21,15 @@ function myFunction(id, name, bday) {
 
     let btnDelete = document.createElement("button");
     btnDelete.innerHTML = "Löschen";
+    btnDelete.class = "deleteAndEditBtn";
     btnDelete.addEventListener('click', event => {
         deleteFamilyMember(id)
     })
 
     let btnEdit = document.createElement("button");
     btnEdit.innerHTML = "Bearbeiten";
+    btnEdit.class = "deleteAndEditBtn";
+
     btnEdit.addEventListener('click', event => {
         loadIndividualFamilyMember(id, name, bday)
     })

@@ -3,20 +3,7 @@
     font-weight: bold;
 }
 
-button {
-    font-family: 'Poppins', sans-serif;
-    justify-content: space-around;
-    margin-top: 500px;
-    border-radius: 20px 20px 20px 20px;
-    float: left;
-    height: 30px;
-    width: 90px;
-    margin: 5px;
-    background-color: #333;
-    color: white;
-    font-weight: bold;
-    gap: 20px;
-}
+
 
 .fullclick li {
     list-style: none;
@@ -40,24 +27,6 @@ button {
     right: 0;
     bottom: 0;
     content: ' ';
-}
-
-.addFamilymember {
-    font-family: 'Poppins', sans-serif;
-    text-decoration: none;
-    color: black;
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px 20px 0 0;
-}
-
-.editFamilymember {
-    font-family: 'Poppins', sans-serif;
-    text-decoration: none;
-    color: black;
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px 20px 0 0;
 }
 
 h3 {
@@ -128,7 +97,18 @@ button[type=submit] {
     box-shadow: inset 0px 0px 10px black, 0px 0px 15px #d3cdc5;
 }
 
-#kontakt {
-    text-decoration: none;
-    color: black;
+
+button {
+    font-family: 'Poppins', sans-serif;
+    justify-content: space-around;
+    margin-top: 500px;
+    border-radius: 20px 20px 20px 20px;
+    float: left;
+    height: 30px;
+    width: 90px;
+    margin: 5px;
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    gap: 20px;
 }
