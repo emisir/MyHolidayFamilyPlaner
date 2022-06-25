@@ -5,9 +5,6 @@ function myFunction(id, description, location, holiday_title, time, sumPrio) {
     div1.classList.add("div1");
     div1.id = "holiday-wish-" + id;
 
-
-
-
     const div2 = document.createElement("figure");
     div2.classList.add("article-image");
 
@@ -25,20 +22,6 @@ function myFunction(id, description, location, holiday_title, time, sumPrio) {
 
     const divDescription = document.createElement("p");
 
-
-    let btnDelete = document.createElement("button");
-    btnDelete.innerHTML = "Löschen";
-    btnDelete.addEventListener('click', event => {
-        deleteHoliday(id)
-    })
-
-    let btnEdit = document.createElement("button");
-    btnEdit.innerHTML = "Bearbeiten";
-    btnEdit.addEventListener('click', event => {
-        loadIndividualHoliday(id, location, description)
-    })
-
-
     div1.appendChild(div2);
     div2.appendChild(div3);
     div1.appendChild(div4);
@@ -47,14 +30,7 @@ function myFunction(id, description, location, holiday_title, time, sumPrio) {
     div4.appendChild(divLocation);
     div4.appendChild(divDescription);
 
-    div4.appendChild(btnDelete);
-    div4.appendChild(btnEdit);
-
-
-
-
     const text = document.createTextNode("");
-
 
     div5.textContent = holiday_title;
     div6.textContent = time;
@@ -71,16 +47,15 @@ function myFunction(id, description, location, holiday_title, time, sumPrio) {
 
 
 
-function createHolidayWish() {
+function createHolidayWish(id) {
     var form = $("#createHolidayWish")
     var location = form.find("#locationTag").val();
-    var holidayId = form.find("#chooseDrop").val();
     var description = form.find("#descriptionTag").val();
     console.log(description)
 
     $.ajax({
 
-        url: 'http://localhost:8090/holiday/' + holidayId + '/holiday-wish',
+        url: 'http://localhost:8090/holiday/1/holiday-wish',
         type: 'POST',
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
@@ -91,7 +66,7 @@ function createHolidayWish() {
         success: function(data) {
             document.getElementById("addWindow-dialog").classList.remove("sichtbar")
             document.getElementById("body-overlay").classList.remove("sichtbar");
-
+            loadHolidayWish(id)
         },
         error: function(request, error) {
             alert("Request: " + JSON.stringify(request));
