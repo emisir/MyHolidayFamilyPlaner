@@ -3,6 +3,7 @@ package hs.aalen.Familymember;
 import java.sql.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +22,7 @@ public class FamilyMember {
 	private String name;
 	private Date bday;
 
-	@OneToMany(mappedBy = "familyMember")
+	@OneToMany(mappedBy = "familyMember", cascade=CascadeType.REMOVE)
 	@JsonIgnore
 	private List<Prio> priorities;
 
