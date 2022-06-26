@@ -1,0 +1,36 @@
+/* Submit Button design for addWindow on Urlaub, Urlaubswunsch, Familienmitglieder  */
+button[type=submit] {
+    padding: 0 16px;
+    background-color: #1877f2;
+    border: none;
+    font-size: 25px;
+    color: white;
+    line-height: 48px;
+    font-weight: bold;
+    cursor: pointer;
+    background-image: linear-gradient(#d3cdc5, #3a342c);
+    text-decoration: none;
+    text-shadow: 1px 1px 5px black;
+    box-shadow: inset 0px 0px 10px black;
+    border-radius: 10%/50%;
+    width: 50%;
+    height: auto;
+    display: inline-block;
+}
+
+/* Löschen and Bearbeiten button Design */
+button {
+    font-family: 'Poppins', sans-serif;
+    justify-content: space-around;
+    margin-top: 500px;
+    border-radius: 20px 20px 20px 20px;
+    float: left;
+    height: 30px;
+    width: 90px;
+    margin: 5px;
+    margin-top: 20%;
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    gap: 20px;
+}
