@@ -15,6 +15,7 @@ function myFunction(id, name, bday) {
     div4.classList.add("article-content");
 
     const div5 = document.createElement("h2");
+    div5.id = ("holidayPlan")
 
     const div6 = document.createElement("a");
     div6.classList.add("card-category");

@@ -14,13 +14,19 @@ function myFunction(id, description, location, holiday_title, time, sumPrio) {
     div4.classList.add("article-content");
 
     const div5 = document.createElement("h2");
+    div5.id = ("holidayPlan");
 
     const div6 = document.createElement("a");
     div6.classList.add("card-category");
 
     const divLocation = document.createElement("h3");
+    divLocation.id = ("locationTxt");
 
     const divDescription = document.createElement("p");
+    divDescription.id = ("descriptionTxt");
+
+    const divPrio = document.createElement("p");
+    divPrio.id = "prioTxt";
 
     div1.appendChild(div2);
     div2.appendChild(div3);
@@ -29,13 +35,16 @@ function myFunction(id, description, location, holiday_title, time, sumPrio) {
     div4.appendChild(div6);
     div4.appendChild(divLocation);
     div4.appendChild(divDescription);
+    div4.appendChild(divPrio);
+
 
     const text = document.createTextNode("");
 
     div5.textContent = holiday_title;
     div6.textContent = time;
     divLocation.textContent = location;
-    divDescription.textContent = description + " " + sumPrio;
+    divDescription.textContent = description;
+    divPrio.textContent = "Priorität: " + sumPrio;
     div3.src = "./images/Urlaub.jpg "
 
     console.log(div3.src);
@@ -63,12 +72,12 @@ function createHolidayWish(id) {
             "location": location,
             "description": description
         }),
-        success: function(data) {
+        success: function (data) {
             document.getElementById("addWindow-dialog").classList.remove("sichtbar")
             document.getElementById("body-overlay").classList.remove("sichtbar");
             loadHolidayWish(id)
         },
-        error: function(request, error) {
+        error: function (request, error) {
             alert("Request: " + JSON.stringify(request));
         }
     });
@@ -83,15 +92,15 @@ function loadHolidayWish() {
         url: 'http://localhost:8090/holiday/1/holiday-wish',
         type: 'GET',
         dataType: 'json',
-        success: function(data) {
+        success: function (data) {
             console.log(data)
 
-            data.forEach(function(holidayWish, holiday) {
+            data.forEach(function (holidayWish, holiday) {
                 myFunction(holidayWish.id, holidayWish.location, holidayWish.description, holiday.id, holiday.title, holiday.time)
             })
 
         },
-        error: function(request, error) {
+        error: function (request, error) {
             alert("Request: " + JSON.stringify(request));
         }
     })
@@ -117,15 +126,15 @@ function loadHolidayDrop() {
         url: 'http://localhost:8090/holiday',
         type: 'GET',
         dataType: 'json',
-        success: function(data) {
+        success: function (data) {
             console.log(data)
 
-            data.forEach(function(holiday) {
+            data.forEach(function (holiday) {
                 createDropOption(holiday.id, holiday.title)
             })
 
         },
-        error: function() {
+        error: function () {
             alert("Holiday daten konnten nicht geladen werden");
 
         }
@@ -140,17 +149,17 @@ function loadHolidayWishes() {
         url: 'http://localhost:8090/holiday',
         type: 'GET',
         dataType: 'json',
-        success: function(data) {
+        success: function (data) {
             console.log(data)
 
-            data.forEach(function(holiday) {
+            data.forEach(function (holiday) {
                 holiday.wishes.forEach(w => {
                     myFunction(w.id, w.description, w.location, holiday.title, holiday.time, w.sumPriority)
                 })
             })
 
         },
-        error: function(request, error) {
+        error: function (request, error) {
             alert("Request: " + JSON.stringify(request));
         }
     })

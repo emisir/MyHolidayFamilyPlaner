@@ -1,79 +1,5 @@
-var settings = {
-    "url": "http://localhost:8090/holiday/",
-
-    "method": "GET",
-    "headers": {
-        "Content-Type": "application/json"
-    },
-};
 
 var user;
-
-
-/* $(document).ready(function() {
-    $.ajax(settings).done(function(response) {
-        console.log(response);
-        let data = response;
-
-        console.log(data);
-        $.each(data, function(i, order) {
-            $(".article-container").append(`
-                <article class="article-card">
-                <figure class="article-image">
-                    <img src="./maybeUseless/images/Urlaub.png" alt="Reiseziel Bild" />
-                </figure>
-                <div class="article-content">
-                    <a href="#" class="card-category">Reiseziel</a>
-                    <h3 class="card-title">
-                        ${data[i].title}
-                    </h3>
-                    <div>${data[i].time}</div>
-                </div>
-                <div class = "cardFooter">
-                    <input type="range" min="1" max="10" value="1" class="slider" id="myRange${i}" />
-                    <p class="prio">Priorität: <span id="demo${i}">${data[i].prio}</span></p>
-                    <button class ="saveBtn" id="saveSpot${i}">Speichern</button>
-                </div>
-              
-                </article>`);
-
-
-
-            $("#myRange" + i).change(function(e) {
-
-                $("#demo" + i).text(e.target.value);
-
-                console.log(e.target.value);
-            });
-
-            $("#saveSpot" + i).click(function(e) {
-
-
-                let inputSave = {
-                    'input': $("#myRange" + i).val(),
-
-                };
-
-                $.ajax({
-                    type: 'POST',
-                    contentType: 'application/json',
-                    url: "http://localhost:8090/prio", // url where we want to POST
-                    data: JSON.stringify(inputSave),
-                    success: function(data, textStatus, jQxhr) {},
-                    error: function(jqXhr, textStatus, errorThrown) {
-                        console.log(errorThrown);
-                    }
-                });
-
-            });
-
-
-
-
-        });
-    });
-}); */
-
 
 var modal = document.getElementById("myModal");
 
@@ -84,17 +10,17 @@ var btn = document.getElementById("famBtn");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
-btn.onclick = function() {
+btn.onclick = function () {
     modal.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+span.onclick = function () {
     modal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
@@ -118,10 +44,10 @@ function loadFamilyMember() {
         url: 'http://localhost:8090/familymember',
         type: 'GET',
         dataType: 'json',
-        success: function(data) {
+        success: function (data) {
             console.log(data)
 
-            data.forEach(function(familymember) {
+            data.forEach(function (familymember) {
                 createDropOption(familymember.id, familymember.name)
             })
 
@@ -155,11 +81,14 @@ function myFunction(id, description, location, holiday_title, time, prio) {
     div6.classList.add("card-category");
 
     const divLocation = document.createElement("h3");
+    divLocation.id = ("locationTxt");
 
     const divDescription = document.createElement("p");
+    divDescription.id = ("descriptionTxt");
 
     const cartFooter = document.createElement("div");
     cartFooter.classList.add("cardFooter");
+
     const cartFooterInput = document.createElement("input");
     cartFooterInput.classList.add("slider");
     cartFooterInput.id = "range-" + id;
@@ -168,21 +97,24 @@ function myFunction(id, description, location, holiday_title, time, prio) {
     cartFooterInput.max = 10
     cartFooterInput.defaultValue = prio || 0
     cartFooter.appendChild(cartFooterInput)
+
+    const cartFooterPrioTxt = document.createElement("p");
+    cartFooterPrioTxt.innerText = "Priorität: ";
+    cartFooterPrioTxt.classList.add("prio");
+    cartFooter.appendChild(cartFooterPrioTxt);
+
     const cartFooterP = document.createElement("p");
-    cartFooterP.classList.add("prio");
     cartFooterP.id = "prio-" + id;
     cartFooterP.innerText = prio || 0;
     cartFooterInput.onchange = (e) => cartFooterP.innerText = e.target.value;
     cartFooter.appendChild(cartFooterP)
+
     const cartFooterButton = document.createElement("button");
     cartFooterButton.innerText = "Speichern"
     cartFooterButton.classList.add("saveBtn");
     cartFooterButton.id = "save-prio-" + id;
     cartFooterButton.onclick = (e) => savePrio(id, cartFooterInput.value)
     cartFooter.appendChild(cartFooterButton)
-
-
-
 
 
     div1.appendChild(div2);
@@ -193,10 +125,6 @@ function myFunction(id, description, location, holiday_title, time, prio) {
     div4.appendChild(divLocation);
     div4.appendChild(divDescription);
     div1.appendChild(cartFooter);
-
-
-
-
 
 
     const text = document.createTextNode("");
@@ -220,17 +148,17 @@ function loadHolidayWishes() {
         url: 'http://localhost:8090/holiday',
         type: 'GET',
         dataType: 'json',
-        success: function(data) {
+        success: function (data) {
             console.log(data)
 
             $.ajax({
                 url: 'http://localhost:8090/prio',
                 type: 'GET',
                 dataType: 'json',
-                success: function(data2) {
+                success: function (data2) {
                     console.log(data2)
 
-                    data.forEach(function(holiday) {
+                    data.forEach(function (holiday) {
                         holiday.wishes.forEach(w => {
                             var prio;
                             var prioIndex = data2.findIndex((pr => pr.holidayWish.id === w.id && pr.familyMember.id === user.id));
@@ -242,7 +170,7 @@ function loadHolidayWishes() {
                     })
 
                 },
-                error: function(request, error) {
+                error: function (request, error) {
                     alert("Request: " + JSON.stringify(request));
                 }
             })
@@ -250,7 +178,7 @@ function loadHolidayWishes() {
 
 
         },
-        error: function(request, error) {
+        error: function (request, error) {
             alert("Request: " + JSON.stringify(request));
         }
     })
@@ -271,11 +199,11 @@ function savePrio(wishId, prio) {
             },
             "priority": parseInt(prio)
         }),
-        success: function(data) {
+        success: function (data) {
             alert("Gespeichert!")
         },
-        error: function(request, error) {
-            alert("Request: " + JSON.stringify(request));
+        error: function (request, error) {
+            alert("Gespeichert!")
         }
     })
 }
@@ -286,19 +214,19 @@ function getFamilyMember(id) {
         url: 'http://localhost:8090/familymember/' + id,
         type: 'GET',
         dataType: 'json',
-        success: function(data) {
+        success: function (data) {
             console.log(data)
             user = data;
             modal.style.display = "none";
         },
-        error: function(request, error) {
+        error: function (request, error) {
             alert("Request: " + JSON.stringify(request));
         }
     })
 }
 
-$(document).ready(function() {
-    $("#submitBtn").on("click", async(e) => {
+$(document).ready(function () {
+    $("#submitBtn").on("click", async (e) => {
         const famMemId = $("#chooseDrop").val();
         await getFamilyMember(famMemId);
         loadHolidayWishes()
