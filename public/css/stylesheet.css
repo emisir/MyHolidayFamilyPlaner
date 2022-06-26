@@ -1,16 +1,6 @@
-html {
-    height: 100%;
-    width: 100%;
-}
-
+/* body background color and margin 0 for smooth edges */
 body {
-    font-family: 'PT Sans', sans-serif;
-    font-size: 100%;
-    font-size: 16px;
-    line-height: 1.5;
     background: #F0F4FB;
-    min-height: 100%;
-    min-width: 100%;
     margin: 0px;
 }
 
@@ -24,6 +14,45 @@ body {
     max-height: 500px;
     border-radius: 10px 10px 10px 10px;
     filter: brightness(60%);
+
+}
+
+/* Topic in the Background picture Design*/
+
+/* For larger Topics, Urlaubswunsch, Familienmitglieder, Priorisiern */
+.topic {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    z-index: 1;
+    position: absolute;
+    top: 30%;
+    left: 53%;
+    margin-top: -100px;
+    margin-left: -200px;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    font-style: italic;
+    backdrop-filter: blur(10px);
+}
+
+/* For Small Topics Urlaub Home*/
+
+.topicSmall {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    z-index: 1;
+    position: absolute;
+    top: 30%;
+    left: 55%;
+    margin-left: -200px;
+    margin-top: -100px;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    backdrop-filter: blur(10px);
 
 }
 
@@ -52,174 +81,7 @@ body {
     font-weight: bold;
 }
 
-
-/* Urlaubsplaner h1 design*/
-
-.topic {
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    font-size: 50px;
-    z-index: 1;
-    position: absolute;
-    top: 30%;
-    left: 53%;
-    margin-top: -100px;
-    margin-left: -200px;
-    padding: 10px;
-    border-radius: 20px;
-    color: white;
-    font-style: italic;
-    backdrop-filter: blur(10px);
-}
-
-.topicSmall {
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    font-size: 50px;
-    z-index: 1;
-    position: absolute;
-    top: 30%;
-    left: 55%;
-    margin-left: -200px;
-    margin-top: -100px;
-    padding: 10px;
-    border-radius: 20px;
-    color: white;
-    font-style: italic;
-    backdrop-filter: blur(10px);
-
-}
-
-#famBtn {
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: bolder;
-    color: #22447b;
-    display: block;
-    border-radius: 5px;
-    background-color: white;
-    border: 1px solid grey;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#famBtn:hover {
-    font-family: 'Poppins', sans-serif;
-    background-color: #22447b;
-    color: white;
-}
-
-.holidayTarget:link {
-    text-decoration: none;
-}
-
-
-/* Login Window to know Who is on the Website */
-
-.modal {
-    font-family: 'Poppins', sans-serif;
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-    font-family: 'Poppins', sans-serif;
-    background-color: #333;
-    box-shadow: inset 0px 0px 10px black, 2px 2px 4px rgba(255, 255, 255, 0.1), 8px 8px 16px rgba(255, 255, 255, 0.1);
-    margin: 15% auto;
-    padding: 50px;
-    border: 5px solid silver;
-    border-radius: 15px 15px 15px 15px;
-    width: 50%;
-}
-
-.page {
-    font-family: 'Poppins', sans-serif;
-    margin-left: 200px;
-}
-
-.addWindow {
-    font-family: 'Poppins', sans-serif;
-    text-decoration: none;
-    color: black;
-}
-
-
-/* The Close Button */
-
-.close {
-    font-family: 'Poppins', sans-serif;
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    position: inherit;
-    margin-top: -50px;
-    margin-right: -40px;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-#submitBtn {
-    background-color: #1877f2;
-    border: none;
-    font-size: 25px;
-    color: white;
-    line-height: 48px;
-    font-weight: bold;
-    cursor: pointer;
-    background-image: linear-gradient(#d3cdc5, #3a342c);
-    text-decoration: none;
-    text-shadow: 1px 1px 5px black;
-    box-shadow: inset 0px 0px 10px black;
-    border-radius: 10%/50%;
-    width: 50%;
-    display: inline-block;
-}
-
-#submitBtn:hover {
-    box-shadow: inset 0px 0px 10px black, 0px 0px 15px #d3cdc5;
-}
-
-#chooseOption {
-    font: 30px;
-    font-family: 'Poppins', sans-serif;
-}
-
-#chooseDrop {
-    font-family: 'Poppins', sans-serif;
-    min-width: 100px;
-    box-shadow: #333;
-    padding: 5px 10px;
-    border-radius: 10px 10px 10px 10px;
-}
-
-.chooseSeason {
-    font-family: 'Poppins', sans-serif;
-    min-width: 100px;
-    box-shadow: #333;
-    padding: 2% 35%;
-    border-radius: 10px 10px 10px 10px;
-    margin: 5%;
-}
-
-
-/* home, ziel and Abstimmung design*/
-
+/* links style Home Urlaub Urlaubswunsch Familienmitglieder Priorisieren */
 .links {
     color: white;
     padding: 14px;
@@ -236,20 +98,48 @@ li {
     list-style-type: none;
 }
 
+/* AddWindow for adding Familymember, Holiday and Holiday wish */
+.addWindow {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: black;
+}
+
+/* Dropwdown choose option design */
+#chooseDrop {
+    font-family: 'Poppins', sans-serif;
+    min-width: 100px;
+    box-shadow: #333;
+    padding: 2% 35%;
+    border-radius: 10px 10px 10px 10px;
+    margin: 5%;
+}
+
+.chooseSeason {
+    font-family: 'Poppins', sans-serif;
+    min-width: 100px;
+    box-shadow: #333;
+    padding: 2% 35%;
+    border-radius: 10px 10px 10px 10px;
+    margin: 5%;
+}
 
 /* Article cards design */
 
+/* Site container for Article cards to Start in the center */
 .site-container {
     margin: 32px auto;
     max-width: calc(100%-80px);
 }
 
+/* Article container for gap between cards and max 4 cards on 1 line */
 .article-container {
     display: grid;
     grid-template-columns: repeat(4, minmax(265px, 1fr));
     gap: 2rem;
 }
 
+/* Article image design on the Article cards */
 .article-image {
     margin: 0;
     padding: 0;
@@ -267,11 +157,13 @@ li {
     border-radius: 20px;
 }
 
+/* background shadow on hover */
 .article-card:hover {
-    box-shadow: 0 4px 20px 0 rgba(34, 68, 123, 0.2);
+    box-shadow: 4px 4px 20px 20px rgba(0, 81, 230, 0.2);
     cursor: pointer;
 }
 
+/* article-card adjustment with distance and content design font.. */
 .article-card .article-content {
     padding: 2rem;
 }
@@ -283,19 +175,18 @@ li {
     text-decoration: none;
 }
 
+/* holiday time font adjustment on the article card  */
 .article-content .card-category {
-    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-weight: 600;
+    font-weight: bolder;
     color: #6b82a7;
     display: block;
     text-decoration: none;
 }
 
-.article-content .card-title {
-    color: #22447b;
-}
 
 .article-content .card-excerpt {
     font-size: 1rem;
@@ -304,25 +195,27 @@ li {
     margin: 0;
 }
 
+/* holiday font adjustment on the article card */
 #holidayPlan {
     font-family: 'FontAwesome';
-
+    letter-spacing: 0.1rem;
 }
 
+/* location font adjustment on the article card */
 #locationTxt {
-
     font-family: 'FontAwesome';
+    letter-spacing: 0.1rem;
 
 }
 
+/* description font adjustment on the article card */
 #descriptionTxt {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: lighter;
+    font-family: 'Poppins', sans-serif;
     letter-spacing: 0.1em;
 }
 
 
-
+/* positioning of the article cards to make them adjustable for diffrent screen sizes */
 @media screen and (min-width: 768px) {
     .site-container {
         max-width: 608px;

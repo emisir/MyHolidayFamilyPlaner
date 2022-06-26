@@ -34,7 +34,7 @@ function createDropOption(id, name) {
     const option = document.createElement("option");
     option.value = id
     option.innerHTML = name
-    $('#chooseDrop').append(option);
+    $('#chooseDropFam').append(option);
 }
 
 
@@ -227,7 +227,7 @@ function getFamilyMember(id) {
 
 $(document).ready(function () {
     $("#submitBtn").on("click", async (e) => {
-        const famMemId = $("#chooseDrop").val();
+        const famMemId = $("#chooseDropFam").val();
         await getFamilyMember(famMemId);
         loadHolidayWishes()
     })
