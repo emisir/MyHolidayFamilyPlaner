@@ -5,18 +5,27 @@
     margin-top: 10px;
 }
 
-
 /* The slider itself */
 
 .slider {
     width: 100%;
     height: auto;
     display: flex;
-    margin-top: 20%;
+    margin-top: -5%;
 }
 
 .prio {
     font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: bolder;
+    color: #22447b;
+    display: block;
+    text-decoration: none;
+}
+
+#prioTxt {
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: bolder;
