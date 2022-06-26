@@ -1,3 +1,4 @@
+/* Pageoverlay after pressing the Add card */
 #body-overlay {
     position: fixed;
     top: 0;
@@ -11,6 +12,7 @@
     z-index: 1;
 }
 
+/* AddWindow for Urlaub Urlaubswunsch and Familienmitglieder Design */
 .dialog {
     position: fixed;
     left: 50%;
@@ -26,20 +28,14 @@
     z-index: 1;
 }
 
+/* to see the Bodyoverlay */
 #body-overlay.sichtbar,
 .dialog.sichtbar {
     opacity: 1;
     pointer-events: auto;
 }
 
-#addWindow-dialog {
-    width: 25%;
-}
-
-#editWindow-dialog {
-    width: 25%;
-}
-
+/* close Button for the dialog */
 .dialog-schliessen-button {
     position: absolute;
     top: 10px;
@@ -48,27 +44,28 @@
     line-height: 32px;
     color: rgba(0, 0, 0, 0.4);
     text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+
 }
 
 
-/* Styling */
-
+/* Styling for the addWindow */
+/* addWindow sizing color border and shadow */
 #addWindow-dialog {
     background-color: #333;
     box-shadow: inset 0px 0px 10px black, 2px 2px 4px rgba(255, 255, 255, 0.1), 8px 8px 16px rgba(255, 255, 255, 0.1);
     border: 5px solid silver;
+    width: 25%;
 }
 
-#addWindow-dialog .dialog-schliessen-button {
-    color: rgba(255, 255, 255, 0.6);
-}
-
+/* to place the items on the dialog in the center */
 #addWindow-dialog form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* the H3 design for the  Dialog addWindow */
 #addWindow-dialog h3 {
     margin: 0;
     color: white;
@@ -77,65 +74,34 @@
     text-shadow: 0px 0px 4px black;
 }
 
+/* inputfields design for the Dialog addWindow */
 #addWindow-dialog input {
     width: 100%;
     margin: 7px;
     border-radius: 6px;
     box-sizing: border-box;
     font-family: inherit;
-    vertical-align: middle;
-}
-
-#addWindow-dialog .eingabefeld {
     padding: 14px 16px;
     font-size: 17px;
-    line-height: 16px;
-    background: rgb(240, 240, 240);
     border: 2px solid silver;
-    color: #1c1e21;
-    height: 50px;
-    box-shadow: inset 0px 0px 4px #222;
 }
 
-#addWindow-dialog .eingabefeld:focus-visible {
-    outline: none;
-    border: 2px solid #3a342c;
-}
-
-#addWindow-dialog input[type=submit] {
-    padding: 0 16px;
-    background-color: #1877f2;
-    border: none;
-    font-size: 25px;
-    color: white;
-    line-height: 48px;
-    font-weight: bold;
-    cursor: pointer;
-    background-image: linear-gradient(#d3cdc5, #3a342c);
-    text-decoration: none;
-    text-shadow: 1px 1px 5px black;
-    box-shadow: inset 0px 0px 10px black;
-    border-radius: 10%/50%;
-    width: 50%;
-    display: inline-block;
-}
-
+/* Styling for the editWindow */
 #editWindow-dialog {
     background-color: #333;
     box-shadow: inset 0px 0px 10px black, 2px 2px 4px rgba(255, 255, 255, 0.1), 8px 8px 16px rgba(255, 255, 255, 0.1);
     border: 5px solid silver;
+    width: 25%;
 }
 
-#editWindow-dialog .dialog-schliessen-button {
-    color: rgba(255, 255, 255, 0.6);
-}
-
+/* to place the items on the dialog in the center */
 #editWindow-dialog form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* the H3 design for the Dialog editWindow */
 #editWindow-dialog h3 {
     margin: 0;
     color: white;
@@ -144,81 +110,14 @@
     text-shadow: 0px 0px 4px black;
 }
 
+/* inputfields design for the Dialog editWindow */
 #editWindow-dialog input {
     width: 100%;
     margin: 7px;
     border-radius: 6px;
     box-sizing: border-box;
     font-family: inherit;
-    vertical-align: middle;
-}
-
-#editWindow-dialog .eingabefeld {
     padding: 14px 16px;
     font-size: 17px;
-    line-height: 16px;
-    background: rgb(240, 240, 240);
     border: 2px solid silver;
-    color: #1c1e21;
-    height: 50px;
-    box-shadow: inset 0px 0px 4px #222;
-}
-
-#editWindow-dialog .eingabefeld:focus-visible {
-    outline: none;
-    border: 2px solid #3a342c;
-}
-
-#editWindow-dialog input[type=submit] {
-    padding: 0 16px;
-    background-color: #1877f2;
-    border: none;
-    font-size: 25px;
-    color: white;
-    line-height: 48px;
-    font-weight: bold;
-    cursor: pointer;
-    background-image: linear-gradient(#d3cdc5, #3a342c);
-    text-decoration: none;
-    text-shadow: 1px 1px 5px black;
-    box-shadow: inset 0px 0px 10px black;
-    border-radius: 10%/50%;
-    width: 50%;
-    display: inline-block;
-}
-
-#addWindow-dialog input[type=submit]:hover {
-    box-shadow: inset 0px 0px 10px black, 0px 0px 15px #d3cdc5;
-}
-
-#editWindow-dialog input[type=submit]:hover {
-    box-shadow: inset 0px 0px 10px black, 0px 0px 15px #d3cdc5;
-}
-
-.h3 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-}
-
-.editWindow-dialog-daten {
-    font-family: 'Poppins', sans-serif;
-}
-
-#display-image {
-    width: 380px;
-    height: 225px;
-    border: 1px solid black;
-    background-position: center;
-    background-size: cover;
-    border-radius: 10px;
-}
-
-#kontakt {
-    text-decoration: none;
-    color: black;
-}
-
-.eingabefeld {
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
 }
