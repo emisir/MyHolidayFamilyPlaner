@@ -81,7 +81,7 @@ adjustment for font and positioning */
     padding: 50px;
     border: 5px solid silver;
     border-radius: 15px 15px 15px 15px;
-    width: 50%;
+    width: 40%;
 }
 
 .page {
@@ -114,7 +114,7 @@ adjustment for font and positioning */
 /* Submit Button on the ModalWindow Apperance with hover effect */
 #submitBtn {
     border: none;
-    font-size: 25px;
+    font-size: 15px;
     color: white;
     line-height: 48px;
     font-weight: bold;
@@ -124,8 +124,9 @@ adjustment for font and positioning */
     text-shadow: 1px 1px 5px black;
     box-shadow: inset 0px 0px 10px black;
     border-radius: 10%/50%;
-    width: 50%;
     display: inline-block;
+    margin-left: 5%;
+    width: 200px;
 }
 
 #submitBtn:hover {
