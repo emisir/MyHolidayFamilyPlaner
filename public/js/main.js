@@ -1,4 +1,96 @@
+function myFunction(id, description, location, holiday_title, time, prio) {
 
+    const articleCard = document.createElement("article");
+    articleCard.classList.add("article-card");
+    articleCard.classList.add("articleCard");
+
+    // id to safe the data to the Backend
+    articleCard.id = "holiday-wish-" + id;
+
+    const articleImage = document.createElement("figure");
+    articleImage.classList.add("article-image");
+
+    const imgCreator = document.createElement("img");
+
+    const articleContent = document.createElement("div");
+    articleContent.classList.add("article-content");
+
+    const headTopicTwo = document.createElement("h2");
+    headTopicTwo.id = ("holidayPlan")
+
+    const cardCategoryContent = document.createElement("a");
+    cardCategoryContent.classList.add("card-category");
+
+    const divLocation = document.createElement("h3");
+    divLocation.id = ("locationTxt");
+
+    const divDescription = document.createElement("p");
+    divDescription.id = ("descriptionTxt");
+
+    // create div for Article card footer
+    const cardFooter = document.createElement("div");
+    cardFooter.classList.add("cardFooter");
+
+    // create Slider to get Prio value
+    const cardFooterInput = document.createElement("input");
+    cardFooterInput.classList.add("slider");
+    cardFooterInput.id = "range-" + id;
+    cardFooterInput.type = "range"
+    cardFooterInput.min = 0
+    cardFooterInput.max = 10
+    cardFooterInput.defaultValue = prio || 0
+    cardFooter.appendChild(cardFooterInput)
+
+    const cardFooterPrioTxt = document.createElement("p");
+    cardFooterPrioTxt.innerText = "Priorität: ";
+    cardFooterPrioTxt.classList.add("prio");
+    cardFooter.appendChild(cardFooterPrioTxt);
+
+    // priotxt for display the Prio value on the cardfooter
+    const cardFooterP = document.createElement("p");
+    cardFooterP.id = "prio-" + id;
+    cardFooterP.innerText = prio || 0;
+    cardFooterInput.onchange = (e) => cardFooterP.innerText = e.target.value;
+    cardFooter.appendChild(cardFooterP)
+
+    // savebtn to save the Prio value to the backend
+    const cardFooterButton = document.createElement("button");
+    cardFooterButton.innerText = "Speichern"
+    cardFooterButton.classList.add("saveBtn");
+    cardFooterButton.id = "save-prio-" + id;
+    cardFooterButton.onclick = (e) => savePrio(id, cardFooterInput.value)
+    cardFooter.appendChild(cardFooterButton)
+
+
+
+
+
+    // The appendChild() method allows you to add a node to the end of the list of child nodes of a specified parent node
+    articleCard.appendChild(articleImage);
+    articleImage.appendChild(imgCreator);
+    articleCard.appendChild(articleContent);
+    articleCard.appendChild(cardFooter);
+
+    articleContent.appendChild(headTopicTwo);
+    articleContent.appendChild(cardCategoryContent);
+    articleContent.appendChild(divLocation);
+    articleContent.appendChild(divDescription);
+
+
+    headTopicTwo.textContent = holiday_title;
+    cardCategoryContent.textContent = time;
+    divLocation.textContent = location;
+    divDescription.textContent = description;
+    imgCreator.src = "./images/Urlaub.jpg "
+
+    console.log(imgCreator.src);
+
+    document.getElementById("acontainer").appendChild(articleCard);
+
+};
+
+
+// variable user for login
 var user;
 
 var modal = document.getElementById("myModal");
@@ -26,9 +118,7 @@ window.onclick = function (event) {
     }
 }
 
-
-
-
+// createDropOption for modal window to Login the Familymember
 function createDropOption(id, name) {
 
     const option = document.createElement("option");
@@ -37,8 +127,7 @@ function createDropOption(id, name) {
     $('#chooseDropFam').append(option);
 }
 
-
-
+// GET the Familymember for dropOption
 function loadFamilyMember() {
     $.ajax({
         url: 'http://localhost:8090/familymember',
@@ -57,93 +146,9 @@ function loadFamilyMember() {
 
 }
 
-function myFunction(id, description, location, holiday_title, time, prio) {
-
-    const div1 = document.createElement("article");
-    div1.classList.add("article-card");
-    div1.classList.add("div1");
-    div1.id = "holiday-wish-" + id;
-
-
-
-
-    const div2 = document.createElement("figure");
-    div2.classList.add("article-image");
-
-    const div3 = document.createElement("img");
-
-    const div4 = document.createElement("div");
-    div4.classList.add("article-content");
-
-    const div5 = document.createElement("h2");
-
-    const div6 = document.createElement("a");
-    div6.classList.add("card-category");
-
-    const divLocation = document.createElement("h3");
-    divLocation.id = ("locationTxt");
-
-    const divDescription = document.createElement("p");
-    divDescription.id = ("descriptionTxt");
-
-    const cartFooter = document.createElement("div");
-    cartFooter.classList.add("cardFooter");
-
-    const cartFooterInput = document.createElement("input");
-    cartFooterInput.classList.add("slider");
-    cartFooterInput.id = "range-" + id;
-    cartFooterInput.type = "range"
-    cartFooterInput.min = 0
-    cartFooterInput.max = 10
-    cartFooterInput.defaultValue = prio || 0
-    cartFooter.appendChild(cartFooterInput)
-
-    const cartFooterPrioTxt = document.createElement("p");
-    cartFooterPrioTxt.innerText = "Priorität: ";
-    cartFooterPrioTxt.classList.add("prio");
-    cartFooter.appendChild(cartFooterPrioTxt);
-
-    const cartFooterP = document.createElement("p");
-    cartFooterP.id = "prio-" + id;
-    cartFooterP.innerText = prio || 0;
-    cartFooterInput.onchange = (e) => cartFooterP.innerText = e.target.value;
-    cartFooter.appendChild(cartFooterP)
-
-    const cartFooterButton = document.createElement("button");
-    cartFooterButton.innerText = "Speichern"
-    cartFooterButton.classList.add("saveBtn");
-    cartFooterButton.id = "save-prio-" + id;
-    cartFooterButton.onclick = (e) => savePrio(id, cartFooterInput.value)
-    cartFooter.appendChild(cartFooterButton)
-
-
-    div1.appendChild(div2);
-    div2.appendChild(div3);
-    div1.appendChild(div4);
-    div4.appendChild(div5);
-    div4.appendChild(div6);
-    div4.appendChild(divLocation);
-    div4.appendChild(divDescription);
-    div1.appendChild(cartFooter);
-
-
-    const text = document.createTextNode("");
-
-
-    div5.textContent = holiday_title;
-    div6.textContent = time;
-    divLocation.textContent = location;
-    divDescription.textContent = description;
-    div3.src = "./images/Urlaub.jpg "
-
-    console.log(div3.src);
-
-    document.getElementById("acontainer").appendChild(div1);
-
-};
-
+// GET the Posted data from createHoliday
 function loadHolidayWishes() {
-    $(".div1").remove()
+    $(".articleCard").remove()
     $.ajax({
         url: 'http://localhost:8090/holiday',
         type: 'GET',
@@ -151,6 +156,7 @@ function loadHolidayWishes() {
         success: function (data) {
             console.log(data)
 
+            // double ajaxRequest to GET prio
             $.ajax({
                 url: 'http://localhost:8090/prio',
                 type: 'GET',
@@ -158,6 +164,7 @@ function loadHolidayWishes() {
                 success: function (data2) {
                     console.log(data2)
 
+                    // forEach loop which gets the Data and create the HolidayWish with Prio and myFunction
                     data.forEach(function (holiday) {
                         holiday.wishes.forEach(w => {
                             var prio;
@@ -175,8 +182,6 @@ function loadHolidayWishes() {
                 }
             })
 
-
-
         },
         error: function (request, error) {
             alert("Request: " + JSON.stringify(request));
@@ -184,12 +189,14 @@ function loadHolidayWishes() {
     })
 }
 
+// function for saveBtn to POST the prio 
 function savePrio(wishId, prio) {
     $.ajax({
         url: 'http://localhost:8090/prio',
         type: 'POST',
         dataType: 'json',
         contentType: "application/json; charset=utf-8",
+        // return the data as json accepts it
         data: JSON.stringify({
             "familyMember": {
                 "id": user.id
@@ -200,16 +207,17 @@ function savePrio(wishId, prio) {
             "priority": parseInt(prio)
         }),
         success: function (data) {
-            alert("Gespeichert!")
+            console.log("Gespeichert!")
         },
         error: function (request, error) {
-            alert("Gespeichert!")
+            console.log("Gespeichert!")
         }
     })
 }
 
+// to GET the DropOption Familymember
 function getFamilyMember(id) {
-    $(".div1").remove()
+    $(".articleCard").remove()
     $.ajax({
         url: 'http://localhost:8090/familymember/' + id,
         type: 'GET',
@@ -225,6 +233,7 @@ function getFamilyMember(id) {
     })
 }
 
+// Function to display the UI after Login
 $(document).ready(function () {
     $("#submitBtn").on("click", async (e) => {
         const famMemId = $("#chooseDropFam").val();

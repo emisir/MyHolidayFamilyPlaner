@@ -1,23 +1,25 @@
 function myFunction(id, description, location, holiday_title, time, sumPrio) {
 
-    const div1 = document.createElement("article");
-    div1.classList.add("article-card");
-    div1.classList.add("div1");
-    div1.id = "holiday-wish-" + id;
+    const articleCard = document.createElement("article");
+    articleCard.classList.add("article-card");
+    articleCard.classList.add("articleCard");
 
-    const div2 = document.createElement("figure");
-    div2.classList.add("article-image");
+    // id to safe the data to the Backend
+    articleCard.id = "holiday-wish-" + id;
 
-    const div3 = document.createElement("img");
+    const articleImage = document.createElement("figure");
+    articleImage.classList.add("article-image");
 
-    const div4 = document.createElement("div");
-    div4.classList.add("article-content");
+    const imgCreator = document.createElement("img");
 
-    const div5 = document.createElement("h2");
-    div5.id = ("holidayPlan");
+    const articleContent = document.createElement("div");
+    articleContent.classList.add("article-content");
 
-    const div6 = document.createElement("a");
-    div6.classList.add("card-category");
+    const headTopicTwo = document.createElement("h2");
+    headTopicTwo.id = ("holidayPlan")
+
+    const cardCategoryContent = document.createElement("a");
+    cardCategoryContent.classList.add("card-category");
 
     const divLocation = document.createElement("h3");
     divLocation.id = ("locationTxt");
@@ -28,75 +30,89 @@ function myFunction(id, description, location, holiday_title, time, sumPrio) {
     const divPrio = document.createElement("p");
     divPrio.id = "prioTxt";
 
-    div1.appendChild(div2);
-    div2.appendChild(div3);
-    div1.appendChild(div4);
-    div4.appendChild(div5);
-    div4.appendChild(div6);
-    div4.appendChild(divLocation);
-    div4.appendChild(divDescription);
-    div4.appendChild(divPrio);
+    // The appendChild() method allows you to add a node to the end of the list of child nodes of a specified parent node
+    articleCard.appendChild(articleImage);
+    articleImage.appendChild(imgCreator);
+    articleContent.appendChild(headTopicTwo);
+    articleContent.appendChild(cardCategoryContent);
+    articleCard.appendChild(articleContent);
+
+    articleContent.appendChild(divLocation);
+    articleContent.appendChild(divDescription);
+    articleContent.appendChild(divPrio);
 
 
-    const text = document.createTextNode("");
+    document.getElementById("acontainer").appendChild(articleCard);
 
-    div5.textContent = holiday_title;
-    div6.textContent = time;
+    // textcontent to assign the desired values to the created elements 
+    headTopicTwo.textContent = holiday_title;
+    cardCategoryContent.textContent = time;
     divLocation.textContent = location;
     divDescription.textContent = description;
     divPrio.textContent = "Priorität: " + sumPrio;
-    div3.src = "./images/Urlaub.jpg "
 
-    console.log(div3.src);
+    imgCreator.src = "./images/Urlaub.jpg "
 
-    document.getElementById("acontainer").appendChild(div1);
+    console.log(imgCreator.src);
+
 
 };
 
 
 
 
-function createHolidayWish(id) {
+// function for Posting the input by creating the HolidayWish to the backend
+function createHolidayWish() {
+
+    //$ for useing jquery but same as document.getElmentById = ("#createholidayWish") from holidayWish.html
     var form = $("#createHolidayWish")
+
+    //gets the id from holidayWish.html and the input in the addWindow
     var location = form.find("#locationTag").val();
+    var holidayId = form.find("#chooseDrop").val();
     var description = form.find("#descriptionTag").val();
+
     console.log(description)
 
+    // ajax request to Post the created HolidayWish from the addWindow to the Backend which allows us to safe the data and not lose it by reloading
     $.ajax({
 
-        url: 'http://localhost:8090/holiday/1/holiday-wish',
+        url: 'http://localhost:8090/holiday/' + holidayId + '/holiday-wish',
         type: 'POST',
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
-
             "location": location,
             "description": description
         }),
+
+        // remove the modalWindow/addWindow and function to load the created HolidayWish
         success: function (data) {
             document.getElementById("addWindow-dialog").classList.remove("sichtbar")
             document.getElementById("body-overlay").classList.remove("sichtbar");
-            loadHolidayWish(id)
+
         },
         error: function (request, error) {
             alert("Request: " + JSON.stringify(request));
         }
     });
 
-
 }
 
 
+// GET the Posted data from createHoliday
 function loadHolidayWish() {
-    $(".div1").remove()
+    $(".articleCard").remove()
     $.ajax({
-        url: 'http://localhost:8090/holiday/1/holiday-wish',
+        url: 'http://localhost:8090/holiday/',
         type: 'GET',
         dataType: 'json',
         success: function (data) {
             console.log(data)
 
+            // forEach loop which gets the input and create the HolidayWish with myFunction
+            // holiday included because of the Relationship between Holiday and HolidayWish
             data.forEach(function (holidayWish, holiday) {
-                myFunction(holidayWish.id, holidayWish.location, holidayWish.description, holiday.id, holiday.title, holiday.time)
+                myFunction(holidayWish.id, holidayWish.location, holidayWish.description, holiday.id, holiday.title, holiday.time, holiday.sumPrio)
             })
 
         },
@@ -104,7 +120,6 @@ function loadHolidayWish() {
             alert("Request: " + JSON.stringify(request));
         }
     })
-
 
 }
 
@@ -121,6 +136,7 @@ function createDropOption(id, title) {
 
 
 
+// to get the title from the created Holiday in a DropDownOption
 function loadHolidayDrop() {
     $.ajax({
         url: 'http://localhost:8090/holiday',
@@ -128,12 +144,8 @@ function loadHolidayDrop() {
         dataType: 'json',
         success: function (data) {
             console.log(data)
-
-            data.forEach(function (holiday) {
-                createDropOption(holiday.id, holiday.title)
-            })
-
         },
+
         error: function () {
             alert("Holiday daten konnten nicht geladen werden");
 
@@ -143,8 +155,9 @@ function loadHolidayDrop() {
 
 }
 
+// GET the Posted data from createHoliday
 function loadHolidayWishes() {
-    $(".div1").remove()
+    $(".articleCard").remove()
     $.ajax({
         url: 'http://localhost:8090/holiday',
         type: 'GET',
@@ -152,6 +165,7 @@ function loadHolidayWishes() {
         success: function (data) {
             console.log(data)
 
+            // double forEach loop which gets the input from wishes and create the HolidayWish and Holiday with myFunction
             data.forEach(function (holiday) {
                 holiday.wishes.forEach(w => {
                     myFunction(w.id, w.description, w.location, holiday.title, holiday.time, w.sumPriority)
