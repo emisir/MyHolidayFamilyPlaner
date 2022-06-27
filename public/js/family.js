@@ -1,79 +1,86 @@
+// Function to create the Article card with DOM createElement
 function myFunction(id, name, bday) {
 
 
-    const div1 = document.createElement("article");
-    div1.classList.add("article-card");
-    div1.classList.add("div1");
-    div1.id = "familymember-" + id;
+    const articleCard = document.createElement("article");
+    articleCard.classList.add("article-card");
+    articleCard.classList.add("articleCard");
 
-    const div2 = document.createElement("figure");
-    div2.classList.add("article-image");
+    // id to safe the data to the Backend
+    articleCard.id = "familymember-" + id;
 
-    const div3 = document.createElement("img");
+    const articleImage = document.createElement("figure");
+    articleImage.classList.add("article-image");
 
-    const div4 = document.createElement("div");
-    div4.classList.add("article-content");
+    const imgCreator = document.createElement("img");
 
-    const div5 = document.createElement("h2");
-    div5.id = ("holidayPlan")
+    const articleContent = document.createElement("div");
+    articleContent.classList.add("article-content");
 
-    const div6 = document.createElement("a");
-    div6.classList.add("card-category");
+    const headTopicTwo = document.createElement("h2");
+    headTopicTwo.id = ("holidayPlan")
 
+    const cardCategoryContent = document.createElement("a");
+    cardCategoryContent.classList.add("card-category");
+
+    // create deleteBtn
     let btnDelete = document.createElement("button");
+
+    // shows what the button says
     btnDelete.innerHTML = "Löschen";
     btnDelete.class = "deleteAndEditBtn";
+
+    // addEventlistener from dialog function deleteFamilyMember to make the button Work
     btnDelete.addEventListener('click', event => {
         deleteFamilyMember(id)
     })
 
+    // create editBtn
     let btnEdit = document.createElement("button");
     btnEdit.innerHTML = "Bearbeiten";
     btnEdit.class = "deleteAndEditBtn";
 
+    // addEventlistener from dialog function editFamilyMember to make the button Work
     btnEdit.addEventListener('click', event => {
         loadIndividualFamilyMember(id, name, bday)
     })
 
-    div1.appendChild(div2);
-    div2.appendChild(div3);
-    div1.appendChild(div4);
-    div4.appendChild(div5);
-    div4.appendChild(div6);
-    div4.appendChild(btnDelete);
-    div4.appendChild(btnEdit);
+    // The appendChild() method allows you to add a node to the end of the list of child nodes of a specified parent node
+    articleCard.appendChild(articleImage);
+    articleImage.appendChild(imgCreator);
+    articleCard.appendChild(articleContent);
+    articleContent.appendChild(headTopicTwo);
+    articleContent.appendChild(cardCategoryContent);
+    articleContent.appendChild(btnDelete);
+    articleContent.appendChild(btnEdit);
 
+    // textcontent to assign the desired values to the created elements 
+    headTopicTwo.textContent = name;
+    cardCategoryContent.textContent = bday;
+    imgCreator.src = "./images/homebutton.png "
 
-    const text = document.createTextNode("");
+    // shows in the console which image source it loads
+    console.log(imgCreator.src);
 
-    div5.textContent = name;
-    div6.textContent = bday;
-    div3.src = "./images/homebutton.png "
+    document.getElementById("acontainer").appendChild(articleCard);
 
-    console.log(div3.src);
-
-    document.getElementById("acontainer").appendChild(div1);
 
 };
 
-function dialogOeffnen(dialogId) {
-    document.getElementById(dialogId).classList.add("sichtbar");
-    document.getElementById("body-overlay").classList.add("sichtbar");
-}
-
-function dialogSchliessen(dialogId) {
-    document.getElementById(dialogId).classList.remove("sichtbar")
-    document.getElementById("body-overlay").classList.remove("sichtbar");
-
-}
-
-
+// function for Posting the input by creating the Familymember to the backend
 function createFamilyMember(e) {
+
+    //$ for useing jquery but same as document.getElmentById = ("#createFamily") from family.html
     var form = $("#createFamily")
+
+    //gets the id from family.html and the input in the addWindow
     var name = form.find("#nameTag").val();
+
+    //formatDate function for deliver the date to json in yyyy-mm-dd format 
     var bday = formatDate(form.find("#bdayTag").val());
     console.log(bday)
 
+    // ajax request to Post the created Familymember from the addWindow to the Backend which allows us to safe the data and not lose it by reloading
     $.ajax({
 
         url: 'http://localhost:8090/familymember',
@@ -83,6 +90,8 @@ function createFamilyMember(e) {
             "name": name,
             "bday": bday
         }),
+
+        // remove the modalWindow/addWindow and function to load the created Familymember
         success: function (data) {
             document.getElementById("addWindow-dialog").classList.remove("sichtbar")
             document.getElementById("body-overlay").classList.remove("sichtbar");
@@ -94,6 +103,7 @@ function createFamilyMember(e) {
     });
 }
 
+//formatDate function for deliver the date to json in yyyy-mm-dd format 
 function formatDate(date) {
     var d = new Date(date),
         month = '' + (d.getMonth() + 1),
@@ -108,8 +118,9 @@ function formatDate(date) {
     return [year, month, day].join('-');
 }
 
+// GET the Posted data from createFamilymember
 function loadFamilyMember() {
-    $(".div1").remove()
+    $(".articleCard").remove()
     $.ajax({
         url: 'http://localhost:8090/familymember',
         type: 'GET',
@@ -117,17 +128,20 @@ function loadFamilyMember() {
         success: function (data) {
             console.log(data)
 
+            // forEach loop which gets the input and create the Familymember with myFunction
             data.forEach(function (familymember) {
                 myFunction(familymember.id, familymember.name, familymember.bday)
             })
 
         },
+        // returns an alarm with the request 
         error: function (request, error) {
             alert("Request: " + JSON.stringify(request));
         }
     })
 }
 
+// DELETE to remove the Posted data from Backend
 function deleteFamilyMember(id) {
 
     $.ajax({
@@ -141,8 +155,12 @@ function deleteFamilyMember(id) {
     });
 }
 
+// function for editBtn
 function loadIndividualFamilyMember(id, name, bday) {
+    // open editWindow
     dialogOeffnen('editWindow-dialog')
+
+    // get the value of the input in editWindow
     $(".editWindow-dialog-daten #nameTag").val(name);
     $(".editWindow-dialog-daten #bdayTag").val(bday);
     $("#editFamily").submit(function () {
@@ -151,6 +169,7 @@ function loadIndividualFamilyMember(id, name, bday) {
 
 }
 
+// PUT request for update the edited Familymember
 function editFamilyMember(id) {
 
     var nameDialog = $(".editWindow-dialog-daten #nameTag").val();
@@ -166,6 +185,7 @@ function editFamilyMember(id) {
             "bday": bdayDialog
         }),
 
+        // loadFamilyMemeber for loading the new edited FamilyMember
         success: function (data) {
             dialogSchliessen('editWindow-dialog')
             loadFamilyMember()

@@ -1,26 +1,25 @@
 function myFunction(holidayWishId, location, description, holidayId, holidayTitle, holidayTime, sumPrio) {
     console.log(holidayTime)
-    const div1 = document.createElement("article");
-    div1.classList.add("article-card");
-    div1.classList.add("div1");
-    div1.id = "holiday-wish-" + holidayWishId;
+    const articleCard = document.createElement("article");
+    articleCard.classList.add("article-card");
+    articleCard.classList.add("articleCard");
 
+    // id to safe the data to the Backend
+    articleCard.id = "holiday-wish-" + holidayWishId;
 
+    const articleImage = document.createElement("figure");
+    articleImage.classList.add("article-image");
 
+    const imgCreator = document.createElement("img");
 
-    const div2 = document.createElement("figure");
-    div2.classList.add("article-image");
+    const articleContent = document.createElement("div");
+    articleContent.classList.add("article-content");
 
-    const div3 = document.createElement("img");
+    const headTopicTwo = document.createElement("h2");
+    headTopicTwo.id = ("holidayPlan")
 
-    const div4 = document.createElement("div");
-    div4.classList.add("article-content");
-
-    const div5 = document.createElement("h2");
-    div5.id = ("holidayPlan");
-
-    const div6 = document.createElement("a");
-    div6.classList.add("card-category");
+    const cardCategoryContent = document.createElement("a");
+    cardCategoryContent.classList.add("card-category");
 
     const divLocation = document.createElement("h3");
     divLocation.id = ("locationTxt");
@@ -28,71 +27,80 @@ function myFunction(holidayWishId, location, description, holidayId, holidayTitl
     const divDescription = document.createElement("p");
     divDescription.id = ("descriptionTxt");
 
-
+    // create deleteBtn
     let btnDelete = document.createElement("button");
+
+    // shows what the button says
     btnDelete.innerHTML = "Löschen";
+
+    // addEventlistener from dialog.js function deleteHolidayWish to make the button Work
     btnDelete.addEventListener('click', event => {
         deleteHolidayWish(holidayWishId)
     })
 
+    // create editBtn
     let btnEdit = document.createElement("button");
     btnEdit.innerHTML = "Bearbeiten";
+
+    // addEventlistener from dialog.js function editHolidayWish to make the button Work
     btnEdit.addEventListener('click', event => {
         loadIndividualHolidayWish(holidayId, holidayWishId, location, description)
     })
 
+    // The appendChild() method allows you to add a node to the end of the list of child nodes of a specified parent node
+    articleCard.appendChild(articleImage);
+    articleImage.appendChild(imgCreator);
+    articleCard.appendChild(articleContent);
+    articleContent.appendChild(headTopicTwo);
+    articleContent.appendChild(cardCategoryContent);
 
-    div1.appendChild(div2);
-    div2.appendChild(div3);
-    div1.appendChild(div4);
-    div4.appendChild(div5);
-    div4.appendChild(div6);
+    articleContent.appendChild(divLocation);
+    articleContent.appendChild(divDescription);
 
-    div4.appendChild(divLocation);
-    div4.appendChild(divDescription);
+    articleContent.appendChild(btnDelete);
+    articleContent.appendChild(btnEdit);
 
-    div4.appendChild(btnDelete);
-    div4.appendChild(btnEdit);
-
-
-
-
-    const text = document.createTextNode("");
-
-
-    div5.textContent = holidayTitle;
-    div6.textContent = holidayTime;
+    // textcontent to assign the desired values to the created elements 
+    headTopicTwo.textContent = holidayTitle;
+    cardCategoryContent.textContent = holidayTime;
     divLocation.textContent = location;
     divDescription.textContent = description;
-    div3.src = "./images/Urlaub.jpg "
+    imgCreator.src = "./images/Urlaub.jpg "
 
-    console.log(div3.src);
+    // shows in the console which image source it loads
+    console.log(imgCreator.src);
 
-    document.getElementById("acontainer").appendChild(div1);
+
+    document.getElementById("acontainer").appendChild(articleCard);
 
 };
 
 
-
-
+// function for Posting the input by creating the HolidayWish to the backend
 function createHolidayWish() {
+
+    //$ for useing jquery but same as document.getElmentById = ("#createholidayWish") from holidayWish.html
     var form = $("#createHolidayWish")
+
+    //gets the id from holidayWish.html and the input in the addWindow
     var location = form.find("#locationTag").val();
     var holidayId = form.find("#chooseDrop").val();
     var description = form.find("#descriptionTag").val();
+
     console.log(description)
 
+    // ajax request to Post the created HolidayWish from the addWindow to the Backend which allows us to safe the data and not lose it by reloading
     $.ajax({
 
         url: 'http://localhost:8090/holiday/' + holidayId + '/holiday-wish',
         type: 'POST',
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
-
-
             "location": location,
             "description": description
         }),
+
+        // remove the modalWindow/addWindow and function to load the created HolidayWish
         success: function (data) {
             document.getElementById("addWindow-dialog").classList.remove("sichtbar")
             document.getElementById("body-overlay").classList.remove("sichtbar");
@@ -103,10 +111,9 @@ function createHolidayWish() {
         }
     });
 
-
 }
 
-
+// GET the Posted data from createHoliday
 function loadHolidayWish() {
     $(".div1").remove()
     $.ajax({
@@ -116,6 +123,8 @@ function loadHolidayWish() {
         success: function (data) {
             console.log(data)
 
+            // forEach loop which gets the input and create the HolidayWish with myFunction
+            // holiday included because of the Relationship between Holiday and HolidayWish
             data.forEach(function (holidayWish, holiday) {
                 myFunction(holidayWish.id, holidayWish.location, holidayWish.description, holiday.id, holiday.title, holiday.time, holiday.sumPrio)
             })
@@ -126,22 +135,10 @@ function loadHolidayWish() {
         }
     })
 
-
 }
 
 
-
-function createDropOption(id, title) {
-
-    const option = document.createElement("option");
-    option.id = "dropHoliday"
-    option.value = id
-    option.innerHTML = title
-    $('#chooseDrop').append(option);
-}
-
-
-
+// to get the title from the created Holiday in a DropDownOption
 function loadHolidayDrop() {
     $.ajax({
         url: 'http://localhost:8090/holiday',
@@ -149,8 +146,9 @@ function loadHolidayDrop() {
         dataType: 'json',
         success: function (data) {
             console.log(data)
-
             data.forEach(function (holiday) {
+
+                // create the DropDownOption with the given input
                 createDropOption(holiday.id, holiday.title)
             })
 
@@ -164,6 +162,17 @@ function loadHolidayDrop() {
 
 }
 
+// Function for creating a DropOption
+function createDropOption(id, title) {
+    const option = document.createElement("option");
+    option.id = "dropHoliday"
+    option.value = id
+    option.innerHTML = title
+    $('#chooseDrop').append(option);
+}
+
+
+// GET the Posted data from createHoliday
 function loadHolidayWishes() {
     $(".div1").remove()
     $.ajax({
@@ -173,22 +182,21 @@ function loadHolidayWishes() {
         success: function (data) {
             console.log(data)
 
+            // double forEach loop which gets the input from wishes and create the HolidayWish and Holiday with myFunction
             data.forEach(function (holiday) {
                 holiday.wishes.forEach(w => {
                     myFunction(w.id, w.location, w.description, holiday.id, holiday.title, holiday.time, w.sumPriority)
                 })
             })
-
         },
         error: function (request, error) {
             alert("Request: " + JSON.stringify(request));
         }
     })
 
-
 }
 
-
+// DELETE to remove the Posted data from Backend
 function deleteHolidayWish(id) {
 
     $.ajax({
@@ -203,8 +211,13 @@ function deleteHolidayWish(id) {
     });
 }
 
+// function for editBtn
 function loadIndividualHolidayWish(holidayId, holidayWishId, location, description) {
+
+    // open editWindow
     dialogOeffnen('editWindow-dialog')
+
+    // get the value of the input and selection in editWindow
     $(".editWindow-dialog-daten #locationTag").val(location);
     $(".editWindow-dialog-daten #descriptionTag").val(description);
     $("#editHolidayWish").submit(function () {
@@ -213,11 +226,13 @@ function loadIndividualHolidayWish(holidayId, holidayWishId, location, descripti
 
 }
 
+// PUT request for update the edited Holiday
 function editHolidayWish(holidayId, holidayWishId) {
 
     var locationDialog = $(".editWindow-dialog-daten #locationTag").val();
     var descriptionDialog = $(".editWindow-dialog-daten #descriptionTag").val();
     $.ajax({
+        // url were we want to update the HolidayWish included Holidayid because the Relationship 
         url: 'http://localhost:8090/holiday/' + holidayId + '/holiday-wish/' + holidayWishId,
         type: 'PUT',
         contentType: "application/json; charset=utf-8",
@@ -227,6 +242,7 @@ function editHolidayWish(holidayId, holidayWishId) {
             "description": descriptionDialog
         }),
 
+        // loadHolidayWish for loading the new edited HolidayWish
         success: function (data) {
             dialogSchliessen('editWindow-dialog')
             loadHolidayWish()
