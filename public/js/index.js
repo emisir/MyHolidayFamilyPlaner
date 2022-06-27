@@ -1,4 +1,4 @@
-function myFunction(id, description, location, holiday_title, time, sumPrio) {
+function createArticleCard(id, description, location, holiday_title, time, sumPrio) {
 
     const articleCard = document.createElement("article");
     articleCard.classList.add("article-card");
@@ -109,10 +109,10 @@ function loadHolidayWish() {
         success: function (data) {
             console.log(data)
 
-            // forEach loop which gets the input and create the HolidayWish with myFunction
+            // forEach loop which gets the input and create the HolidayWish with createArticleCard
             // holiday included because of the Relationship between Holiday and HolidayWish
             data.forEach(function (holidayWish, holiday) {
-                myFunction(holidayWish.id, holidayWish.location, holidayWish.description, holiday.id, holiday.title, holiday.time, holiday.sumPrio)
+                createArticleCard(holidayWish.id, holidayWish.location, holidayWish.description, holiday.id, holiday.title, holiday.time, holiday.sumPrio)
             })
 
         },
@@ -165,10 +165,10 @@ function loadHolidayWishes() {
         success: function (data) {
             console.log(data)
 
-            // double forEach loop which gets the input from wishes and create the HolidayWish and Holiday with myFunction
+            // double forEach loop which gets the input from wishes and create the HolidayWish and Holiday with createArticleCard
             data.forEach(function (holiday) {
                 holiday.wishes.forEach(w => {
-                    myFunction(w.id, w.description, w.location, holiday.title, holiday.time, w.sumPriority)
+                    createArticleCard(w.id, w.description, w.location, holiday.title, holiday.time, w.sumPriority)
                 })
             })
 

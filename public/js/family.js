@@ -1,5 +1,5 @@
 // Function to create the Article card with DOM createElement
-function myFunction(id, name, bday) {
+function createArticleCard(id, name, bday) {
 
 
     const articleCard = document.createElement("article");
@@ -128,9 +128,9 @@ function loadFamilyMember() {
         success: function (data) {
             console.log(data)
 
-            // forEach loop which gets the input and create the Familymember with myFunction
+            // forEach loop which gets the input and create the Familymember with createArticleCard
             data.forEach(function (familymember) {
-                myFunction(familymember.id, familymember.name, familymember.bday)
+                createArticleCard(familymember.id, familymember.name, familymember.bday)
             })
 
         },

@@ -1,5 +1,5 @@
 // Function to create the Article card with DOM createElement
-function myFunction(id, title, time) {
+function createArticleCard(id, title, time) {
 
 
     const articleCard = document.createElement("article");
@@ -114,9 +114,9 @@ function loadHoliday() {
         success: function (data) {
             console.log(data)
 
-            // forEach loop which gets the input and create the Holiday with myFunction
+            // forEach loop which gets the input and create the Holiday with createArticleCard
             data.forEach(function (holiday) {
-                myFunction(holiday.id, holiday.title, holiday.time)
+                createArticleCard(holiday.id, holiday.title, holiday.time)
             })
 
         },

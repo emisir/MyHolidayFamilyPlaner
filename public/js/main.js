@@ -1,4 +1,4 @@
-function myFunction(id, description, location, holiday_title, time, prio) {
+function createArticleCard(id, description, location, holiday_title, time, prio) {
 
     const articleCard = document.createElement("article");
     articleCard.classList.add("article-card");
@@ -164,7 +164,7 @@ function loadHolidayWishes() {
                 success: function (data2) {
                     console.log(data2)
 
-                    // forEach loop which gets the Data and create the HolidayWish with Prio and myFunction
+                    // forEach loop which gets the Data and create the HolidayWish with Prio and createArticleCard
                     data.forEach(function (holiday) {
                         holiday.wishes.forEach(w => {
                             var prio;
@@ -172,7 +172,7 @@ function loadHolidayWishes() {
                             if (prioIndex >= 0) {
                                 prio = data2[prioIndex].priority
                             }
-                            myFunction(w.id, w.description, w.location, holiday.title, holiday.time, prio)
+                            createArticleCard(w.id, w.description, w.location, holiday.title, holiday.time, prio)
                         })
                     })
 
