@@ -16,17 +16,15 @@ import hs.aalen.prio.Prio;
 
 @Entity
 public class FamilyMember {
-	@Id // Annotation des Primaerschluessels id
-	@GeneratedValue(strategy = GenerationType.AUTO) // ID wird automatisch generiert durch GenerateValue
+	@Id // Annotation of the primary key id
+	@GeneratedValue(strategy = GenerationType.AUTO) // ID generates automatically with GenerateValue
 	private Long id;
 	private String name;
 	private Date bday;
 	
 	
-	// 1 zu N
-	// eine oder mehrere untergeordnete Entitäten zu löschen, 
-	//wenn die Löschung der übergeordneten Entität erfolgt
-	
+	// 1 zu N relationship
+	//delete child entities when the deletion of the parent entity occurs	
 	@OneToMany(mappedBy = "familyMember", cascade=CascadeType.REMOVE) 
 	@JsonIgnore
 	private List<Prio> priorities;
@@ -38,13 +36,13 @@ public class FamilyMember {
 		this.bday = bday;
 		this.priorities = priorities;
 	}
-	//leerer konstruktur für Objekterzeugung
+	//empty constructor for object creation
 	public FamilyMember() {		
 	}
 	
 	
 	
-	//get und set methoden der Variablen
+	//get und set methods
 
 	public List<Prio> getPriorities() {
 		return priorities;

@@ -17,7 +17,7 @@ public class PrioService {
 	public Prio getPrio(Long id) {
 		return prioRepository.findById(id).orElse(null);
 	}
-
+	
 	public void addPrio(Prio prio) {
 		Prio foundEntry = prioRepository.findByFamilyMemberIdAndHolidayWishId(prio.getFamilyMember().getId(),
 				prio.getHolidayWish().getId());
