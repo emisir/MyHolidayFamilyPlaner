@@ -10,18 +10,22 @@ import javax.persistence.OneToMany;
 
 import hs.aalen.Holidaywish.HolidayWish;
 
-@Entity
+//Annotation class as entity
+@Entity 
 public class Holiday {
 
-	@Id
+	//Annotation primarykey id 
+	@Id 
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String title;
 	private String time;
-
+ 
+	// 1 to n relationship
 	@OneToMany(mappedBy = "holiday")
 	public List<HolidayWish> wishes;
-	
+	 
+	//empty constructor for object creation
 	public Holiday() {
 		
 	} 	
@@ -34,6 +38,7 @@ public class Holiday {
 		this.wishes = wishes;
 	}
 
+	// setter and getter
 	public Long getId() {
 		return id;
 	}

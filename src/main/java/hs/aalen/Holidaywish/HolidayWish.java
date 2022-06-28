@@ -17,26 +17,36 @@ import hs.aalen.prio.Prio;
 
 @Entity
 public class HolidayWish {
+	//Anno
 	@Id
+	
+	//ID generates automatically with GenerateValue
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String description;
 	private String location;
 
+	//n to 1 relationship
 	@ManyToOne
 	@JsonIgnore
 	private Holiday holiday;
 
+	//1 to n relationship
 	@OneToMany(mappedBy = "holidayWish")
 	@JsonIgnore
 	private List<Prio> priorities;
-
+	
+	//indicate that a field is not to be persisted in the database
 	@Transient
 	private int sumPriority;
 
+	
+	//empty constructor for object creation
 	public HolidayWish() {
 	}
-
+   
+	// setters and getters
+	
 	public List<Prio> getPriorities() {
 		return priorities;
 	}

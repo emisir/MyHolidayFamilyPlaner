@@ -7,27 +7,27 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class FamilyMemberService {
-	//Objekte werden in familymemberRepository eingefuegt
+	//Objects are inserted into familymemberRepository
 	@Autowired
 	private FamilyMemberRepository familyMemberRepository;
 
-	//Familienmitglied als Liste ausgeben
+	//output familymember as list
 	public List<FamilyMember> getFamilyMemberList() {
 		return familyMemberRepository.findAll();
 	}
-	//Familienmitglied ausgeben
+	//show familymember
 	public FamilyMember getFamilyMember(Long id) {
 		return familyMemberRepository.findById(id).orElse(null);
 	}
-	//Familienmitglied hinzufügen
+	//Add family member
 	public void addFamilyMember(FamilyMember familyMember) {
 		familyMemberRepository.save(familyMember);
 	}
-    //Familienmitglied aktualisieren
+	//update family member
 	public void updateFamilyMember(Long id, FamilyMember familyMember) {
 		familyMemberRepository.save(familyMember);
 	}
-    //Familienmitglied löschen
+	//delete family member
 	public void deleteFamilyMember(Long id) {
 		familyMemberRepository.deleteById(id);
 	}

@@ -17,6 +17,7 @@ public class HolidayService {
 	@Autowired
 	private HolidayWishRepository holidayWishRepository;
 
+	// show holiday + linked holidaywish
 	public List<Holiday> getHolidayList() {
 		List<Holiday> holidays = holidayRepository.findAll();
 		for (Holiday holiday : holidays) {
@@ -31,7 +32,6 @@ public class HolidayService {
 		Holiday holiday = holidayRepository.findById(id).orElse(null);
 
 		
-		
 		if (holiday != null) {
 			for (HolidayWish wish : holiday.getWishes()) {
 				this.calculatePrioritySum(wish);
@@ -39,8 +39,9 @@ public class HolidayService {
 		}
 
 		return holiday;
+		
 	}
-	
+	//holiday is to be found, then it links and stores the holiday wish. 
 	public void saveHolidayWishById(Long holidayId, HolidayWish holidayWish) {
 		Holiday holiday = holidayRepository.findById(holidayId).orElse(null);
 		if (holiday != null) {
@@ -48,15 +49,17 @@ public class HolidayService {
 			holidayWishRepository.save(holidayWish);
 		}
 	}
-
+ 
+	//add holiday
 	public void addHoliday(Holiday holiday) {
 		holidayRepository.save(holiday);
 	}
 
+	//update holiday
 	public void updateHoliday(Long id, Holiday holiday) {
 		holidayRepository.save(holiday);
 	}
-    //löschen + wenn holiday gelöscht wird kann holidaywish gelöscht werden
+    //delete + if holiday is deleted holidaywish can be deleted
 	public void deleteHoliday(Long id) {
 		Holiday holiday = this.holidayRepository.findById(id).orElse(null);
 		List<HolidayWish> holidayWishes = holiday.getWishes();
@@ -67,7 +70,7 @@ public class HolidayService {
 	}
  
 	
-	//Prioritäten werden zusammen addiert 
+	//prio added together
 	private void calculatePrioritySum(HolidayWish holidayWish) {
 		int sum = 0;
 		for (Prio prio : holidayWish.getPriorities()) {

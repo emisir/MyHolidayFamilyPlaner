@@ -18,10 +18,13 @@ public class PrioService {
 		return prioRepository.findById(id).orElse(null);
 	}
 	
+	//Prioritization has taken place and if a family member has already prioritized a vacation request,
+	//the priority will be overwritten, otherwise if none has taken place, a new one will be set.
 	public void addPrio(Prio prio) {
 		Prio foundEntry = prioRepository.findByFamilyMemberIdAndHolidayWishId(prio.getFamilyMember().getId(),
 				prio.getHolidayWish().getId());
 
+		
 		if (foundEntry != null) {
 			foundEntry.setPriority(prio.getPriority());
 			prioRepository.save(foundEntry);
