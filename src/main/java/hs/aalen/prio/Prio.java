@@ -13,15 +13,21 @@ import hs.aalen.Familymember.FamilyMember;
 @Entity
 public class Prio {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id //primariy key id
+	@GeneratedValue(strategy = GenerationType.AUTO) //ID generates automatically 
 	private Long id;
-
+	
+	// n to 1 relationship
 	@ManyToOne
+	
+	//stores the id value and has a foreign key to the Familymember entity
 	@JoinColumn(name = "family_member_id", referencedColumnName = "id")
 	private FamilyMember familyMember;
 
+	// n to 1 relationship
 	@ManyToOne
+	
+	//stores the id value and has a foreign key to the Holidaywish entity
 	@JoinColumn(name = "holiday_wish_id", referencedColumnName = "id")
 	private HolidayWish holidayWish;
 
@@ -39,6 +45,7 @@ public class Prio {
 		this.priority = priority;
 	}
 
+	// set and get methods
 	public Long getId() {
 		return id;
 	}

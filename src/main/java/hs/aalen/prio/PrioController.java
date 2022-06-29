@@ -14,11 +14,12 @@ public class PrioController {
 	@Autowired
 	PrioService prioService;
 
+	// show all prios
 	@RequestMapping("/prio")
 	public List<Prio> getPrioList() {
 		return prioService.getPrioList();
 	}
-
+	// add prio
 	@RequestMapping(method = RequestMethod.POST, value = "/prio")
 	public void addPrio(@RequestBody Prio prio) {
 		prioService.addPrio(prio);
